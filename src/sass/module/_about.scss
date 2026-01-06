@@ -1,0 +1,138 @@
+@use "global" as *;
+.about {
+}
+.about__inner {
+  margin-top: rem(73);
+  padding-right: rem(15);
+  padding-left: rem(15);
+  @include mq("md") {
+    margin-top: 133px;
+    padding-right: rem(180);
+    padding-left: rem(180);
+    position: relative;
+    &::after {
+        content: "";
+        background: url(../images/common/coral.png) no-repeat;
+        background-size: 100% auto;
+        position: absolute;
+        z-index: 2;
+        width: rem(194);
+        height: rem(181);
+        bottom: -11.7%;
+        right: 5.7%;
+        @media screen and (min-width: rem(768)) and (max-width: rem(1100)) {
+            width: rem(97);
+            height: rem(90);            
+        }
+    }
+  }
+}
+.about__content {
+  margin-top: rem(28);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.about__img {
+  display: flex;
+  position: relative;
+}
+.about__img-left {
+  width: vw(375, 128);
+  aspect-ratio: 128/194;
+  @include mq("md") {
+    width: vw(1440, 400);
+    aspect-ratio: 400/606;
+  }
+  z-index: 3;
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+.about__catch {
+  position: absolute;
+  top: 30%;
+  left: 18.5%;
+  font-family: Gotu;
+  font-weight: 400;
+  z-index: 20;  
+  color: #fff;
+  font-size: rem(80);
+  line-height: rem(100);
+  @media screen and (min-width: rem(768)) and (max-width: rem(1425)) {
+      font-size: rem(70);
+      line-height: rem(80);
+      left: 1%;    
+  }
+}
+.about__img-right {
+  margin-top: rem(26);
+  margin-left: rem(-64);
+  width: vw(375, 281);
+  aspect-ratio: 281/186;
+  @include mq("md") {
+    width: vw(1440, 880);
+    aspect-ratio: 880/581;
+    margin-top: rem(80);
+    margin-left: rem(-200);
+  }
+  position: relative;
+  z-index: 1;
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+.about__img-right-text {
+  position: absolute;
+  top: 18%;
+  right: 6%;
+  p {
+    margin-top: 14px;
+    margin-right: -12px;
+    max-width: rem(400);
+    @media screen and (min-width: rem(768)) and (max-width: rem(1425)) {
+        max-width: rem(300);        
+    }
+    font-family: "Noto Sans JP";
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(24);
+    color: #fff;
+  }
+}
+.about__text {
+}
+.about__text-title {
+  margin-top: rem(40);
+  font-family: Gotu;
+  font-weight: 400;
+  color: #408f95;
+  font-size: rem(40);
+  line-height: rem(40);
+  @include mq("md") {
+    color: #fff;
+    font-size: rem(80);
+    line-height: rem(100);
+  }
+}
+.about__text-body {
+  margin-top: rem(16);
+  font-family: "Noto Sans JP";
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(24);
+  color: #0d2936;
+  @include mq("md") {
+    color: #fff;
+  }
+}
+.about-button {
+  margin-top: rem(25);
+  margin-left: rem(-18);
+  @include mq('md') {
+    margin-top: 40px;
+    margin-left: 6px;
+  }
+}

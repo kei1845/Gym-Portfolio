@@ -1,0 +1,164 @@
+@use "global" as *;
+.voice {
+  margin-top: rem(83);
+  @include mq("md") {
+    margin-top: rem(143);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../images/common/voicefish.png) no-repeat;
+      background-size: contain;
+      z-index: -1;
+      width: rem(301);
+      height: rem(138);
+      top: rem(-120);
+      left: rem(100);
+    }
+  }
+}
+.voice__inner {
+  padding-right: rem(15);
+  padding-left: rem(15);
+  @include mq("md") {
+    padding-right: rem(180);
+    padding-left: rem(180);
+    @media screen and (min-width: rem(768)) and (max-width: rem(1380)) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+  }
+}
+.voice__boxes {
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  justify-content: center;
+  margin-top: rem(44);
+  @include mq("md") {
+    flex-direction: row;
+    margin-top: rem(29);
+  }
+}
+.voice__box {
+    
+    background: #fff;
+    box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+    padding: rem(15) rem(16) rem(24) rem(16);
+    @include mq("md") {
+        padding: rem(24);
+        max-width: vw(1440,520);
+  }
+}
+.voice__box-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: rem(13);
+  @include mq("md") {
+    gap: rem(16);
+  }
+}
+.voice__box-left {
+    max-width: vw(375,149);
+    @include mq('md') {
+        max-width: rem(276);
+    }
+}
+.voice__box-meta {
+  display: flex;
+  flex-direction: column;
+  @include mq("md") {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+.voice__box-age {
+  color: #0d2936;
+  font-family: "Noto Sans JP";
+  font-size: rem(12);
+  font-weight: 400;
+  line-height: rem(18);
+  white-space: nowrap;
+}
+.voice__box-tag {
+  color: #408f95;
+  font-family: "Noto Sans JP";
+  max-width: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  font-size: rem(12);
+  font-weight: 400;
+  line-height: rem(22);
+  display: inline-block;
+  border: rem(1) solid #408f95;
+  background: #fff;
+  padding: rem(3) rem(11);
+  @include mq("md") {
+    padding: rem(5) rem(15);
+  }
+}
+.voice__box-title {
+  color: #0d2936;
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: rem(16);
+  margin-top: rem(3);
+  line-height: 1.2;
+  @include mq("md") {
+    font-size: rem(24);
+    margin-top: rem(8);
+    line-height: 1.4;
+  }
+}
+.voice__box-bar {
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(4);
+  }
+  width: 100%;
+  height: rem(1);
+  background: #408f95;
+}
+.voice__box-right {
+  width: vw(375, 151);
+  @include mq('md') {
+      width: rem(180);    
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+.voice__box-text {
+  margin-top: rem(15);
+  color: #000;
+  font-family: "Noto Sans JP";
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.voice-button {
+  margin-top: rem(40);
+  margin-left: rem(-2);
+    @include mq('md') {
+        margin-top: rem(80);        
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background: url(../images/common/voicetatsu.png) no-repeat;
+          background-size: contain;
+          z-index: -1;
+          width: rem(71);
+          height: rem(162);
+          top: rem(-36);
+          right: rem(0);
+        }
+    }
+    
+}
