@@ -103,7 +103,7 @@
 }
 .footer__text {
   color: #fff;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(16);
   font-weight: 400;
   line-height: rem(18);
@@ -131,7 +131,7 @@
 }
 .footer__footer {
   color: #fff;
-  font-family: Gotu;
+  font-family: $second-font-family;
   font-size: rem(12);
   font-weight: 400;
   line-height: rem(18);

@@ -112,7 +112,7 @@
 }
 .contact__footer-text {
   color: #0d2936;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(16);
   font-weight: 400;
   line-height: rem(24);
@@ -146,7 +146,7 @@
 }
 .contact__title-main {
   color: #0d2936;
-  font-family: Gotu;
+  font-family: $second-font-family;
   font-size: rem(80);
   font-weight: 400;
   line-height: rem(80);
@@ -162,7 +162,7 @@
 .contact__title-sub {
   color: #408f95;
   text-align: center;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(12);
   font-weight: 400;
   line-height: rem(18);
@@ -174,7 +174,7 @@
 .contact__reserve {
   color: #408f95;
   text-align: center;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(14);
   font-weight: 400;
   line-height: rem(18);

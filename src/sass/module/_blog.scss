@@ -72,7 +72,7 @@
 .blog__box-time {
   margin-top: rem(24);
   color: #0d2936;
-  font-family: Gotu;
+  font-family: $second-font-family;
   font-size: rem(12);
   font-weight: 400;
   line-height: rem(18);
@@ -80,7 +80,7 @@
 .blog__box-title {
   margin-top: rem(-1);
   color: #0d2936;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(16);
   font-weight: 500;
   line-height: rem(24);
@@ -94,7 +94,7 @@
 .blog__box-text {
   margin-top: rem(16);
   color: #000;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(16);
   font-weight: 400;
   line-height: rem(24);

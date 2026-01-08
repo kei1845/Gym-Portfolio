@@ -6,15 +6,20 @@
   left: 0;
   width: 100%;
   z-index: 10;
+  height: 80px;
+  @include mq('md') {
+    height: 90px;
+  }
   // display: none;
 }
 .header__inner {
+  height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: rem(19) rem(15);
+  padding: 0 rem(15);
   @include mq("md") {
-    padding: rem(18) rem(40);
+    padding: 0 rem(40);
   }
 }
 .header__logo {
@@ -32,27 +37,33 @@
   }
 }
 .header__nav {
+  height: inherit;
 }
 .header__nav-list {
+  height: inherit;
   display: flex;
   gap: rem(40);
 }
 .header__nav-item {
+  height: inherit;
 }
 .header__link {
+  height: inherit;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: rem(4);
   // 以下下線引き
   position: relative;
   &::after {
     position: absolute;
-    bottom: rem(-4);
+    bottom: 20px;
     left: 0;
     content: "";
     width: 100%;
-    height: rem(2);
-    background: #49c9d4;
+    height: rem(1);
+    background: #FFF;
     transform: scale(0, 1);
     transform-origin: center top;
     transition: transform 0.3s;
@@ -64,7 +75,7 @@
 .header__link--en {
   color: #fff;
   text-align: center;
-  font-family: Gotu;
+  font-family: $second-font-family;
   font-size: rem(18);
   font-weight: 400;
   line-height: rem(18); /* 100% */
@@ -72,7 +83,7 @@
 .header__link--ja {
   color: #fff;
   text-align: center;
-  font-family: "Noto Sans JP";
+  
   font-size: rem(10);
   font-weight: 400;
   line-height: rem(15); /* 150% */
