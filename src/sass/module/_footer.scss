@@ -102,10 +102,10 @@
   }  
 }
 .footer__text {
-  color: #fff;
+  color: $white;
   
   font-size: rem(16);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(18);
   white-space: nowrap;
   &:nth-child(n + 2) {
@@ -113,7 +113,7 @@
   }
 }
 .footer__text.starfish {
-  font-weight: 700;
+  font-weight: $bold;
   &:nth-child(n + 2) {
     margin-top: rem(40);
   }
@@ -130,10 +130,10 @@
   }
 }
 .footer__footer {
-  color: #fff;
+  color: $white;
   font-family: $second-font-family;
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(18);
   text-align: center;
   

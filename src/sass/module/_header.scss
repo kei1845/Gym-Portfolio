@@ -63,7 +63,7 @@
     content: "";
     width: 100%;
     height: rem(1);
-    background: #FFF;
+    background: $white;
     transform: scale(0, 1);
     transform-origin: center top;
     transition: transform 0.3s;
@@ -73,19 +73,19 @@
   }
 }
 .header__link--en {
-  color: #fff;
+  color: $white;
   text-align: center;
   font-family: $second-font-family;
   font-size: rem(18);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(18); /* 100% */
 }
 .header__link--ja {
-  color: #fff;
+  color: $white;
   text-align: center;
   
   font-size: rem(10);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(15); /* 150% */
 }
 /* ==================================================
@@ -128,7 +128,7 @@
   width: rem(32);
   height: rem(1);
   border-radius: rem(100);
-  background: #fff;
+  background: $white;
   transition: transform 0.3s linear,top 0.3s linear;
   &:nth-child(1) {
   }

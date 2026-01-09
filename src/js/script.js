@@ -27,7 +27,7 @@ const campaignSwiper = new Swiper(".campaign__swiper", {
   // loopedSlides: 4, // スライド枚数と合わせる
   breakpoints: {
     768: {
-      slidesPerView: 3.5,
+      slidesPerView: 3,
       // slidesPerView: "auto",
       spaceBetween: 40,
       // slidesOffsetBefore: 0, // デスクトップでは余白なし

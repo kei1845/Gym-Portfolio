@@ -12,9 +12,9 @@
   }
 }
 .heading__en {
-  color: #0d2936;
+  color: $green;
   font-family: $second-font-family;
-  font-weight: 400;
+  font-weight: $normal;
   font-size: rem(32);
   line-height: rem(40);
   @include mq("md") {
@@ -26,7 +26,7 @@
 }
 .heading__ja {
   color: #408f95;  
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(18); /* 150% */
   font-size: rem(12);
 }
@@ -58,9 +58,9 @@
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   background: #408f95;
   border: 1px solid #408f95;
-  color: #fff;
+  color: $white;
   display: block;
-  font-weight: 400;
+  font-weight: $normal;
   font-family: $second-font-family;
   font-size: rem(14);
   line-height: rem(22); /* 157.143% */
@@ -75,7 +75,7 @@
     position: relative;
     top: rem(-2);
     path {
-      stroke: #fff;
+      stroke: $white;
       transition: stroke 0.2s ease;
     }
   }
@@ -87,7 +87,7 @@
   position: relative;
   z-index: 1;
   &::after {
-    background: #fff;
+    background: $white;
     position: absolute;
     top: 0;
     left: 0;

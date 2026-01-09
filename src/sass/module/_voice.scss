@@ -42,7 +42,7 @@
 }
 .voice__box {
     
-    background: #fff;
+    background: $white;
     box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
     padding: rem(15) rem(16) rem(24) rem(16);
     @include mq("md") {
@@ -75,10 +75,10 @@
   }
 }
 .voice__box-age {
-  color: #0d2936;
+  color: $green;
   
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(18);
   white-space: nowrap;
 }
@@ -89,18 +89,18 @@
   width: fit-content;
   white-space: nowrap;
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(22);
   display: inline-block;
   border: rem(1) solid #408f95;
-  background: #fff;
+  background: $white;
   padding: rem(3) rem(11);
   @include mq("md") {
     padding: rem(5) rem(15);
   }
 }
 .voice__box-title {
-  color: #0d2936;
+  color: $green;
   
   font-weight: 500;
   font-size: rem(16);
@@ -136,7 +136,7 @@
   color: #000;
   
   font-size: rem(16);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(24);
   @include mq("md") {
     margin-top: rem(40);

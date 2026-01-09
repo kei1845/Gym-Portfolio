@@ -10,7 +10,7 @@
   padding-right: rem(15);
   padding-left: rem(15);
   padding-bottom: rem(83);
-  background: #ddf0f1;
+  background: $green2;
   @include mq("md") {
     padding-top: rem(100);
     padding-right: rem(184);
@@ -61,10 +61,10 @@
   }
 }
 .information__text-title {
-  color: #0d2936;
+  color: $green;
   
   font-size: rem(20);
-  font-weight: 700;
+  font-weight: $bold;
   line-height: rem(24);
   @include mq("md") {
     font-size: rem(24);
@@ -82,10 +82,10 @@
 }
 .information__description {
   margin-top: rem(6);
-  color: #0d2936;
+  color: $green;
   
   font-size: rem(16);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(24);
 }
 .information__button {

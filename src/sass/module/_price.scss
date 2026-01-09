@@ -6,7 +6,7 @@
   }
 }
 .price__inner {
-  background: #ddf0f1;
+  background: $green2;
   padding-top: rem(80);
   padding-right: rem(15);
   padding-left: rem(15);
@@ -44,10 +44,10 @@
   }
 }
 .price__category-title {
-  color: #0d2936;
+  color: $green;
   
   font-size: rem(16);
-  font-weight: 700;
+  font-weight: $bold;
   line-height: rem(24);
 }
 .price__category-bar {
@@ -60,9 +60,9 @@
   margin-top: rem(8);
   display: flex;
   justify-content: space-between;
-  color: #0d2936;
+  color: $green;
   
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(24);
   font-size: rem(14);
   @include mq("md") {

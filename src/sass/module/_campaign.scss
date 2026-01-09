@@ -19,7 +19,7 @@
 .campaign__nav-prev {
   position: absolute;
   top: -27%;
-  left: 68.5%;
+  left: 805px;
   width: rem(80);
   cursor: pointer;
   img {
@@ -27,10 +27,11 @@
     height: rem(80);
   }
 }
+
 .campaign__nav-next {
   position: absolute;
   top: -27%;
-  left: 79.5%;
+  left: 965px;
   width: rem(80);
   cursor: pointer;
   img {
@@ -46,13 +47,11 @@
   }
 }
 .campaign-cards {
-  padding-left: rem(15);
   @include mq("md") {
-    padding-left: rem(180);
   }
 }
 .campaign-card {
-  background: #fff;
+  background: $white;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   width: rem(280) !important;
   height: auto;
@@ -61,35 +60,27 @@
   }
 }
 .campaign-card__img {
-  // width: rem(280);
-  // height: rem(188);
-  // @include mq('md') {
-  //   width: rem(334);
-  //   height: rem(223);    
-  // }
   img {
     width: 100%;
-    // height: rem(200);
+    aspect-ratio: 333 / 223;
     object-fit: cover;
   }
 }
 .campaign-card__body {
   padding: rem(16) rem(16) rem(26);
-  // height: rem(178);
   @include mq("md") {
     padding: rem(24) rem(15) rem(43);
-    // height: rem(222);
   }
 }
 .campaign-card__tag {
   color: #408f95;
   
   font-size: rem(12);
-  font-weight: 400;
+  font-weight: $normal;
   line-height: rem(22); /* 183.333% */
   display: inline-block;
   border: rem(1) solid #408f95;
-  background: #fff;
+  background: $white;
   padding: rem(3) rem(11);
   @include mq("md") {
     padding: rem(6) rem(16);
@@ -100,7 +91,7 @@
   @include mq('md') {
     margin-top: rem(1);
   }
-  color: #0d2936;
+  color: $green;
   
   font-size: rem(16);
   font-weight: 500;
@@ -126,9 +117,9 @@
   background: #408f95;
 }
 .campaign-card__desc {
-  color: #0d2936;
+  color: $green;
   
-  font-weight: 400;
+  font-weight: $normal;
   text-align: center;
   line-height: rem(24); /* 171.429% */
   margin-top: rem(8);
@@ -149,13 +140,13 @@
   align-items: flex-end;
   gap: rem(16);
   @include mq("md") {
-    gap: rem(21);
+    gap: rem(29);
   }
 }
 .campaign-card__old {
-  color: #0d2936;
+  color: $green;
   font-family: Lato;
-  font-weight: 700;
+  font-weight: $bold;
   font-size: rem(20);
   line-height: rem(20);
   @include mq("md") {
@@ -179,7 +170,7 @@
 .campaign-card__new {
   color: #408f95;
   font-family: Lato;
-  font-weight: 700;
+  font-weight: $bold;
   font-size: rem(32);
   line-height: rem(32); /* 100% */
   @include mq("md") {
