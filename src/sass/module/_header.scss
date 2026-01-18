@@ -170,8 +170,9 @@ body.is-scrollLock {
 /* 以下追記
 -------------------------------------------------- */
 .drawer__logo {
-  width: vw(375,102);
+  width: rem(102);
   margin-top: rem(-27);
+  margin-right: rem(244);
 }
 // .drawer__margin {
 //   margin-left: rem(20);
