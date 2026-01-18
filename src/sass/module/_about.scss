@@ -19,6 +19,9 @@
     }
   }
 }
+
+.about__inner {
+}
 .about__content {
   margin-top: rem(28);
   @include mq("md") {
@@ -39,8 +42,6 @@
   }
   z-index: 3;
   img {
-    width: 100%;
-    display: block;
   }
 }
 .about__catch {
@@ -68,9 +69,8 @@
   position: relative;
   z-index: 1;
   img {
-    width: 100%;
-    display: block;
-  }
+
+    }
 }
 .about__img-right-text {
   position: absolute;

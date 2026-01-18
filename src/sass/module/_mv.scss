@@ -13,10 +13,8 @@
   width: 100%;
   height: 100vh;
   img {
-    width: 100%;
-    height: 100%;
-    display: block;
     object-fit: cover;
+    height: 100%;
   }
 }
 .mv-slide1 {
@@ -24,6 +22,7 @@
     object-position: 35% 50%;
     @include mq("md") {
       object-position: 50% 50%;
+      height: 100%;
     }
   }
 }
@@ -32,6 +31,7 @@
     object-position: 12% 50%;
     @include mq("md") {
       object-position: 50% 50%;
+      height: 100%;
     }
   }
 }
@@ -40,6 +40,7 @@
     object-position: 35% 50%;
     @include mq("md") {
       object-position: 50% 50%;
+      height: 100%;
     }
   }
 }
@@ -48,6 +49,7 @@
     object-position: 40% 50%;
     @include mq("md") {
       object-position: 50% 50%;
+      height: 100%;
     }
   }
 }

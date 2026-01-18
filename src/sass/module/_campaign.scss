@@ -9,6 +9,8 @@
     margin-top: rem(120);
   }
 }
+
+
 .campaign__nav {
   position: relative;
   width: 100%;
@@ -19,7 +21,8 @@
 .campaign__nav-prev {
   position: absolute;
   top: -27%;
-  left: 805px;
+  left: auto;
+  right: rem(195);
   width: rem(80);
   cursor: pointer;
   img {
@@ -31,7 +34,8 @@
 .campaign__nav-next {
   position: absolute;
   top: -27%;
-  left: 965px;
+  left: auto;
+  right: rem(35);
   width: rem(80);
   cursor: pointer;
   img {
@@ -61,7 +65,6 @@
 }
 .campaign-card__img {
   img {
-    width: 100%;
     aspect-ratio: 333 / 223;
     object-fit: cover;
   }
