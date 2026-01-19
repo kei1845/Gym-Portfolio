@@ -9,11 +9,10 @@
 }
 .footer__inner {
   padding-top: rem(48);
-  // max-width: rem(1440); // 任意の最大幅
-  // margin: 0 auto; 
   @include mq("md") {
-    
-    padding: rem(80) rem(24);
+    padding-top: rem(80);
+    padding-right: rem(24);
+    padding-left: rem(24);
     margin: 0 auto;
     max-width: rem(1200);
   }
@@ -129,21 +128,20 @@
     left: rem(-21);
   }
 }
-.footer__footer {
+.footer__copyright {
+  display: block;
   color: $white;
   font-family: $second-font-family;
   font-size: rem(12);
   font-weight: $normal;
   line-height: rem(18);
-  text-align: center;
-  
+  text-align: center;  
   margin-top: rem(40);
-  padding-bottom: rem(56);
+  padding-bottom: rem(57);
   @include mq("md") {
       font-size: rem(14);
     margin-top: rem(80);
     padding-bottom: rem(80);
-     white-space: nowrap;
   }
 }
 /* ==================================================
@@ -155,7 +153,7 @@
   height: rem(48);    
   right: rem(15);
   bottom: rem(15);
-  z-index: 2;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s , visibility 0.3s;
@@ -169,7 +167,6 @@
     right: rem(20);
     bottom: rem(20);
   }
-  img {
-    
+  img {    
   }
 }

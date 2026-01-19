@@ -121,3 +121,34 @@
     background-color: #408F95;
   }
 }
+
+/* ==================================================
+# hoverした時、白くする。
+================================================== */
+.hover-white {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2); /* 白をうっすら */
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+/* ==================================================
+# hoverした時、透明にする。
+================================================== */
+
+.hover-opacity {
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
