@@ -9,8 +9,6 @@
     margin-top: rem(120);
   }
 }
-
-
 .campaign__nav {
   position: relative;
   width: 100%;
@@ -76,13 +74,12 @@
   }
 }
 .campaign-card__tag {
-  color: #408f95;
-  
-  font-size: rem(12);
+  color: #408f95;  
   font-weight: $normal;
-  line-height: rem(22); /* 183.333% */
+  font-size: rem(12);
+  line-height: 1.833;
   display: inline-block;
-  border: rem(1) solid #408f95;
+  border: 1px solid #408f95;
   background: $white;
   padding: rem(3) rem(11);
   @include mq("md") {
@@ -94,24 +91,10 @@
   @include mq('md') {
     margin-top: rem(1);
   }
-  color: $green;
-  
-  font-size: rem(16);
+  color: $green;  
   font-weight: 500;
-  line-height: rem(24); /* 150% */
-  // position: relative;
-  // &::after {
-  //   position: absolute;
-  //   content: "";
-  //   top: rem(30);
-  //   left: 0;
-  //   height: rem(1);
-  //   background-color: black;
-  //   width: rem(248);
-  //   @include mq("md") {
-  //     width: rem(301);
-  //   }
-  // }
+  font-size: rem(16);
+  line-height: 1.5;
 }
 .campaign-card__bar {
   margin-top: rem(8);
@@ -120,29 +103,27 @@
   background: #408f95;
 }
 .campaign-card__desc {
-  color: $green;
-  
+  color: $green;  
   font-weight: $normal;
   text-align: center;
-  line-height: rem(24); /* 171.429% */
-  margin-top: rem(8);
   font-size: rem(14);
+  line-height: 1.714;
+  margin-top: rem(8);
   @include mq("md") {
     margin-top: rem(16);
     font-size: rem(16);
+    line-height: 1.5;
     margin-right: rem(18);
   }
 }
 .campaign-card__price {
   padding-top: rem(5);
-  @include mq('md') {
-    padding-top: rem(6);
-  }
-  padding-left: rem(16);
+  padding-left: rem(19);
   display: flex;
   align-items: flex-end;
-  gap: rem(16);
+  gap: rem(18);
   @include mq("md") {
+    padding-top: rem(6);
     gap: rem(29);
   }
 }
@@ -151,10 +132,9 @@
   font-family: Lato;
   font-weight: $bold;
   font-size: rem(20);
-  line-height: rem(20);
+  line-height: 1;
   @include mq("md") {
     font-size: rem(24);
-    line-height: rem(24);
     margin-left: rem(2);
   }
   position: relative;
@@ -175,14 +155,13 @@
   font-family: Lato;
   font-weight: $bold;
   font-size: rem(32);
-  line-height: rem(32); /* 100% */
+  line-height: 1;
   @include mq("md") {
     font-size: rem(40);
-    line-height: rem(40);
   }
 }
 .campaign-button {
-  margin-top: rem(39);
+  margin-top: rem(40);
   margin-left: rem(-6);
   @include mq('md') {
     margin-top: rem(78);

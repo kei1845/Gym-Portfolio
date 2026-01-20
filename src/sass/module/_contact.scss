@@ -26,43 +26,27 @@
   }
 }
 .contact__inner {
-  
-  // width: 100%;
 }
-.contact__box {
-  // max-width: 1080px;
-  // padding-right: 20px;
-  // padding-left: 20px;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
-  
+.contact__box {  
   display: flex;
   flex-direction: column;
   @include mq("md") {
     box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
     flex-direction: row;
     justify-content: space-between;
-    // gap: 20px;
-    // justify-content: space-around;
-    // justify-content: center;
     padding-top: rem(80);
     padding-bottom: rem(79);
     padding-right: rem(115);
     padding-left: rem(52);
-    // padding-top: 20px;
-    // padding-bottom: 20px;
   }
   
 }
 .contact__left {
 }
 .contact__header {
-  // width: vw(375, 174);
   width: rem(174);
   @include mq("md") {
-    // width: vw(1440, 200);
     width: rem(200);
-    // max-width: 200px;
   }
   margin-right: auto;
   margin-left: auto;
@@ -79,7 +63,7 @@
   background: #408f95;
   @include mq("md") {
     margin-top: rem(8);
-    max-width: 100%;
+    max-width: none;
   }
 }
 .contact__footer {
@@ -99,10 +83,9 @@
 }
 .contact__footer-text {
   color: $green;
-
-  font-size: rem(16);
   font-weight: $normal;
-  line-height: rem(24);
+  font-size: rem(16);
+  line-height: 1.5;
   text-align: center;
   @include mq("md") {
     text-align: left;
@@ -112,7 +95,6 @@
   }
 }
 .contact__footer-right {
-  // width: vw(375,295);
   width: rem(295);
   margin-top: rem(16);
   margin-right: auto;
@@ -120,9 +102,8 @@
   box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
   @include mq("md") {
     box-shadow: none;
-    // width: vw(1440,273);
     width: rem(273);
-    max-width: 273px;
+    max-width: rem(273);
     margin-top: 0;
     margin-left: rem(21);
   }
@@ -138,9 +119,9 @@
 .contact__title-main {
   color: $green;
   font-family: $second-font-family;
-  font-size: rem(80);
   font-weight: $normal;
-  line-height: rem(80);
+  font-size: rem(80);
+  line-height: 1;
   text-align: center;
   margin-top: rem(40);
   @include mq("md") {
@@ -153,10 +134,9 @@
 .contact__title-sub {
   color: #408f95;
   text-align: center;
-
-  font-size: rem(12);
   font-weight: $normal;
-  line-height: rem(18);
+  font-size: rem(12);
+  line-height: 1.5;
   margin-top: rem(-5);
   @include mq("md") {
     margin-top: rem(-6);
@@ -165,10 +145,9 @@
 .contact__reserve {
   color: #408f95;
   text-align: center;
-
-  font-size: rem(14);
   font-weight: $normal;
-  line-height: rem(18);
+  font-size: rem(14);
+  line-height: 1.286;
   margin-top: rem(8);
   @include mq("md") {
     margin-top: rem(8);

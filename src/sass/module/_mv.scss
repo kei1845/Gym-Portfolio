@@ -53,11 +53,6 @@
     }
   }
 }
-// .mv-swiper,
-// .mv-swiper .swiper-wrapper,
-// .mv-swiper-slide {
-//   height: 100vh;
-// }
 .mv__content {
   position: absolute;
   top: 50%;
@@ -73,15 +68,15 @@
   font-weight: $normal;
   text-align: center;
   font-size: rem(40);
-  letter-spacing: rem(23);
+  line-height: 1.2;
+  letter-spacing: 0.54em;
   margin-right: rem(-23);
   margin-top: rem(-10);
+  margin-top: rem(-3);
   @include mq("md") {
-    font-size: rem(80);
-    // margin-top: 0;
     margin-right: rem(-44);
-    line-height: 1.25; /* 125% */
-    letter-spacing: 43.2px;
+    font-size: rem(80);
+    line-height: 1.25;
   }
 }
 .mv__sub {
@@ -89,7 +84,7 @@
   font-family: $second-font-family;
   font-size: rem(20);
   font-weight: $normal;
-  margin-top: rem(-3);
+  margin-top: rem(3);
   @include mq("md") {
     margin-top: rem(-5);
     position: relative;

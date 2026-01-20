@@ -14,14 +14,6 @@
     padding-bottom: rem(100);
   }
 }
-// カンプぴったりになる。
-// .information__inner.inner {
-//   @include mq('md') {
-//     padding-right: 30px;
-//     padding-left: 22px;
-//   }
-// }
-
 
 .information__content {
   display: flex;
@@ -34,16 +26,14 @@
     gap: rem(48);
     margin-top: rem(40);
   }
-
 }
 .information__image {
   width: 100%;
   aspect-ratio: 345/227;
   margin-inline: auto;
   @include mq('md') {
-    max-width: 540px;
-  }
-  
+    max-width: rem(540);
+  }  
   img {
     aspect-ratio: 345 / 227;
     @include mq('md') {
@@ -58,13 +48,13 @@
   }
 }
 .information__text-title {
-  color: $green;
-  
-  font-size: rem(20);
+  color: $green;  
   font-weight: $bold;
-  line-height: rem(24);
+  font-size: rem(20);
+  line-height: 1.2;
   @include mq("md") {
     font-size: rem(24);
+    line-height: 1;
     margin-top: rem(61);
   }
 }
@@ -79,11 +69,10 @@
 }
 .information__description {
   margin-top: rem(6);
-  color: $green;
-  
-  font-size: rem(16);
+  color: $green;  
   font-weight: $normal;
-  line-height: rem(24);
+  font-size: rem(16);
+  line-height: 1.5;
 }
 .information__button {
   margin-top: rem(40);

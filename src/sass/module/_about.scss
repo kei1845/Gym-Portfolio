@@ -4,7 +4,7 @@
 .about__inner {
   margin-top: rem(73);
   @include mq("md") {
-    margin-top: 133px;
+    margin-top: rem(133);
     position: relative;
     &::after {
         content: "";
@@ -52,7 +52,7 @@
   font-weight: $normal;
   z-index: 20;  
   color: $white;
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(rem(40), 6vw, rem(80));
   line-height: 1.25;
 }
 .about__img-right {
@@ -77,11 +77,11 @@
   top: 18%;
   right: 6%;
   p {
-    margin-top: 14px;
-    margin-right: -12px;
-    max-width: min(400px, 28vw);
-    font-size: rem(16);
+    margin-top: rem(14);
+    margin-right: rem(-12);
+    max-width: min(rem(400), 28vw);
     font-weight: $normal;
+    font-size: rem(16);
     line-height: 1.5;
     color: $white;
   }
@@ -94,29 +94,20 @@
   font-weight: $normal;
   color: #408f95;
   font-size: rem(40);
-  line-height: rem(40);
-  @include mq("md") {
-    color: $white;
-    font-size: rem(80);
-    line-height: rem(100);
-  }
+  line-height: 1;
 }
 .about__text-body {
-  margin-top: rem(16);
-  
-  font-size: rem(16);
+  margin-top: rem(16);  
   font-weight: $normal;
-  line-height: rem(24);
+  font-size: rem(16);
+  line-height: 1.5;
   color: $green;
-  @include mq("md") {
-    color: $white;
-  }
 }
 .about-button {
   margin-top: rem(25);
   margin-left: rem(-18);
   @include mq('md') {
-    margin-top: 40px;
-    margin-left: 6px;
+    margin-top: rem(40);
+    margin-left: rem(6);
   }
 }

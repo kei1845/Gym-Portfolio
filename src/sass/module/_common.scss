@@ -16,9 +16,10 @@
   font-family: $second-font-family;
   font-weight: $normal;
   font-size: rem(32);
-  line-height: rem(40);
+  line-height: 1.25;
   @include mq("md") {
     font-size: rem(40);
+    line-height: 1;
   }
   &::first-letter {
     color: #408f95;
@@ -27,8 +28,8 @@
 .heading__ja {
   color: #408f95;  
   font-weight: $normal;
-  line-height: rem(18); /* 150% */
   font-size: rem(12);
+  line-height: 1.5;
 }
 /* ==================================================
 # button
@@ -42,12 +43,12 @@
   &::before {
     content: "";
     position: absolute;
-    top: 6px;
-    left: 4px;
+    top: rem(6);
+    left: rem(4);
     width: rem(202);
     height: rem(54);
     background-color: white;
-    border: rem(1) solid #408f95;
+    border: 1px solid #408f95;
     z-index: 0; /* ボタンの背面 */
   }
 }
@@ -63,7 +64,7 @@
   font-weight: $normal;
   font-family: $second-font-family;
   font-size: rem(14);
-  line-height: rem(22); /* 157.143% */
+  line-height: 1.571;
   padding: rem(16) rem(10);
   text-align: center;
   width: rem(202);
@@ -141,11 +142,9 @@
     opacity: 1;
   }
 }
-
 /* ==================================================
 # hoverした時、透明にする。
 ================================================== */
-
 .hover-opacity {
   transition: opacity 0.3s;
   &:hover {

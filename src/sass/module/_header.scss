@@ -6,11 +6,10 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  height: 80px;
+  height: rem(80);
   @include mq('md') {
-    height: 90px;
+    height: rem(90);
   }
-  // display: none;
 }
 .header__inner {
   height: inherit;
@@ -25,8 +24,7 @@
 .header__logo {
   @include mq('md') {
     position: relative;
-    top: rem(4);
-    
+    top: rem(4);    
   }
   img {
     width: rem(102);
@@ -53,11 +51,12 @@
   align-items: center;
   justify-content: center;
   gap: rem(4);
+
   // 以下下線引き
   position: relative;
   &::after {
     position: absolute;
-    bottom: 20px;
+    bottom: rem(20);
     left: 0;
     content: "";
     width: 100%;
@@ -75,17 +74,16 @@
   color: $white;
   text-align: center;
   font-family: $second-font-family;
-  font-size: rem(18);
   font-weight: $normal;
-  line-height: rem(18); /* 100% */
+  font-size: rem(18);
+  line-height: 1;
 }
 .header__link--ja {
   color: $white;
-  text-align: center;
-  
-  font-size: rem(10);
+  text-align: center;  
   font-weight: $normal;
-  line-height: rem(15); /* 150% */
+  font-size: rem(10);
+  line-height: 1.5;
 }
 /* ==================================================
 # drawer menu
@@ -126,7 +124,7 @@
   left: 0;
   width: rem(32);
   height: rem(1);
-  border-radius: rem(100);
+  border-radius: 100px;
   background: $white;
   transition: transform 0.3s linear,top 0.3s linear;
   &:nth-child(1) {
@@ -138,7 +136,6 @@
     top: rem(24);
   }
 }
-// 以下作り直し
 .drawer-content {
   background: #408f95;
   position: fixed;
@@ -148,8 +145,7 @@
   height: 100vh;
   z-index: 14;
   transform: translateX(100vw);
-  transition: transform 0.3s linear;
-  
+  transition: transform 0.3s linear;  
   &.is-checked {
     transform: translateX(0);
   }
@@ -157,8 +153,6 @@
 .drawer-content-inner {
 }
 .drawer-content2 {
-  // margin-top: rem(350);
-  // width: 100vw;
   z-index: 10000;
   margin-top: rem(45);
   gap: rem(30);
@@ -167,13 +161,8 @@
 body.is-scrollLock {
   overflow: hidden;
 }
-/* 以下追記
--------------------------------------------------- */
 .drawer__logo {
   width: rem(102);
   margin-top: rem(-27);
   margin-right: rem(244);
 }
-// .drawer__margin {
-//   margin-left: rem(20);
-// }

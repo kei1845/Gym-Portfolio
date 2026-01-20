@@ -1,6 +1,6 @@
 @use "global" as *;
 .price {
-  margin-top: rem(82);
+  margin-top: rem(85);
   background: $green2;
   padding-bottom: rem(81);
   @include mq("md") {
@@ -39,11 +39,10 @@
   }
 }
 .price__category-title {
-  color: $green;
-  
-  font-size: rem(16);
+  color: $green;  
   font-weight: $bold;
-  line-height: rem(24);
+  font-size: rem(16);
+  line-height: 1.5;
 }
 .price__category-bar {
   margin-top: rem(4);
@@ -57,10 +56,11 @@
   justify-content: space-between;
   color: $green;  
   font-weight: $normal;
-  line-height: rem(24);
   font-size: rem(14);
+  line-height: 1.714;
   @include mq("md") {
     font-size: rem(16);
+    line-height: 1.5;
   }
 }
 .price__item-name {
@@ -74,7 +74,7 @@
   aspect-ratio: 345/227;
   margin-inline: auto;
   @include mq("md") {
-    max-width: 492px;
+    max-width: rem(492);
     aspect-ratio: 492/746;
     margin-left: rem(93);
   }
@@ -87,7 +87,7 @@
   margin-top: rem(38);
   margin-left: rem(-3);
   @include mq("md") {
-    margin-top: rem(79);
+    margin-top: rem(80);
     margin-left: rem(1);
     position: relative;
     &::before {

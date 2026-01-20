@@ -63,24 +63,22 @@
   }
 }
 .voice__box-age {
-  color: $green;
-  
-  font-size: rem(12);
+  color: $green;  
   font-weight: $normal;
-  line-height: rem(18);
+  font-size: rem(12);
+  line-height: 1.5;
   white-space: nowrap;
 }
 .voice__box-tag {
-  color: #408f95;
-  
+  color: #408f95;  
   max-width: fit-content;
   width: fit-content;
   white-space: nowrap;
-  font-size: rem(12);
   font-weight: $normal;
-  line-height: rem(22);
+  font-size: rem(12);
+  line-height: 1.833;
   display: inline-block;
-  border: rem(1) solid #408f95;
+  border: 1px solid #408f95;
   background: $white;
   padding: rem(3) rem(11);
   @include mq("md") {
@@ -88,20 +86,18 @@
   }
 }
 .voice__box-title {
-  color: $green;
-  
+  color: $green;  
   font-weight: 500;
-  font-size: rem(16);
   margin-top: rem(3);
-  line-height: 1.2;
+  font-size: rem(16);
+  line-height: 1.5;
   @include mq("md") {
-    font-size: rem(24);
     margin-top: rem(8);
+    font-size: rem(24);
     line-height: 1.4;
   }
 }
 .voice__box-bar {
-  margin-top: rem(16);
   @include mq("md") {
     margin-top: rem(4);
   }
@@ -110,7 +106,6 @@
   background: #408f95;
 }
 .voice__box-right {
-  // width: vw(375, 151);
   width: rem(151);
   @include mq('md') {
       width: rem(180);    
@@ -121,18 +116,17 @@
   }
 }
 .voice__box-text {
-  margin-top: rem(15);
-  color: #000;
-  
-  font-size: rem(16);
+  margin-top: rem(17);
+  color: #000;  
   font-weight: $normal;
-  line-height: rem(24);
+  font-size: rem(16);
+  line-height: 1.5;
   @include mq("md") {
     margin-top: rem(40);
   }
 }
 .voice-button {
-  margin-top: rem(40);
+  margin-top: rem(38);
   margin-left: rem(-2);
     @include mq('md') {
         margin-top: rem(80);        
