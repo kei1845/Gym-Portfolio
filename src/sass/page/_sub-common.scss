@@ -1,0 +1,92 @@
+@use "global" as *;
+
+.sub-mv {
+  position: relative;
+  width: 100%;
+  height: rem(460);
+  @include mq("md") {
+    height: rem(548);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../images/common/voicefish.png) no-repeat;
+    background-size: contain;
+    z-index: 1;
+
+    width: rem(120);
+    height: rem(55);
+    bottom: rem(-111);
+    left: rem(19);
+
+    @include mq("md") {
+      width: rem(301);
+      height: rem(138);
+      left: rem(100);
+      bottom: rem(-246);
+    }
+  }
+}
+
+.sub-mv__img {
+  width: 100%;
+  height: inherit;
+  img {
+    object-fit: cover;
+    height: 100%;
+    object-position: 72% 50%;
+    @include mq("md") {
+      object-position: 50% 50%;
+    }
+  }
+}
+
+.sub-mv__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sub-mv__title {
+  color: $white;
+  font-family: $third-font-family;
+  font-weight: $normal;
+  font-size: rem(40);
+  line-height: 1.2;
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: 1.25;
+    margin-top: rem(100);
+  }
+}
+
+.breadcrumb {
+  margin-top: rem(8);
+  margin-left: rem(4);
+  @include mq('md') {
+    margin-left: 0;
+  }
+
+  display: flex;
+  gap: rem(20);
+  color: $green;
+  font-weight: $normal;
+  font-size: rem(14);
+  a {
+    text-decoration: none;
+    position: relative;
+
+    & + a::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: rem(-11);
+      width: rem(5);
+      height: rem(9);
+      background: url(../images/common/sub-pages/sub-common/bc-next.png)
+        no-repeat center/contain;
+    }
+  }
+}
