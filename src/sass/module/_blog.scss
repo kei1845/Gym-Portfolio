@@ -88,7 +88,7 @@
 .blog__box-time {
   display: block;
   margin-top: rem(23);
-  color: #0d2936;
+  color: $green;
   font-family: $second-font-family;
   font-weight: $normal;
   font-size: rem(12);
@@ -96,7 +96,7 @@
 }
 .blog__box-title {
   margin-top: rem(-1);
-  color: #0d2936;
+  color: $green;
   font-weight: $medium;
   font-size: rem(16);
   line-height: 1.5;
@@ -105,7 +105,7 @@
   margin-top: rem(4);
   width: 100%;
   height: rem(1);
-  background: #408f95;
+  background: $green-accent;
 }
 .blog__box-text {
   margin-top: rem(16);

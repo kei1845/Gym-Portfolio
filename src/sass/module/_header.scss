@@ -137,7 +137,8 @@
   }
 }
 .drawer-content {
-  background: #408f95;
+  overflow-y: auto;   // 縦スクロール許可
+  background: $green-accent;
   position: fixed;
   top: 0;
   right: 0;

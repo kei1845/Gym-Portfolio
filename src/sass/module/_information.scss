@@ -32,7 +32,7 @@
   aspect-ratio: 345/227;
   margin-inline: auto;
   @include mq('md') {
-    max-width: rem(540);
+    width: 50%;
   }  
   img {
     aspect-ratio: 345 / 227;
@@ -65,7 +65,7 @@
   }
   width: 100%;
   height: rem(1);
-  background: #408f95;
+  background: $green-accent;
 }
 .information__description {
   margin-top: rem(6);

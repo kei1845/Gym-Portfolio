@@ -60,7 +60,7 @@
   margin-right: auto;
   margin-left: auto;
   height: rem(1);
-  background: #408f95;
+  background: $green-accent;
   @include mq("md") {
     margin-top: rem(8);
     max-width: none;
@@ -113,7 +113,7 @@
 }
 .contact__vertical-bar {
   width: rem(1);
-  background: #408f95;
+  background: $green-accent;
 }
 .contact__right {
 }
@@ -129,11 +129,11 @@
     margin-top: rem(20);
   }
   &::first-letter {
-    color: #408f95;
+    color: $green-accent;
   }
 }
 .contact__title-sub {
-  color: #408f95;
+  color: $green-accent;
   text-align: center;
   font-weight: $normal;
   font-size: rem(12);
@@ -144,7 +144,7 @@
   }
 }
 .contact__reserve {
-  color: #408f95;
+  color: $green-accent;
   text-align: center;
   font-weight: $normal;
   font-size: rem(14);

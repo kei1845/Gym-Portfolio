@@ -1,6 +1,6 @@
 @use "global" as *;
 .footer {
-  background: #408f95;
+  background: $green-accent;
   margin-top: rem(103);
   
   @include mq("md") {

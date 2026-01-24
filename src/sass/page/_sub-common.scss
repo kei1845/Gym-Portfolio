@@ -17,7 +17,7 @@
     position: absolute;
     background: url(../images/common/voicefish.png) no-repeat;
     background-size: contain;
-    z-index: 1;
+    z-index: -1;
 
     width: rem(120);
     height: rem(55);
@@ -68,7 +68,7 @@
 .breadcrumb {
   margin-top: rem(8);
   margin-left: rem(4);
-  @include mq('md') {
+  @include mq("md") {
     margin-left: 0;
   }
 
@@ -97,6 +97,58 @@
 
 
 /* ==================================================
+# tabs
+================================================== */
+.tabs {
+
+}
+
+.tabs__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(16) rem(21);
+  @include mq('md') {
+    display: flex;
+    gap: rem(32);
+  }
+  
+}
+
+.tabs__item {
+  border: 1px solid $green-accent;
+  min-width: rem(162);
+  min-height: rem(34);
+  // padding: rem(3) rem(10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  
+}
+
+.tabs__link {
+  width: 100%;
+  height: 100%;
+  color: $green-accent;
+  font-weight: $normal;
+  font-size: rem(14);
+  line-height: 1.571;
+  padding: rem(5) rem(10);
+  
+}
+
+.tabs__item.is-active {
+  pointer-events: none;
+  background-color: $green-accent;
+  .tabs__link {
+    color: $white;
+  }
+}
+
+
+
+/* ==================================================
 # pagination prev next
 ================================================== */
 
@@ -104,19 +156,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-}
-
-.pagination__item {
-
 }
 
 .pagination__prev {
-  margin-right: 40px;
-  
+  margin-right: rem(40);
+  @include mq('md') {
+    margin-right: rem(40);
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(38);
+  height: rem(38);
+  border: 1px solid $green-accent;
 }
 .pagination__next {
-  margin-left: 40px;
+  margin-left: rem(40);
+  @include mq('md') {
+    margin-left: rem(40);
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(38);
+  height: rem(38);
+  border: 1px solid $green-accent;
 }
 .pagination__arrow {
   transition: background-color 0.3s ease;
@@ -124,43 +188,46 @@
     background-color: $green-accent;
   }
 }
-.pagination__arrow svg path{
+.pagination__arrow svg path {
   stroke: $green-accent;
   transition: stroke 0.3s ease;
 }
 .pagination__arrow:hover svg path {
   stroke: $white;
 }
-// .pagination__prev,
-// .pagination__next {
-  // }
-  
-  
-  .pagination__link {
-    width: 38px;
-    height: 38px;
-    border: 1px solid $green-accent;
-    color: $green-accent;
-    font-family: $third-font-family;
-    font-weight: $bold;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .pagination__link.is-current {
-    color: $white;
-    background-color: $green-accent;
-  }
-  
-  
 
-  .pagination__numbers{
+.pagination__number {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  // padding: 0 rem(14);
+  min-width: rem(38);
+  height: rem(38);
+  border: 1px solid $green-accent;
+}
+.pagination__link {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  color: $green-accent;
+  font-family: $third-font-family;
+  font-weight: $bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
 }
 
+.pagination__number.is-current {
+  pointer-events: none;
+  .pagination__link {
+    background-color: $green-accent;
+    color: $white;
+  }
+}
 
-
-
+.pagination__numbers {
+  display: flex;
+  gap: rem(12);
+}
