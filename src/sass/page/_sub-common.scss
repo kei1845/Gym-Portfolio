@@ -1,5 +1,9 @@
 @use "global" as *;
 
+/* ==================================================
+# 下層ページのmvとパンくずリストと背景の魚。
+================================================== */
+
 .sub-mv {
   position: relative;
   width: 100%;
@@ -90,3 +94,73 @@
     }
   }
 }
+
+
+/* ==================================================
+# pagination prev next
+================================================== */
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.pagination__item {
+
+}
+
+.pagination__prev {
+  margin-right: 40px;
+  
+}
+.pagination__next {
+  margin-left: 40px;
+}
+.pagination__arrow {
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $green-accent;
+  }
+}
+.pagination__arrow svg path{
+  stroke: $green-accent;
+  transition: stroke 0.3s ease;
+}
+.pagination__arrow:hover svg path {
+  stroke: $white;
+}
+// .pagination__prev,
+// .pagination__next {
+  // }
+  
+  
+  .pagination__link {
+    width: 38px;
+    height: 38px;
+    border: 1px solid $green-accent;
+    color: $green-accent;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .pagination__link.is-current {
+    color: $white;
+    background-color: $green-accent;
+  }
+  
+  
+
+  .pagination__numbers{
+  display: flex;
+  gap: 12px;
+}
+
+
+
+
