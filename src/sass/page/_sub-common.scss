@@ -118,16 +118,16 @@
   border: 1px solid $green-accent;
   min-width: rem(162);
   min-height: rem(34);
-  // padding: rem(3) rem(10);
+  text-align: center;
+  // 以下を.tabs__linkに持っていくか悩む。日本語、数字がとても多いときの表示確認。
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  
-  
 }
 
 .tabs__link {
+  overflow: hidden;    
+  text-overflow: ellipsis; 
   width: 100%;
   height: 100%;
   color: $green-accent;
@@ -200,22 +200,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding: 0 rem(14);
   min-width: rem(38);
   height: rem(38);
   border: 1px solid $green-accent;
 }
 .pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 0 5px;
   color: $green-accent;
   font-family: $third-font-family;
   font-weight: $bold;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: $white;
 }
 

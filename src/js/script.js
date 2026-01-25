@@ -163,3 +163,98 @@ jQuery(function ($) {
   });
   
 });
+
+
+/* ==================================================
+# modal
+================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('gallery-modal');
+  const modalImg = modal.querySelector('img');
+
+  document.querySelectorAll('.gallery__item').forEach(item => {
+    item.addEventListener('click', () => {
+      modalImg.src = item.dataset.modalImg;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  modal.addEventListener('click', (e) => {
+    const isSp = window.matchMedia('(max-width: 767px)').matches;
+
+    if (
+      e.target.classList.contains('modal-overlay') ||
+      (isSp && e.target.tagName === 'IMG')
+    ) {
+      modal.classList.remove('is-open');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      modal.classList.remove('is-open');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const modal = document.getElementById('gallery-modal');
+//   const modalImg =modal.querySelector('img');
+
+//   document.querySelectorAll('.gallery-item').forEach(item => {
+//     item.addEventListener('click', () => {
+//       modalImg.src = item.dataset.modalImg;
+//       modal.classList.add('is-open');
+//     });
+//   });
+
+//   modal.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('modal-overlay')) {
+//       modal.classList.remove('is-open');
+//       modalImg.src = '';
+//     }
+//   });
+//   document.addEventListener('keydown',(e) => {
+//     if (e.key == 'Escape' && modal.classList.contains('is-open')) {
+//       modal.classList.remove('is-open');
+//       modalImg.src = '';
+//     }
+//   });
+// });
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const modal = document.getElementById('gallery-modal');
+//   const modalImg = modal.querySelector('img');
+
+//   document.querySelectorAll('.gallery-item').forEach(item => {
+//     item.addEventListener('click', () => {
+//       modalImg.src = item.dataset.modalImg;
+//       modal.classList.add('is-open');
+//     });
+//   });
+
+//   // 背景や画像上でもクリックで閉じる
+//   modal.addEventListener('click', () => {
+//     modal.classList.remove('is-open');
+//     modalImg.src = '';
+//   });
+
+//   // ESCキーでも閉じる（任意）
+//   document.addEventListener('keydown', e => {
+//     if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+//       modal.classList.remove('is-open');
+//       modalImg.src = '';
+//     }
+//   });
+// });
