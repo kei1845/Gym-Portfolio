@@ -130,11 +130,23 @@ const imgImagemin = () => {
         )
       )
       .pipe(dest(destPath.img))
-      .pipe(webp())//webpに変換
+      // .pipe(webp())//webpに変換
       // 圧縮済みの画像ファイルを出力先に保存
       .pipe(dest(destPath.img))
   );
 };
+
+// 以下追記、画像の名前変えても元の画像残らないように。
+// const imgImagemin = () => {
+//   return src(srcPath.img)
+//     .pipe(imagemin([
+//       imageminMozjpeg({ quality: 80 }),
+//       imageminPngquant(),
+//       imageminSvgo({ plugins: [{ removeViewbox: false }] }),
+//     ]))
+//     .pipe(dest(destPath.img));
+// };
+
 
 // js圧縮
 const jsBabel = () => {
@@ -186,5 +198,17 @@ const watchFiles = () => {
 // ブラウザシンク付きの開発用タスク
 exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
 
+// 以下追記、画像の名前変えても元の画像がでないように。
+// exports.default = series(
+//   series(cssSass, jsBabel, imgClean, imgImagemin, htmlCopy),
+//   parallel(watchFiles, browserSyncFunc)
+// );
+
+
 // 本番用タスク
 exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);
+
+
+// 追記
+// 画像の名前変えたら、元の画像残らないようにする。
+

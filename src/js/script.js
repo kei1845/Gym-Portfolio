@@ -171,6 +171,7 @@ jQuery(function ($) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('gallery-modal');
+  if (!modal) return;
   const modalImg = modal.querySelector('img');
 
   document.querySelectorAll('.gallery__item').forEach(item => {
@@ -204,57 +205,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ==================================================
+# information タグ切り替え
+================================================== */
 
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.sub-information__tab');
+  const contents = document.querySelectorAll('.sub-information__content');
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const modal = document.getElementById('gallery-modal');
-//   const modalImg =modal.querySelector('img');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
 
-//   document.querySelectorAll('.gallery-item').forEach(item => {
-//     item.addEventListener('click', () => {
-//       modalImg.src = item.dataset.modalImg;
-//       modal.classList.add('is-open');
-//     });
-//   });
+      // タブのactive切り替え
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
 
-//   modal.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('modal-overlay')) {
-//       modal.classList.remove('is-open');
-//       modalImg.src = '';
-//     }
-//   });
-//   document.addEventListener('keydown',(e) => {
-//     if (e.key == 'Escape' && modal.classList.contains('is-open')) {
-//       modal.classList.remove('is-open');
-//       modalImg.src = '';
-//     }
-//   });
-// });
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const modal = document.getElementById('gallery-modal');
-//   const modalImg = modal.querySelector('img');
-
-//   document.querySelectorAll('.gallery-item').forEach(item => {
-//     item.addEventListener('click', () => {
-//       modalImg.src = item.dataset.modalImg;
-//       modal.classList.add('is-open');
-//     });
-//   });
-
-//   // 背景や画像上でもクリックで閉じる
-//   modal.addEventListener('click', () => {
-//     modal.classList.remove('is-open');
-//     modalImg.src = '';
-//   });
-
-//   // ESCキーでも閉じる（任意）
-//   document.addEventListener('keydown', e => {
-//     if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-//       modal.classList.remove('is-open');
-//       modalImg.src = '';
-//     }
-//   });
-// });
+      // コンテンツのactive切り替え
+      contents.forEach(content => {
+        content.classList.remove('is-active');
+        if (content.id === target) {
+          content.classList.add('is-active');
+        }
+      });
+    });
+  });
+});

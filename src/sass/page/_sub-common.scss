@@ -15,7 +15,7 @@
   &::before {
     content: "";
     position: absolute;
-    background: url(../images/common/voicefish.png) no-repeat;
+    background: url(../images/voicefish.png) no-repeat;
     background-size: contain;
     z-index: -1;
 
@@ -89,7 +89,7 @@
       left: rem(-11);
       width: rem(5);
       height: rem(9);
-      background: url(../images/common/sub-pages/sub-common/bc-next.png)
+      background: url(../images/sub-pages/sub-common/bc-next.png)
         no-repeat center/contain;
     }
   }
@@ -153,16 +153,19 @@
 ================================================== */
 
 .pagination__list {
+  margin-top: rem(80);
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: rem(345);
+  @include mq('md') {
+    max-width: rem(444);
+  }
 }
 
 .pagination__prev {
-  margin-right: rem(40);
-  @include mq('md') {
-    margin-right: rem(40);
-  }
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,10 +174,6 @@
   border: 1px solid $green-accent;
 }
 .pagination__next {
-  margin-left: rem(40);
-  @include mq('md') {
-    margin-left: rem(40);
-  }
   display: flex;
   align-items: center;
   justify-content: center;

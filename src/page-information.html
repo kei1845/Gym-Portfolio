@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -32,12 +33,13 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.1.2/jquery.inview.js"></script> -->
   <script defer src="./assets/js/script.js"></script>
 </head>
+
 <body>
   <header class="header">
     <div class="header__inner">
       <h1 class="header__logo">
-        <a href="index.html">          
-          <img src="./assets/images/common/CodeUps.png" alt="CodeUps">
+        <a href="index.html">
+          <img src="./assets/images/CodeUps.png" alt="CodeUps">
         </a>
       </h1>
       <nav class="header__nav u-desktop">
@@ -103,7 +105,7 @@
     <div class="footer__inner inner drawer-content-inner">
       <div class="footer__header">
         <div class="drawer__logo">
-          <img src="./assets/images/common/footer-codeups.png" alt="CodeUps">
+          <img src="./assets/images/footer-codeups.png" alt="CodeUps">
         </div>
       </div>
       <div class="footer__body drawer-content2">
@@ -144,9 +146,9 @@
 
   <main>
     <section class="sub-mv">
-          <div class="sub-mv__img">
-            <img src="./assets/images/common/sub-pages/campaign/campaign-mv.png" alt="海の中のミスジチョウチョウウオ">
-          </div>      
+      <div class="sub-mv__img">
+        <img src="./assets/images/sub-pages/information/information-mv.png" alt="海の中のミスジチョウチョウウオ">
+      </div>
       <div class="sub-mv__content">
         <h2 class="sub-mv__title">Information</h2>
       </div>
@@ -157,17 +159,70 @@
         <a href="page-campaign.html">ダイビング情報</a>
       </nav>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    information
+
+    <div class="sub-information">
+      <div class="sub-information-inner inner">
+        <div class="sub-information__tabs">
+          <button class="sub-information__tab is-active" data-target="license">
+            <div class="sub-information__img u-desktop"></div>
+            <div class="sub-information__main">ライセンス<br class="u-mobile">講習</div>
+          </button>
+          <button class="sub-information__tab" data-target="fun">
+            <div class="sub-information__img u-desktop"></div>
+            <div class="sub-information__main">ファン<br class="u-mobile">ダイビング</div>            
+          </button>
+          <button class="sub-information__tab" data-target="trial">
+            <div class="sub-information__img u-desktop"></div>
+            <div class="sub-information__main">体験<br class="u-mobile">ダイビング</div>
+          </button>
+        </div>
+        <div class="sub-information__contents">
+          <div class="sub-information__content is-active" id="license">
+            <div class="sub-information__left">
+              <h3 class="sub-information__title">ライセンス講習</h3>
+              <div class="sub-information__bar"></div>
+              <p class="sub-information__text">泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！</p>
+            </div>
+            <div class="sub-information__right">
+              <img src="./assets/images/sub-pages/information/license.png" alt="ダイバー">
+              <!-- <img src="./assets/images/500x1500.png" alt="500x1500"> -->
+            </div>
+          </div>
+          <div class="sub-information__content" id="fun">
+            <div class="sub-information__left">
+              <h3 class="sub-information__title">ファンダイビング</h3>
+              <div class="sub-information__bar"></div>
+              <p class="sub-information__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
+            </div>
+            <div class="sub-information__right">
+              <img src="./assets/images/sub-pages/information/fun-diving.png" alt="サンゴ礁周辺でテンジクダイの仲間が大群で泳ぐ海中写真">
+            </div>            
+          </div>
+          <div class="sub-information__content" id="trial">
+            <div class="sub-information__left">
+              <h3 class="sub-information__title">体験ダイビング</h3>
+              <div class="sub-information__bar"></div>
+              <p class="sub-information__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
+            </div>
+            <div class="sub-information__right">
+              <img src="./assets/images/sub-pages/information/diving.png" alt="海の中のミスジチョウチョウウオ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
     <section class="contact">
       <div class="contact__inner inner">
         <div class="contact__box">
           <div class="contact__left">
             <div class="contact__header">
-              <img src="./assets/images/common/contact-icon.png" alt="CodeUps">
+              <img src="./assets/images/contact-icon.png" alt="CodeUps">
             </div>
             <div class="contact__bar"></div>
             <div class="contact__footer">
@@ -178,7 +233,7 @@
                 <p class="contact__footer-text">定休日:毎週火曜日</p>
               </address>
               <div class="contact__footer-right">
-                <img src="./assets/images/common/contact-img.png" alt="CodeUpsの店舗地図">
+                <img src="./assets/images/contact-img.png" alt="CodeUpsの店舗地図">
               </div>
             </div>
           </div>
@@ -200,19 +255,19 @@
       </div>
     </section>
   </main>
-  
+
   <footer class="footer">
     <div class="footer__inner inner">
       <div class="footer__header">
         <div class="footer__logo">
-          <img src="./assets/images/common/footer-codeups.png" alt="CodeUps">
+          <img src="./assets/images/footer-codeups.png" alt="CodeUps">
         </div>
         <div class="footer__icons">
           <a href="#" class="footer__icon hover-opacity">
-            <img src="./assets/images/common/footer-facebook.png" alt="CodeUpsのFacebook">
+            <img src="./assets/images/footer-facebook.png" alt="CodeUpsのFacebook">
           </a>
           <a href="#" class="footer__icon hover-opacity">
-            <img src="./assets/images/common/footer-instagram.png" alt="CodeUpsのInstagram">
+            <img src="./assets/images/footer-instagram.png" alt="CodeUpsのInstagram">
           </a>
         </div>
       </div>
@@ -252,6 +307,7 @@
     </div>
     <small class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
   </footer>
-  <a href="#mv" class="page-top" id="js-page-top"><img src="./assets/images/common/to-top.png" alt="ページの一番上へ戻る"></a>
+  <a href="#mv" class="page-top" id="js-page-top"><img src="./assets/images/to-top.png" alt="ページの一番上へ戻る"></a>
 </body>
+
 </html>

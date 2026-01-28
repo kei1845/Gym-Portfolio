@@ -192,20 +192,6 @@
   margin-top: rem(16);
 }
 
-.sub-campaign-pagination {
-  margin-top: rem(81);
-
-  // カンプ完全一致。仮。
-  // margin-left: rem(6);
-  @include mq("md") {
-    // margin-left: 0;
-
-    margin-top: rem(80);
-  }
-}
-
-
-
 /* WordPressにする時、消す。
 pagination、SPの時に数減らす。5と6。
 -------------------------------------------------- */

@@ -7,7 +7,7 @@
     &::before {
       content: "";
       position: absolute;
-      background: url(../images/common/voicefish.png) no-repeat;
+      background: url(../images/voicefish.png) no-repeat;
       background-size: contain;
       z-index: -1;
       width: rem(301);
@@ -134,7 +134,7 @@
         &::after {
           content: "";
           position: absolute;
-          background: url(../images/common/voicetatsu.png) no-repeat;
+          background: url(../images/voicetatsu.png) no-repeat;
           background-size: contain;
           z-index: -1;
           width: rem(71);
