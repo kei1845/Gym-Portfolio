@@ -1,168 +1,170 @@
 @use "global" as *;
-.campaign {
-  overflow: hidden;
-}
-.campaign__inner {
-  margin-top: rem(40);
-  padding-bottom: rem(10);
-  @include mq('md') {
-    margin-top: rem(120);
+body.front-page {
+  .campaign {
+    overflow: hidden;
   }
-}
-.campaign__nav {
-  position: relative;
-  width: 100%;
-  height: rem(80);
-  bottom: rem(3);
-  left: rem(35);
-}
-.campaign__nav-prev {
-  position: absolute;
-  top: -27%;
-  left: auto;
-  right: rem(195);
-  width: rem(80);
-  cursor: pointer;
-  img {
-    width: rem(80);
+  .campaign__inner {
+    margin-top: rem(40);
+    padding-bottom: rem(10);
+    @include mq("md") {
+      margin-top: rem(120);
+    }
+  }
+  .campaign__nav {
+    position: relative;
+    width: 100%;
     height: rem(80);
+    bottom: rem(3);
+    left: rem(35);
   }
-}
+  .campaign__nav-prev {
+    position: absolute;
+    top: -27%;
+    left: auto;
+    right: rem(195);
+    width: rem(80);
+    cursor: pointer;
+    img {
+      width: rem(80);
+      height: rem(80);
+    }
+  }
 
-.campaign__nav-next {
-  position: absolute;
-  top: -27%;
-  left: auto;
-  right: rem(35);
-  width: rem(80);
-  cursor: pointer;
-  img {
+  .campaign__nav-next {
+    position: absolute;
+    top: -27%;
+    left: auto;
+    right: rem(35);
     width: rem(80);
-    height: rem(80);
+    cursor: pointer;
+    img {
+      width: rem(80);
+      height: rem(80);
+    }
   }
-}
-.campaign__swiper {
-  margin-top: rem(28);
-  overflow: visible;
-  @include mq("md") {
-    margin-top: rem(-40);
+  .campaign__swiper {
+    margin-top: rem(28);
+    overflow: visible;
+    @include mq("md") {
+      margin-top: rem(-40);
+    }
   }
-}
-.campaign-cards {
-}
-.campaign-card {
-  background: $white;
-  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
-  width: rem(280) !important;
-  height: auto;
-  @include mq("md") {
-    width: rem(333) !important;
+  .campaign-cards {
   }
-}
-.campaign-card__img {
-  img {
-    aspect-ratio: 333 / 223;
-    object-fit: cover;
+  .campaign-card {
+    background: $white;
+    box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+    width: rem(280) !important;
+    height: auto;
+    @include mq("md") {
+      width: rem(333) !important;
+    }
   }
-}
-.campaign-card__body {
-  padding: rem(16) rem(16) rem(26);
-  @include mq("md") {
-    padding: rem(24) rem(15) rem(43);
+  .campaign-card__img {
+    img {
+      aspect-ratio: 333 / 223;
+      object-fit: cover;
+    }
   }
-}
-.campaign-card__tag {
-  color: $green-accent;  
-  font-weight: $normal;
-  font-size: rem(12);
-  line-height: 1.833;
-  display: inline-block;
-  border: 1px solid $green-accent;
-  background: $white;
-  padding: rem(3) rem(11);
-  @include mq("md") {
-    padding: rem(6) rem(16);
+  .campaign-card__body {
+    padding: rem(16) rem(16) rem(26);
+    @include mq("md") {
+      padding: rem(24) rem(15) rem(43);
+    }
   }
-}
-.campaign-card__title {
-  margin-top: rem(4);
-  @include mq('md') {
-    margin-top: rem(1);
+  .campaign-card__tag {
+    color: $green-accent;
+    font-weight: $normal;
+    font-size: rem(12);
+    line-height: 1.833;
+    display: inline-block;
+    border: 1px solid $green-accent;
+    background: $white;
+    padding: rem(3) rem(11);
+    @include mq("md") {
+      padding: rem(6) rem(16);
+    }
   }
-  color: $green;  
-  font-weight: $medium;
-  font-size: rem(16);
-  line-height: 1.5;
-}
-.campaign-card__bar {
-  margin-top: rem(8);
-  width: 100%;
-  height: rem(1);
-  background: $green-accent;
-}
-.campaign-card__desc {
-  color: $green;  
-  font-weight: $normal;
-  text-align: center;
-  font-size: rem(14);
-  line-height: 1.714;
-  margin-top: rem(8);
-  @include mq("md") {
-    margin-top: rem(16);
+  .campaign-card__title {
+    margin-top: rem(4);
+    @include mq("md") {
+      margin-top: rem(1);
+    }
+    color: $green;
+    font-weight: $medium;
     font-size: rem(16);
     line-height: 1.5;
-    margin-right: rem(18);
   }
-}
-.campaign-card__price {
-  padding-top: rem(5);
-  padding-left: rem(19);
-  display: flex;
-  align-items: flex-end;
-  gap: rem(18);
-  @include mq("md") {
-    padding-top: rem(6);
-    gap: rem(29);
+  .campaign-card__bar {
+    margin-top: rem(8);
+    width: 100%;
+    height: rem(1);
+    background: $green-accent;
   }
-}
-.campaign-card__old {
-  color: $green;
-  font-family: $third-font-family;
-  font-weight: $bold;
-  font-size: rem(20);
-  line-height: 1;
-  @include mq("md") {
-    font-size: rem(24);
-    margin-left: rem(2);
+  .campaign-card__desc {
+    color: $green;
+    font-weight: $normal;
+    text-align: center;
+    font-size: rem(14);
+    line-height: 1.714;
+    margin-top: rem(8);
+    @include mq("md") {
+      margin-top: rem(16);
+      font-size: rem(16);
+      line-height: 1.5;
+      margin-right: rem(18);
+    }
   }
-  position: relative;
-  display: inline-block;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: rem(3);
-    background-color: #C94800;
+  .campaign-card__price {
+    padding-top: rem(5);
+    padding-left: rem(19);
+    display: flex;
+    align-items: flex-end;
+    gap: rem(18);
+    @include mq("md") {
+      padding-top: rem(6);
+      gap: rem(29);
+    }
   }
-}
-.campaign-card__new {
-  color: $green-accent;
-  font-family: $third-font-family;
-  font-weight: $bold;
-  font-size: rem(32);
-  line-height: 1;
-  @include mq("md") {
-    font-size: rem(40);
+  .campaign-card__old {
+    color: $green;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    font-size: rem(20);
+    line-height: 1;
+    @include mq("md") {
+      font-size: rem(24);
+      margin-left: rem(2);
+    }
+    position: relative;
+    display: inline-block;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: rem(3);
+      background-color: #c94800;
+    }
   }
-}
-.campaign-button {
-  margin-top: rem(40);
-  margin-left: rem(-6);
-  @include mq('md') {
-    margin-top: rem(78);
-    margin-left: rem(-4);
+  .campaign-card__new {
+    color: $green-accent;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    font-size: rem(32);
+    line-height: 1;
+    @include mq("md") {
+      font-size: rem(40);
+    }
+  }
+  .campaign-button {
+    margin-top: rem(40);
+    margin-left: rem(-6);
+    @include mq("md") {
+      margin-top: rem(78);
+      margin-left: rem(-4);
+    }
   }
 }

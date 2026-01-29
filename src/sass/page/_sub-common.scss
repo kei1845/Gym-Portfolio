@@ -119,6 +119,7 @@
   min-width: rem(162);
   min-height: rem(34);
   text-align: center;
+  background-color: $white;
   // 以下を.tabs__linkに持っていくか悩む。日本語、数字がとても多いときの表示確認。
   display: flex;
   align-items: center;

@@ -1,160 +1,160 @@
 @use "global" as *;
-.contact {
-  margin-top: rem(81);
-  @include mq('md') {
-    margin-top: rem(140);
-  }
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    background: url(../images/contact-fish-sp.png) no-repeat;
-    background-size: contain;
-    z-index: 2;
-    width: rem(109);
-    height: rem(50);
-    top: rem(-24);
-    right: rem(15);
+
+  .contact {
+    margin-top: rem(81);
     @include mq("md") {
-      background: url(../images/contact-fish-pc.png) no-repeat;
+      margin-top: rem(140);
+    }
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../images/contact-fish-sp.png) no-repeat;
       background-size: contain;
-      width: rem(301);
-      height: rem(142);
-      top: rem(-38);
-      right: rem(51);
+      z-index: 2;
+      width: rem(109);
+      height: rem(50);
+      top: rem(-24);
+      right: rem(15);
+      @include mq("md") {
+        background: url(../images/contact-fish-pc.png) no-repeat;
+        background-size: contain;
+        width: rem(301);
+        height: rem(142);
+        top: rem(-38);
+        right: rem(51);
+      }
     }
   }
-}
-.contact__inner {
-}
-.contact__box {  
-  display: flex;
-  flex-direction: column;
-  @include mq("md") {
+  .contact__inner {
+  }
+  .contact__box {
+    display: flex;
+    flex-direction: column;
+    @include mq("md") {
+      box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: rem(80);
+      padding-bottom: rem(79);
+      padding-right: rem(115);
+      padding-left: rem(52);
+    }
+  }
+  .contact__left {
+  }
+  .contact__header {
+    width: rem(174);
+    @include mq("md") {
+      width: rem(200);
+    }
+    margin-right: auto;
+    margin-left: auto;
+    img {
+    }
+  }
+  .contact__bar {
+    margin-top: rem(6);
+    width: 100%;
+    max-width: 86%;
+    margin-right: auto;
+    margin-left: auto;
+    height: rem(1);
+    background: $green-accent;
+    @include mq("md") {
+      margin-top: rem(8);
+      max-width: none;
+    }
+  }
+  .contact__footer {
+    display: flex;
+    flex-direction: column;
+    @include mq("md") {
+      flex-direction: row;
+      margin-top: rem(24);
+    }
+  }
+  .contact__footer-left {
+    margin-top: rem(14);
+    @include mq("md") {
+      margin-top: rem(-2);
+      margin-left: rem(-2);
+    }
+  }
+  .contact__footer-text {
+    font-style: normal; /* 斜体解除 */
+    color: $green;
+    font-weight: $normal;
+    font-size: rem(16);
+    line-height: 1.5;
+    text-align: center;
+    @include mq("md") {
+      text-align: left;
+    }
+    &:nth-child(n + 2) {
+      margin-top: rem(4);
+    }
+  }
+  .contact__footer-right {
+    width: rem(295);
+    margin-top: rem(16);
+    margin-right: auto;
+    margin-left: auto;
     box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: rem(80);
-    padding-bottom: rem(79);
-    padding-right: rem(115);
-    padding-left: rem(52);
+    @include mq("md") {
+      box-shadow: none;
+      width: rem(273);
+      max-width: rem(273);
+      margin-top: 0;
+      margin-left: rem(21);
+    }
+    img {
+    }
   }
-  
-}
-.contact__left {
-}
-.contact__header {
-  width: rem(174);
-  @include mq("md") {
-    width: rem(200);
+  .contact__vertical-bar {
+    width: rem(1);
+    background: $green-accent;
   }
-  margin-right: auto;
-  margin-left: auto;
-  img {
+  .contact__right {
   }
-}
-.contact__bar {
-  margin-top: rem(6);
-  width: 100%;
-  max-width: 86%;
-  margin-right: auto;
-  margin-left: auto;
-  height: rem(1);
-  background: $green-accent;
-  @include mq("md") {
+  .contact__title-main {
+    color: $green;
+    font-family: $second-font-family;
+    font-weight: $normal;
+    font-size: rem(80);
+    line-height: 1;
+    text-align: center;
+    margin-top: rem(40);
+    @include mq("md") {
+      margin-top: rem(20);
+    }
+    &::first-letter {
+      color: $green-accent;
+    }
+  }
+  .contact__title-sub {
+    color: $green-accent;
+    text-align: center;
+    font-weight: $normal;
+    font-size: rem(12);
+    line-height: 1.5;
+    margin-top: rem(-5);
+    @include mq("md") {
+      margin-top: rem(-6);
+    }
+  }
+  .contact__reserve {
+    color: $green-accent;
+    text-align: center;
+    font-weight: $normal;
+    font-size: rem(14);
+    line-height: 1.286;
     margin-top: rem(8);
-    max-width: none;
+    @include mq("md") {
+      margin-top: rem(8);
+    }
   }
-}
-.contact__footer {
-  display: flex;
-  flex-direction: column;
-  @include mq("md") {
-    flex-direction: row;
-    margin-top: rem(24);
-  }
-}
-.contact__footer-left {
-  margin-top: rem(14);
-  @include mq("md") {
-    margin-top: rem(-2);
+  .contact__button {
+    margin-top: rem(39);
     margin-left: rem(-2);
   }
-}
-.contact__footer-text {
-  font-style: normal;  /* 斜体解除 */
-  color: $green;
-  font-weight: $normal;
-  font-size: rem(16);
-  line-height: 1.5;
-  text-align: center;
-  @include mq("md") {
-    text-align: left;
-  }
-  &:nth-child(n + 2) {
-    margin-top: rem(4);
-  }
-}
-.contact__footer-right {
-  width: rem(295);
-  margin-top: rem(16);
-  margin-right: auto;
-  margin-left: auto;
-  box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
-  @include mq("md") {
-    box-shadow: none;
-    width: rem(273);
-    max-width: rem(273);
-    margin-top: 0;
-    margin-left: rem(21);
-  }
-  img {
-  }
-}
-.contact__vertical-bar {
-  width: rem(1);
-  background: $green-accent;
-}
-.contact__right {
-}
-.contact__title-main {
-  color: $green;
-  font-family: $second-font-family;
-  font-weight: $normal;
-  font-size: rem(80);
-  line-height: 1;
-  text-align: center;
-  margin-top: rem(40);
-  @include mq("md") {
-    margin-top: rem(20);
-  }
-  &::first-letter {
-    color: $green-accent;
-  }
-}
-.contact__title-sub {
-  color: $green-accent;
-  text-align: center;
-  font-weight: $normal;
-  font-size: rem(12);
-  line-height: 1.5;
-  margin-top: rem(-5);
-  @include mq("md") {
-    margin-top: rem(-6);
-  }
-}
-.contact__reserve {
-  color: $green-accent;
-  text-align: center;
-  font-weight: $normal;
-  font-size: rem(14);
-  line-height: 1.286;
-  margin-top: rem(8);
-  @include mq("md") {
-    margin-top: rem(8);
-  }
-}
-.contact__button {
-  margin-top: rem(39);
-  margin-left: rem(-2);
-}

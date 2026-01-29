@@ -1,12 +1,14 @@
 @use "global" as *;
-.about {
-}
-.about__inner {
-  margin-top: rem(73);
-  @include mq("md") {
-    margin-top: rem(133);
-    position: relative;
-    &::after {
+
+body.front-page {
+  .about {
+  }
+  .about__inner {
+    margin-top: rem(73);
+    @include mq("md") {
+      margin-top: rem(133);
+      position: relative;
+      &::after {
         content: "";
         background: url(../images/coral.png) no-repeat;
         background-size: 100% auto;
@@ -16,98 +18,98 @@
         height: rem(181);
         bottom: -11.7%;
         right: 5.7%;
+      }
     }
   }
-}
 
-.about__inner {
-}
-.about__content {
-  margin-top: rem(28);
-  @include mq("md") {
+  .about__inner {
+  }
+  .about__content {
+    margin-top: rem(28);
+    @include mq("md") {
+      margin-top: rem(40);
+    }
+  }
+  .about__img {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .about__img-left {
+    width: vw(375, 128);
+    aspect-ratio: 128/194;
+    @include mq("md") {
+      width: vw(1440, 400);
+      aspect-ratio: 400/606;
+    }
+    z-index: 3;
+    img {
+    }
+  }
+  .about__catch {
+    position: absolute;
+    top: 30%;
+    left: 18.5%;
+    font-family: $second-font-family;
+    font-weight: $normal;
+    z-index: 8;
+    color: $white;
+    font-size: clamp(rem(40), 6vw, rem(80));
+    line-height: 1.25;
+  }
+  .about__img-right {
+    margin-top: rem(26);
+    margin-left: rem(-64);
+    width: vw(375, 281);
+    aspect-ratio: 281/186;
+    @include mq("md") {
+      width: vw(1440, 880);
+      aspect-ratio: 880/581;
+      margin-top: rem(80);
+      margin-left: rem(-200);
+    }
+    position: relative;
+    z-index: 1;
+    img {
+    }
+  }
+  .about__img-right-text {
+    position: absolute;
+    top: 18%;
+    right: 6%;
+    p {
+      margin-top: rem(14);
+      margin-right: rem(-12);
+      max-width: min(rem(400), 28vw);
+      font-weight: $normal;
+      font-size: rem(16);
+      line-height: 1.5;
+      color: $white;
+    }
+  }
+  .about__text {
+  }
+  .about__text-title {
     margin-top: rem(40);
+    font-family: $second-font-family;
+    font-weight: $normal;
+    color: $green-accent;
+    font-size: rem(40);
+    line-height: 1;
   }
-}
-.about__img {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.about__img-left {
-  width: vw(375, 128);
-  aspect-ratio: 128/194;
-  @include mq("md") {
-    width: vw(1440, 400);
-    aspect-ratio: 400/606;
-  }
-  z-index: 3;
-  img {
-  }
-}
-.about__catch {
-  position: absolute;
-  top: 30%;
-  left: 18.5%;
-  font-family: $second-font-family;
-  font-weight: $normal;
-  z-index: 8;  
-  color: $white;
-  font-size: clamp(rem(40), 6vw, rem(80));
-  line-height: 1.25;
-}
-.about__img-right {
-  margin-top: rem(26);
-  margin-left: rem(-64);
-  width: vw(375, 281);
-  aspect-ratio: 281/186;
-  @include mq("md") {
-    width: vw(1440, 880);
-    aspect-ratio: 880/581;
-    margin-top: rem(80);
-    margin-left: rem(-200);
-  }
-  position: relative;
-  z-index: 1;
-  img {
-
-    }
-}
-.about__img-right-text {
-  position: absolute;
-  top: 18%;
-  right: 6%;
-  p {
-    margin-top: rem(14);
-    margin-right: rem(-12);
-    max-width: min(rem(400), 28vw);
+  .about__text-body {
+    margin-top: rem(16);
     font-weight: $normal;
     font-size: rem(16);
     line-height: 1.5;
-    color: $white;
+    color: $green;
   }
-}
-.about__text {
-}
-.about__text-title {
-  margin-top: rem(40);
-  font-family: $second-font-family;
-  font-weight: $normal;
-  color: $green-accent;
-  font-size: rem(40);
-  line-height: 1;
-}
-.about__text-body {
-  margin-top: rem(16);  
-  font-weight: $normal;
-  font-size: rem(16);
-  line-height: 1.5;
-  color: $green;
-}
-.about-button {
-  margin-top: rem(25);
-  margin-left: rem(-18);
-  @include mq('md') {
-    margin-top: rem(40);
-    margin-left: rem(6);
+  .about-button {
+    margin-top: rem(25);
+    margin-left: rem(-18);
+    @include mq("md") {
+      margin-top: rem(40);
+      margin-left: rem(6);
+    }
   }
 }

@@ -210,8 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
 ================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('.sub-information__tab');
-  const contents = document.querySelectorAll('.sub-information__content');
+  const tabs = document.querySelectorAll('.information__tab');
+  const contents = document.querySelectorAll('.information__content');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
