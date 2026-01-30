@@ -172,37 +172,38 @@ jQuery(function ($) {
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('gallery-modal');
   if (!modal) return;
-  const modalImg = modal.querySelector('img');
+
+  const modalContent = modal.querySelector('.modal-content'); // 画像を入れる場所
 
   document.querySelectorAll('.gallery__item').forEach(item => {
     item.addEventListener('click', () => {
+      // 既存の画像を削除
+      const existingImg = modalContent.querySelector('img');
+      if (existingImg) existingImg.remove();
+
+      // 新しいimgを生成
+      const modalImg = document.createElement('img');
       modalImg.src = item.dataset.modalImg;
+      modalImg.alt = item.dataset.modalAlt || 'ギャラリー画像';
+      modalContent.appendChild(modalImg);
+
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  modal.addEventListener('click', (e) => {
-    const isSp = window.matchMedia('(max-width: 767px)').matches;
-
-    if (
-      e.target.classList.contains('modal-overlay') ||
-      (isSp && e.target.tagName === 'IMG')
-    ) {
-      modal.classList.remove('is-open');
-      modalImg.src = '';
-      document.body.style.overflow = '';
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-      modal.classList.remove('is-open');
-      modalImg.src = '';
-      document.body.style.overflow = '';
-    }
+  // クリックされたらモーダル閉じる（画面のどこでも）
+  modal.addEventListener('click', () => {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    
+    // 画像も削除
+    const existingImg = modalContent.querySelector('img');
+    if (existingImg) existingImg.remove();
   });
 });
+
+
 
 
 /* ==================================================

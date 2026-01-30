@@ -1,1 +1,120 @@
 @use "global" as *;
+body.price {
+  .price {
+      margin-top: rem(52);
+      margin-bottom: rem(106);
+      @include mq('md') {
+          margin-top: rem(150);
+          margin-bottom: rem(140);
+    }
+}
+
+.price__inner {
+}
+
+.price__boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(40);
+    @include mq('md') {
+        gap: rem(80);
+    }
+
+    // justify-content: center;
+}
+
+.price__box {
+    max-width: rem(702);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include mq('md') {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch; // ★これが核心
+    }
+  }
+
+  .price__header {
+    width: 100%;
+    height: rem(40);
+    @include mq('md') {
+        width: rem(200);
+        min-height: rem(178);
+        height: auto;
+    }
+    display: flex;
+    flex-direction: row-reverse;
+    gap: rem(8);
+    @include mq('md') {
+        flex-direction: column;
+        gap: rem(8);
+    }
+    justify-content: center;
+    align-items: center;
+    background: $green-accent;
+  }
+
+  .price__header-title {
+    color: $white;
+    font-weight: $bold;
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+
+  .price__header-img {
+    background-image: url(../images/sub-pages/price/white-whale.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    //   width: rem(50);
+    //   height: rem(50);
+    width: rem(24);
+    height: rem(24);
+    @include mq('md') {
+        width: rem(64);
+        height: rem(64);
+        margin-left: rem(5);
+    }
+  }
+
+  .price__table {
+    width: 100%; /* 表全体を横幅いっぱいに */
+    @include mq('md') {
+        max-width: rem(502);
+    }
+    border-collapse: collapse; /* セルの境界線をまとめる */
+  }
+
+  td {
+    color: $green;
+    font-size: rem(16);
+    // font-size: rem(16);
+    font-weight: $normal;
+    line-height: 1.5;
+    border: 1px solid $green-accent; /* 見やすくするための線 */
+    word-break: break-word; /* 長い単語や文字列でも折り返す */
+    vertical-align: middle;
+    padding: rem(6) rem(16);
+    min-height: rem(64);
+    height: rem(60);
+    @include mq('md') {
+        padding: rem(17) rem(16);
+    }
+    &:nth-child(1) {
+        width: 70%;
+        text-align: center;
+        @include mq('md') {
+          width: 67.7%;
+          text-align: left;
+      }
+    }
+    &:nth-child(2) {
+        text-align: right;
+        width: 30%;
+        @include mq('md') {
+            width: 32.3%;
+        }
+    }
+  }
+}

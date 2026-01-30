@@ -39,6 +39,19 @@
   img {
     object-fit: cover;
     height: 100%;
+    object-position: 50% 50%;
+    @include mq("md") {
+      object-position: 50% 50%;
+    }
+  }
+}
+// campaignのみ
+.sub-mv__img-campaign {
+  width: 100%;
+  height: inherit;
+  img {
+    object-fit: cover;
+    height: 100%;
     object-position: 72% 50%;
     @include mq("md") {
       object-position: 50% 50%;
