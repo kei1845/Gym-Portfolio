@@ -232,3 +232,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+/* ==================================================
+# accordion
+================================================== */
+
+// jQuery(".js-accordion").on("click", function(e){
+//   e.preventDefault();
+//   if (jQuery(this).parent().hasClass("is-open")) {
+//     jQuery(this).parent().removeClass("is-open");
+//     jQuery(this).next().slideUp();
+//   } else {
+//     jQuery(this).parent().addClass("is-open");
+//     jQuery(this).next().slideDown();
+//   }
+// });
+
+jQuery(".js-accordion").on("click", function(e){
+  e.preventDefault();
+  var $item = jQuery(this).closest(".faq__item"); // どんな階層でもOK
+  $item.toggleClass("is-open");
+  jQuery(this).next(".faq__answer").slideToggle(300);
+});
+
