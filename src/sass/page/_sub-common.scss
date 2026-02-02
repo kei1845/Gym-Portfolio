@@ -98,12 +98,12 @@
       content: "";
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      left: rem(-11);
-      width: rem(5);
-      height: rem(9);
-      background: url(../images/sub-pages/sub-common/bc-next.png)
-        no-repeat center/contain;
+      transform: translateY(-50%) rotate(45deg);
+      left: rem(-14);
+      width: rem(6);
+      height: rem(6);
+      border-top: 1px solid currentColor;
+      border-right: 1px solid currentColor;
     }
   }
 }

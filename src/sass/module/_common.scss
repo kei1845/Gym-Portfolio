@@ -47,7 +47,7 @@
     left: rem(4);
     width: rem(202);
     height: rem(54);
-    background-color: white;
+    background-color: $white;
     border: 1px solid $green-accent;
     z-index: 0; /* ボタンの背面 */
   }

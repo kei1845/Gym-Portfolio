@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex" />
+    <!-- meta情報 -->
+    <title>CodeUps</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- ogp -->
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <!-- ファビコン -->
+    <link rel="icon" href="#" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.1.2/jquery.inview.js"></script> -->
+    <script defer src="./assets/js/script.js"></script>
+</head>
+
+<body class="sub-utility">
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="index.html">
+                    <img src="./assets/images/CodeUps.png" alt="CodeUps">
+                </a>
+            </h1>
+            <nav class="header__nav u-desktop">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="page-campaign.html" class="header__link">
+                            <span class="header__link--en">Campaign</span>
+                            <span class="header__link--ja">キャンペーン</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-about.html" class="header__link">
+                            <span class="header__link--en">About us</span>
+                            <span class="header__link--ja">私たちについて</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-information.html" class="header__link">
+                            <span class="header__link--en">Information</span>
+                            <span class="header__link--ja">ダイビング情報</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-blog.html" class="header__link">
+                            <span class="header__link--en">Blog</span>
+                            <span class="header__link--ja">ブログ</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-voice.html" class="header__link">
+                            <span class="header__link--en">Voice</span>
+                            <span class="header__link--ja">お客様の声</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-price.html" class="header__link">
+                            <span class="header__link--en">Price</span>
+                            <span class="header__link--ja">料金一覧</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-faq.html" class="header__link">
+                            <span class="header__link--en">FAQ</span>
+                            <span class="header__link--ja">よくある質問</span>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="page-contact.html" class="header__link">
+                            <span class="header__link--en">Contact</span>
+                            <span class="header__link--ja">お問合せ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <button id="js-drawer-icon" class="header__open drawer-icon u-mobile">
+        <span class="drawer-icon__bar"></span>
+        <span class="drawer-icon__bar"></span>
+        <span class="drawer-icon__bar"></span>
+    </button>
+    <div id="js-drawer-content" class="drawer-content u-mobile">
+        <div class="footer__inner inner drawer-content-inner">
+            <div class="footer__header">
+                <div class="drawer__logo">
+                    <img src="./assets/images/footer-codeups.png" alt="CodeUps">
+                </div>
+            </div>
+            <div class="footer__body drawer-content2">
+                <div class="footer__wrapper">
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">キャンペーン</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス取得</a>
+                        <a href="#" class="footer__text hover-opacity">貸切体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ナイトダイビング</a>
+                        <a href="#" class="footer__text hover-opacity starfish">私たちについて</a>
+                    </div>
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">ダイビング情報</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
+                        <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
+                        <a href="#" class="footer__text hover-opacity starfish">ブログ</a>
+                    </div>
+                </div>
+                <div class="footer__wrapper drawer__margin">
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">お客様の声</a>
+                        <a href="#" class="footer__text hover-opacity starfish">料金一覧</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
+                        <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
+                    </div>
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">よくある質問</a>
+                        <a href="#" class="footer__text hover-opacity starfish">プライバシー<br class="u-mobile">ポリシー</a>
+                        <a href="#" class="footer__text hover-opacity starfish">利用規約</a>
+                        <a href="#" class="footer__text hover-opacity starfish">お問い合わせ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="sub-mv">
+            <div class="sub-mv__img">
+                <img src="./assets/images/sub-pages/sub-utility/sub-utility-mv.png" alt="海の中のミスジチョウチョウウオ">
+            </div>
+            <div class="sub-mv__content">
+                <h2 class="sub-mv__title">Privacy Policy</h2>
+            </div>
+        </section>
+        <div class="inner">
+            <nav class="breadcrumb">
+                <a href="index.html">TOP</a>
+                <a href="page-campaign.html">お問い合わせ</a>
+            </nav>
+        </div>
+
+        <section class="legal">
+            <div class="legal-inner inner">
+                <h3 class="legal-title">プライバシーポリシー</h3>
+                <p class="legal-text">以下は、Webサイトで使用するための一般的なプライバシーポリシーの例です。<br>
+                    <br>
+                    概要 当社は、お客様の個人情報を大切に扱い、個人情報保護に努めています。本プライバシーポリシーには、当社がどのように個人情報を収集し、使用するかについて説明しています。<br>
+                    収集する情報 当社は、お客様が当社のサービスを利用する際に、お名前、住所、電話番号、メールアドレスなどの個人情報を収集する場合があります。<br>
+                    <br>
+                    また、当社のサイトを閲覧する際に、IPアドレス、ブラウザの種類、言語設定、アクセス日時などの情報も収集する場合があります。<br>
+                    情報の使用 当社は、お客様から収集した個人情報を、以下の目的で使用することがあります。<br>
+                    <br>
+                    ・お客様からのお問い合わせやサポートの提供 ・当社のサービスや製品の提供 ・当社のサイトの改善や新しいサービスの開発 ・法律や規制に基づく義務の履行
+                    情報の共有 当社は、お客様から収集した個人情報を、以下の場合に限り第三者に提供することがあります。<br>
+                    <br>
+                    ・お客様の同意がある場合 ・法律や規制に基づく場合 ・当社が信頼できると判断した業務委託先に必要な範囲で提供する場合<br>
+                    セキュリティ 当社は、お客様の個人情報を適切に保護するために、適切な安全対策を講じます。個人情報への不正アクセス、紛失、改ざん、漏洩等を防止するための措置を講じます。<br>
+                    Cookieの使用<br>
+                    当社は、お客様により良いサイトの利用体験を提供するために、Cookieを使用する場合があります。Cookieは、お客様が当社のサイトを訪れた際に、お客様のブラウザに保存される小さなデータファイルです。Cookieには個人情報は含まれません。<br>
+                    お問い合わせ先 当社のプライバシーポリシーに関するご質問やご意見は、以下の連絡先までお問い合わせください。 [会社名] [住所] [電話番号] [メールアドレス]<br>
+                    プライバシーポリシーの変更<br>
+                    当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、当社のサイトに掲載された時点から効力を有するものとします。変更があった場合、当社は適切な手段でお知らせします。<br>
+                    <br>
+                    以上が、当社のプライバシーポリシーの概要です。お客様の個人情報保護のために、常に努めてまいります。
+                </p>
+
+            </div>
+        </section>
+
+
+        <section class="contact">
+            <div class="contact__inner inner">
+                <div class="contact__box">
+                    <div class="contact__left">
+                        <div class="contact__header">
+                            <img src="./assets/images/contact-icon.png" alt="CodeUps">
+                        </div>
+                        <div class="contact__bar"></div>
+                        <div class="contact__footer">
+                            <address class="contact__footer-left">
+                                <p class="contact__footer-text">沖縄県那覇市1-1</p>
+                                <p class="contact__footer-text">TEL:0120-000-0000</p>
+                                <p class="contact__footer-text">営業時間:8:30-19:00</p>
+                                <p class="contact__footer-text">定休日:毎週火曜日</p>
+                            </address>
+                            <div class="contact__footer-right">
+                                <img src="./assets/images/contact-img.png" alt="CodeUpsの店舗地図">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__vertical-bar"></div>
+                    <div class="contact__right">
+                        <p class="contact__title-main">Contact</p>
+                        <h2 class="contact__title-sub">お問い合わせ</h2>
+                        <p class="contact__reserve">ご予約・お問い合わせはコチラ</p>
+                        <div class="button-wrapper-outer contact__button">
+                            <div class="button-wrapper">
+                                <a href="#" class="button slide">Contact us<svg xmlns="http://www.w3.org/2000/svg"
+                                        width="41" height="7" viewBox="0 0 41 7" fill="none">
+                                        <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner inner">
+            <div class="footer__header">
+                <div class="footer__logo">
+                    <img src="./assets/images/footer-codeups.png" alt="CodeUps">
+                </div>
+                <div class="footer__icons">
+                    <a href="#" class="footer__icon hover-opacity">
+                        <img src="./assets/images/footer-facebook.png" alt="CodeUpsのFacebook">
+                    </a>
+                    <a href="#" class="footer__icon hover-opacity">
+                        <img src="./assets/images/footer-instagram.png" alt="CodeUpsのInstagram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__body">
+                <div class="footer__wrapper">
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">キャンペーン</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス取得</a>
+                        <a href="#" class="footer__text hover-opacity">貸切体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ナイトダイビング</a>
+                        <a href="#" class="footer__text hover-opacity starfish">私たちについて</a>
+                    </div>
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">ダイビング情報</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
+                        <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
+                        <a href="#" class="footer__text hover-opacity starfish">ブログ</a>
+                    </div>
+                </div>
+                <div class="footer__wrapper">
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">お客様の声</a>
+                        <a href="#" class="footer__text hover-opacity starfish">料金一覧</a>
+                        <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
+                        <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
+                        <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
+                    </div>
+                    <div class="footer__nav-column">
+                        <a href="#" class="footer__text hover-opacity starfish">よくある質問</a>
+                        <a href="#" class="footer__text hover-opacity starfish">プライバシー<br class="u-mobile">ポリシー</a>
+                        <a href="#" class="footer__text hover-opacity starfish">利用規約</a>
+                        <a href="#" class="footer__text hover-opacity starfish">お問い合わせ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <small class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
+    </footer>
+    <a href="#mv" class="page-top" id="js-page-top"><img src="./assets/images/to-top.png" alt="ページの一番上へ戻る"></a>
+</body>
+
+</html>

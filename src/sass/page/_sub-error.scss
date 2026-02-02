@@ -1,0 +1,113 @@
+@use "global" as *;
+
+body.sub-error {
+  background-color: $green-accent;
+  position: relative;
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../images/sub-pages/error/error-whale.png") no-repeat;
+    pointer-events: none;
+    z-index: 0;
+    background-position: left 51% top 18%;
+    background-size: 329px;
+    @include mq("md") {
+      background-position: left 25% center;
+      background-size: min(vw(1440, 665), 665px);
+    }
+  }
+
+  .breadcrumb.breadcrumb-error {
+    color: $white;
+      margin-top: 88px;
+      @include mq('md') {
+          margin-top: 94px;
+      }
+    
+  }
+
+  .error {
+      margin-top: 39px;
+      margin-bottom: -61px;
+      @include mq("md") {
+          margin-top: 98px;
+          margin-bottom: -12px;
+      }
+  }
+
+  .error-inner.inner {
+    text-align: center;
+  }
+
+  .error-title {
+    color: $white;
+    font-family: $third-font-family;
+    font-weight: $normal;
+    font-size: 80px;
+    letter-spacing: 0.5em;
+    margin-left: 37px;
+
+    @include mq("md") {
+      font-size: 160px;
+      margin-left: 79px;
+    }
+  }
+
+  .error-text {
+    color: $white;
+    font-family: $third-font-family;
+    font-weight: $normal;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: -16px;
+    @include mq("md") {
+        margin-top: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .error__button {
+    margin-top: 40px;
+    @include mq("md") {
+      margin-top: 80px;
+    }
+    .button-wrapper {
+      &::before {
+        background-color: $green-accent;
+        border: 1px solid $white;
+      }
+      .button {
+        border: 1px solid $white;
+        color: $green-accent;
+        background: $white;
+
+        svg {
+          path {
+            stroke: $green-accent;
+          }
+        }
+        &:hover svg path {
+          stroke: $white; /* ホバー時の色 */
+        }
+      }
+    }
+    .button.slide:hover {
+      color: $white;
+    }
+  }
+
+  .slide {
+    &::after {
+      background: $green-accent;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .footer.footer-error {
+    background: none;
+  }
+}

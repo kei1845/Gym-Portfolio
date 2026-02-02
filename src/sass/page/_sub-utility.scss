@@ -1,0 +1,100 @@
+@use "global" as *;
+
+body.side-map-no-fish {
+  .sub-mv {
+    &::before {
+      display: none;
+    }
+  }
+}
+body.sub-utility {
+  /* site-map
+    -------------------------------------------------- */
+  .site-map {
+    margin-top: rem(-37);
+    margin-bottom: rem(107);
+    @include mq("md") {
+      margin-top: rem(44);
+      margin-bottom: rem(15);
+    }
+  }
+
+  .footer__body.footer__body-site-map {
+    gap: rem(49);
+    margin-right: rem(-11);
+    @include mq("md") {
+      gap: rem(166);
+      margin-right: rem(2);
+    }
+  }
+
+  .footer__wrapper.footer__wrapper-site-map {
+    @include mq("md") {
+      gap: rem(166);
+      &:nth-child(2) {
+        margin-right: rem(-24);
+      }
+    }
+  }
+
+  .site-map-text {
+    color: $green;
+  }
+
+  .footer__text.starfish-black {
+    font-weight: $bold;
+    &:nth-child(n + 2) {
+      margin-top: rem(40);
+    }
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../images/sub-pages/sub-utility/starfish-black.png)
+        no-repeat;
+      background-size: contain;
+      width: rem(18);
+      height: rem(18);
+      top: rem(1);
+      left: rem(-21);
+    }
+  }
+
+  /* privacy policy  terms of service
+  -------------------------------------------------- */
+
+  .legal {
+    margin-top: rem(48);
+    margin-bottom: rem(235);
+    @include mq("md") {
+      margin-top: rem(150);
+      margin-bottom: 0;
+    }
+  }
+
+  .legal-inner.inner {
+    @include mq('md') {
+        max-width: rem(850);
+    }
+    text-align: left;
+    color: $green;
+  }
+
+  .legal-title {
+    font-size: rem(24);
+    @include mq("md") {
+      font-size: rem(32);
+    }
+    font-weight: $medium;
+  }
+
+  .legal-text {
+    margin-top: rem(41);
+    @include mq("md") {
+      margin-top: rem(48);
+    }
+    font-weight: $normal;
+    font-size: rem(16);
+    line-height: 2;
+  }
+}
