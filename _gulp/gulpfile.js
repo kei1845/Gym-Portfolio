@@ -70,7 +70,7 @@ const cssSass = () => {
         postcss([
           postcssPresetEnv(),
           autoprefixer({
-            grid: true,
+            grid: false,
           }),
         ])
       )

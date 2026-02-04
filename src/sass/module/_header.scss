@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 100;
   height: rem(80);
   @include mq('md') {
     height: rem(90);
@@ -94,7 +94,7 @@
   width: rem(32);
   height: rem(24);
   position: relative;
-  z-index: 10000;
+  z-index: 210;
   position: fixed;
   top: rem(28);
   right: rem(15);
@@ -144,7 +144,7 @@
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 14;
+  z-index: 200;
   transform: translateX(100vw);
   transition: transform 0.3s linear;  
   &.is-checked {
@@ -154,7 +154,6 @@
 .drawer-content-inner {
 }
 .drawer-content2 {
-  z-index: 10000;
   margin-top: rem(45);
   gap: rem(30);
   margin-left: rem(-10);

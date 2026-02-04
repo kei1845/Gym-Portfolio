@@ -1,5 +1,5 @@
 @use "global" as *;
-body.information {
+body.sub-information {
   .information {
     margin-top: rem(121);
     margin-bottom: rem(105);
@@ -134,7 +134,7 @@ body.information {
 
   .information__text {
     margin-top: rem(8);
-    color: #000;
+    color: $black;
     font-size: rem(16);
     line-height: 1.5;
     font-weight: $normal;

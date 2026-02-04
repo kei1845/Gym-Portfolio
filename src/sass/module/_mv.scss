@@ -61,7 +61,6 @@ body.front-page {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
-    text-align: center;
   }
   .mv__title {
     color: $white;
@@ -72,7 +71,6 @@ body.front-page {
     line-height: 1.2;
     letter-spacing: 0.54em;
     margin-right: rem(-23);
-    margin-top: rem(-10);
     margin-top: rem(-3);
     @include mq("md") {
       margin-right: rem(-44);

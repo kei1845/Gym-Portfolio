@@ -170,9 +170,9 @@
   margin-top: rem(80);
   display: flex;
   align-items: center;
-  // justify-content: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   max-width: rem(345);
   @include mq('md') {
     max-width: rem(444);
@@ -231,7 +231,6 @@
 }
 
 .pagination__number.is-current {
-  pointer-events: none;
   .pagination__link {
     background-color: $green-accent;
     color: $white;

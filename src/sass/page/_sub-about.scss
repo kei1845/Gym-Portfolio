@@ -36,14 +36,11 @@ body.sub-about {
 
   .about__catch {
     position: absolute;
-    top: 30%;
-    left: 18.5%;
     font-family: $second-font-family;
     font-weight: $normal;
     z-index: 8;
     color: $white;
     font-size: clamp(rem(40), 6vw, rem(80));
-    line-height: 1.25;
     // 以下追記
     top: 19%;
     left: 7%;
@@ -55,16 +52,7 @@ body.sub-about {
     }
   }
   .about__img-right {
-    margin-top: rem(26);
-    margin-left: rem(-64);
-    width: vw(375, 281);
     aspect-ratio: 281/186;
-    @include mq("md") {
-      width: vw(1440, 880);
-      aspect-ratio: 880/581;
-      margin-top: rem(80);
-      margin-left: rem(-200);
-    }
     position: relative;
     z-index: 1;
     img {
@@ -77,13 +65,12 @@ body.sub-about {
       width: vw(1440, 880);
       margin-left: rem(-200);
       margin-top: rem(81);
+      aspect-ratio: 880/581;
     }
   }
   
   .about__img-right-text {
     position: absolute;
-    top: 18%;
-    right: 6%;
     p {
       margin-top: rem(14);
       margin-right: rem(-12);
@@ -94,14 +81,13 @@ body.sub-about {
       color: $white;
     }
     // 以下追記
-    right: 5.5%;
     top: 22.5%;
+    right: 5.5%;
   }
   
   .about__text {    
   }
   .about__text-body {
-    margin-top: rem(16);
     font-weight: $normal;
     font-size: rem(16);
     line-height: 1.5;
@@ -143,36 +129,45 @@ body.sub-about {
   }
 
   .gallery__grid {
-    margin-top: rem(40);
-    @include mq("md") {
-      margin-top: rem(80);
-    }
-
+    margin-top: rem(40);    
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: rem(8);
     @include mq("md") {
+      margin-top: rem(80);
       grid-template-columns: 45.56% 7.41% 45.56%;
     }
   }
 
+
   .gallery__item {
-    all: unset; /* ← これが決定打 */
-    display: block; /* grid itemとして安定させる */
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    aspect-ratio: 580 / 369;
-    grid-column: auto;
-    grid-row: auto;
-    @include mq("md") {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
+  /* buttonの見た目だけ消す */
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+
+  /* レイアウト */
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 580 / 369;
+
+  @include mq("md") {
+    grid-column: span 2;
+    grid-row: span 1;
   }
+}
+
+.gallery__item:focus-visible {
+  outline: 2px solid #408F95;
+  outline-offset: 2px;
+}
+
 
   .gallery__item:nth-child(6n + 1),
   .gallery__item:nth-child(6n + 6) {
@@ -183,23 +178,11 @@ body.sub-about {
     }
   }
 
-  .gallery__item {
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
   .modal {
     position: fixed;
     inset: 0;
     display: none;
-    z-index: 15000;
+    z-index: 300;
     align-items: center;
     justify-content: center;
   }

@@ -39,12 +39,12 @@ body.front-page {
   }
 
   // デザインカンプ完全一致。仮。
-  .blog__inner.inner {
-    @media screen and (max-width: rem(767)) {
-      padding-right: rem(20);
-      padding-left: rem(20);
-    }
-  }
+  // .blog__inner.inner {
+  //   @media screen and (max-width: rem(767)) {
+  //     padding-right: rem(20);
+  //     padding-left: rem(20);
+  //   }
+  // }
 
   .heading {
     .blog-title {
@@ -102,7 +102,7 @@ body.front-page {
   }
   .blog__box-text {
     margin-top: rem(16);
-    color: #000;
+    color: $black;
     font-weight: $normal;
     font-size: rem(16);
     line-height: 1.5;
