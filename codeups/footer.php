@@ -1,4 +1,3 @@
-</main>
 <footer class="footer">
     <div class="footer__inner inner">
       <div class="footer__header">
@@ -48,7 +47,7 @@
         </div>
       </div>
     </div>
-    <small class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
+    <small class="footer__copyright">Copyright &copy; 2021 - <?php echo wp_date("Y");?> CodeUps LLC. All Rights Reserved.</small>
   </footer>
   <a href="#mv" class="page-top" id="js-page-top"><img src="<?php echo esc_url( get_theme_file_uri('/assets/images/to-top.png') ); ?>" alt="ページの一番上へ戻る"></a>
   <?php wp_footer(); ?>

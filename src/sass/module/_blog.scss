@@ -1,6 +1,6 @@
 @use "global" as *;
 
-body.front-page {
+.front-page {
   .blog {
     margin-top: rem(80);
     @include mq("md") {

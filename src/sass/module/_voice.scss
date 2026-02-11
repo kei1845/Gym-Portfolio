@@ -1,5 +1,5 @@
 @use "global" as *;
-body.front-page {
+.front-page {
   .voice {
     margin-top: rem(83);
     @include mq("md") {
