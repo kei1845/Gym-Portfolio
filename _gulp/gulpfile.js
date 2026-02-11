@@ -1,34 +1,33 @@
-const { src, dest, watch, series, parallel } = require("gulp"); // Gulpの基本関数をインポート
-const sass = require("gulp-sass")(require("sass")); // SCSSをCSSにコンパイルするためのモジュール
-const plumber = require("gulp-plumber"); // エラーが発生してもタスクを続行するためのモジュール
-const notify = require("gulp-notify"); // エラーやタスク完了の通知を表示するためのモジュール
-const sassGlob = require("gulp-sass-glob-use-forward"); // SCSSのインポートを簡略化するためのモジュール
-const mmq = require("gulp-merge-media-queries"); // メディアクエリをマージするためのモジュール
-const postcss = require("gulp-postcss"); // CSSの変換処理を行うためのモジュール
-const autoprefixer = require("autoprefixer"); // ベンダープレフィックスを自動的に追加するためのモジュール
-const cssdeclsort = require("css-declaration-sorter"); // CSSの宣言をソートするためのモジュール
-const postcssPresetEnv = require("postcss-preset-env"); // 最新のCSS構文を使用可能にするためのモジュール
-const sourcemaps = require("gulp-sourcemaps"); // ソースマップを作成するためのモジュール
-const babel = require("gulp-babel"); // ES6+のJavaScriptをES5に変換するためのモジュール
-const imageminSvgo = require("imagemin-svgo"); // SVGを最適化するためのモジュール
-const browserSync = require("browser-sync"); // ブラウザの自動リロード機能を提供するためのモジュール
-const imagemin = require("gulp-imagemin"); // 画像を最適化するためのモジュール
-const imageminMozjpeg = require("imagemin-mozjpeg"); // JPEGを最適化するためのモジュール
-const imageminPngquant = require("imagemin-pngquant"); // PNGを最適化するためのモジュール
-const changed = require("gulp-changed"); // 変更されたファイルのみを対象にするためのモジュール
-const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
-const webp = require('gulp-webp');//webp変換
-const rename = require('gulp-rename');//ファイル名変更
+const { src, dest, watch, series, parallel } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const plumber = require("gulp-plumber");
+const notify = require("gulp-notify");
+const sassGlob = require("gulp-sass-glob-use-forward");
+const mmq = require("gulp-merge-media-queries");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssdeclsort = require("css-declaration-sorter");
+const postcssPresetEnv = require("postcss-preset-env");
+const sourcemaps = require("gulp-sourcemaps");
+const babel = require("gulp-babel");
+const imageminSvgo = require("imagemin-svgo");
+const browserSync = require("browser-sync").create();
+const imagemin = require("gulp-imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
+const changed = require("gulp-changed");
+const del = require("del");
 
-// 読み込み先
-const srcPath = {
-  css: "../src/sass/**/*.scss",
-  js: "../src/js/**/*",
-  img: "../src/images/**/*",
-  html: ["../src/**/*.html", "!./node_modules/**"],
-};
+// ====== 設定ここだけ見ればOK ======
+const themeName = "codeups";
 
-// html反映用
+// ① gulpプロジェクト内に置いてる “編集用テーマ” の場所（VSCodeで触ってるやつ）
+const themeSrcRoot = "../codeups";
+
+// ② Local by Flywheel の WP テーマの実体（出力先）
+const wpThemeRoot = `C:/Users/elsie/Local Sites/codeups/app/public/wp-content/themes/${themeName}`;
+
+// HTMLとして見る用（dist）
 const destPath = {
   all: "../dist/**/*",
   css: "../dist/assets/css/",
@@ -37,178 +36,143 @@ const destPath = {
   html: "../dist/",
 };
 
-const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
+// WP側（Localのテーマフォルダ）に吐き出す先
+const destWpPath = {
+  all: `${wpThemeRoot}/**/*`,
+  css: `${wpThemeRoot}/assets/css/`,
+  js: `${wpThemeRoot}/assets/js/`,
+  img: `${wpThemeRoot}/assets/images/`,
+};
 
-// HTMLファイルのコピー
+// 読み込み元（gulpが監視するやつ）
+const srcPath = {
+  css: "../src/sass/**/*.scss",
+  js: "../src/js/**/*",
+  img: "../src/images/**/*",
+  html: ["../src/**/*.html", "!../src/**/_*.html", "!./node_modules/**"],
+  php: `${themeSrcRoot}/**/*.php`, // ★ 編集用テーマのphpを監視
+};
+
+// ====== タスク ======
+
+// HTMLコピー（distへ）
 const htmlCopy = () => {
   return src(srcPath.html).pipe(dest(destPath.html));
 };
 
+// PHPコピー（編集用テーマ → LocalのWPテーマへ）
+const phpCopy = () => {
+  return src(srcPath.php).pipe(dest(wpThemeRoot));
+};
+
+// Sass
 const cssSass = () => {
-  // ソースファイルを指定
-  return (
-    src(srcPath.css)
-      // ソースマップを初期化
-      .pipe(sourcemaps.init())
-      // エラーハンドリングを設定
-      .pipe(
-        plumber({
-          errorHandler: notify.onError("Error:<%= error.message %>"),
-        })
-      )
-      // Sassのパーシャル（_ファイル）を自動的にインポート
-      .pipe(sassGlob())
-      // SassをCSSにコンパイル
-      .pipe(
-        sass.sync({
-          includePaths: ["src/sass"],
-          outputStyle: "expanded", // コンパイル後のCSSの書式（expanded or compressed）
-        })
-      )
-      // ベンダープレフィックスを自動付与
-      .pipe(
-        postcss([
-          postcssPresetEnv(),
-          autoprefixer({
-            grid: false,
-          }),
-        ])
-      )
-      // CSSプロパティをアルファベット順にソートし、未来のCSS構文を使用可能に
-      .pipe(
-        postcss([cssdeclsort({
-          order: "alphabetical"
-        })]
-        ),
-        postcssPresetEnv({ browsers: 'last 2 versions' })
-      )
-      // メディアクエリを統合
-      .pipe(mmq())
-      // ソースマップを書き出し
-      .pipe(sourcemaps.write("./"))
-      // コンパイル済みのCSSファイルを出力先に保存
-      .pipe(dest(destPath.css))
-      // Sassコンパイルが完了したことを通知
-      .pipe(
-        notify({
-          message: "Sassをコンパイルしました！",
-          onLast: true,
-        })
-      )
-  );
+  return src(srcPath.css)
+    .pipe(sourcemaps.init())
+    .pipe(
+      plumber({
+        errorHandler: notify.onError("Error: <%= error.message %>"),
+      })
+    )
+    .pipe(sassGlob())
+    .pipe(
+      sass.sync({
+        includePaths: ["src/sass"],
+        outputStyle: "expanded",
+      })
+    )
+    .pipe(
+      postcss([
+        postcssPresetEnv(),
+        autoprefixer({ grid: true }),
+        cssdeclsort({ order: "alphabetical" }),
+      ])
+    )
+    .pipe(mmq())
+    .pipe(sourcemaps.write("./"))
+    .pipe(dest(destPath.css))    // dist
+    .pipe(dest(destWpPath.css)); // WP
 };
 
-// 画像圧縮
-const imgImagemin = () => {
-  // 画像ファイルを指定
-  return (
-    src(srcPath.img)
-      // 変更があった画像のみ処理対象に
-      .pipe(changed(destPath.img))
-      // 画像を圧縮
-      .pipe(
-        imagemin(
-          [
-            // JPEG画像の圧縮設定
-            imageminMozjpeg({
-              quality: 80, // 圧縮品質（0〜100）
-            }),
-            // PNG画像の圧縮設定
-            imageminPngquant(),
-            // SVG画像の圧縮設定
-            imageminSvgo({
-              plugins: [
-                {
-                  removeViewbox: false, // viewBox属性を削除しない
-                },
-              ],
-            }),
-          ],
-          {
-            verbose: true, // 圧縮情報を表示
-          }
-        )
-      )
-      .pipe(dest(destPath.img))
-      // .pipe(webp())//webpに変換
-      // 圧縮済みの画像ファイルを出力先に保存
-      .pipe(dest(destPath.img))
-  );
-};
-
-// 以下追記、画像の名前変えても元の画像残らないように。
-// const imgImagemin = () => {
-//   return src(srcPath.img)
-//     .pipe(imagemin([
-//       imageminMozjpeg({ quality: 80 }),
-//       imageminPngquant(),
-//       imageminSvgo({ plugins: [{ removeViewbox: false }] }),
-//     ]))
-//     .pipe(dest(destPath.img));
-// };
-
-
-// js圧縮
+// JS
 const jsBabel = () => {
-  // JavaScriptファイルを指定
-  return (
-    src(srcPath.js)
-      // エラーハンドリングを設定
-      .pipe(
-        plumber({
-          errorHandler: notify.onError("Error: <%= error.message %>"),
-        })
+  return src(srcPath.js)
+    .pipe(
+      plumber({
+        errorHandler: notify.onError("Error: <%= error.message %>"),
+      })
+    )
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(dest(destPath.js))    // dist
+    .pipe(dest(destWpPath.js)); // WP
+};
+
+// 画像
+const imgImagemin = () => {
+  return src(srcPath.img)
+    .pipe(changed(destPath.img))
+    .pipe(
+      imagemin(
+        [
+          imageminMozjpeg({ quality: 80 }),
+          imageminPngquant(),
+          imageminSvgo({ plugins: [{ removeViewbox: false }] }),
+        ],
+        { verbose: true }
       )
-      // Babelでトランスパイル（ES6からES5へ変換）
-      .pipe(
-        babel({
-          presets: ["@babel/preset-env"],
-        })
-      )
-      // 圧縮済みのファイルを出力先に保存
-      .pipe(dest(destPath.js))
+    )
+    .pipe(dest(destPath.img)) // dist
+    .pipe(dest(destWpPath.img)); // WP
+};
+
+// 削除
+const clean = () => {
+  // dist と WPテーマ配下の assets だけ消す（全部消すと危ない）
+  return del(
+    [
+      destPath.all,
+      `${wpThemeRoot}/assets/css/**/*`,
+      `${wpThemeRoot}/assets/js/**/*`,
+      `${wpThemeRoot}/assets/images/**/*`,
+    ],
+    { force: true }
   );
 };
 
-// ブラウザーシンク
-const browserSyncOption = {
-  notify: false,
-  server: "../dist/",
+// BrowserSync（WP proxy）
+const browserSyncFunc = (done) => {
+  browserSync.init({
+    notify: false,
+    proxy: "codeups.local",
+  });
+  done();
 };
-const browserSyncFunc = () => {
-  browserSync.init(browserSyncOption);
-};
+
 const browserSyncReload = (done) => {
   browserSync.reload();
   done();
 };
 
-// ファイルの削除
-const clean = () => {
-  return del(destPath.all, { force: true });
-};
-// ファイルの監視
+// 監視
 const watchFiles = () => {
   watch(srcPath.css, series(cssSass, browserSyncReload));
   watch(srcPath.js, series(jsBabel, browserSyncReload));
   watch(srcPath.img, series(imgImagemin, browserSyncReload));
   watch(srcPath.html, series(htmlCopy, browserSyncReload));
+
+  // ★ php を変更したら WPテーマへコピーしてリロード
+  watch(srcPath.php, series(phpCopy, browserSyncReload));
 };
 
-// ブラウザシンク付きの開発用タスク
-exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
+// 開発
+exports.default = series(
+  parallel(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy),
+  parallel(watchFiles, browserSyncFunc)
+);
 
-// 以下追記、画像の名前変えても元の画像がでないように。
-// exports.default = series(
-//   series(cssSass, jsBabel, imgClean, imgImagemin, htmlCopy),
-//   parallel(watchFiles, browserSyncFunc)
-// );
-
-
-// 本番用タスク
-exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);
-
-
-// 追記
-// 画像の名前変えたら、元の画像残らないようにする。
-
+// 本番（必要なら）
+exports.build = series(clean, parallel(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy));
