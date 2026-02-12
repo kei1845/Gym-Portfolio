@@ -1,5 +1,5 @@
 @use "global" as *;
-body.sub-blog {
+.sub-blog {
   .blog {
     margin-top: rem(52);
     @include mq("md") {
@@ -37,9 +37,11 @@ body.sub-blog {
   .blog__box-image {
     img {
       aspect-ratio: 301/201;
+      height: 100%;
       object-fit: cover;
     }
   }
+
   .blog__box-time {
     display: block;
     margin-top: rem(23);

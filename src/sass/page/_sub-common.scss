@@ -84,7 +84,6 @@
   @include mq("md") {
     margin-left: 0;
   }
-
   display: flex;
   gap: rem(20);
   color: $green;
@@ -93,8 +92,8 @@
   a {
     text-decoration: none;
     position: relative;
-
-    & + a::before {
+    & + a::before,
+    & + span::before {
       content: "";
       position: absolute;
       top: 50%;
@@ -240,4 +239,16 @@
 .pagination__numbers {
   display: flex;
   gap: rem(12);
+}
+
+
+.pagination__prev.is-hidden,
+.pagination__next.is-hidden {
+  opacity: 0;
+}
+
+@media (max-width: 767px){
+  .pagination__numbers .page-numbers.dots{
+    display:none;
+  }
 }

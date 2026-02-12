@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-<div class="front-page">
-  <main>
+  <main class="front-page">
         <section id="mv" class="mv">
           <div class="swiper mv-swiper">
             <div class="swiper-wrapper">
@@ -419,5 +418,4 @@
       </div>
     </section>
   </main>
-  </div>
 <?php get_footer(); ?>

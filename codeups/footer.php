@@ -2,7 +2,9 @@
     <div class="footer__inner inner">
       <div class="footer__header">
         <div class="footer__logo">
-          <img src="<?php echo esc_url( get_theme_file_uri('/assets/images/footer-codeups.png') ); ?>" alt="CodeUps">
+          <a href="<?php echo esc_url( home_url('/') ); ?>">
+            <img src="<?php echo esc_url( get_theme_file_uri('/assets/images/footer-codeups.png') ); ?>" alt="CodeUps">
+          </a>
         </div>
         <div class="footer__icons">
           <a href="#" class="footer__icon hover-opacity">

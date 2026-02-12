@@ -161,7 +161,7 @@ jQuery(function ($) {
       $("body").removeClass("is-scrollLock");
     }
   });
-  
+
 });
 
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   modal.addEventListener('click', () => {
     modal.classList.remove('is-open');
     document.body.style.overflow = '';
-    
+
     // 画像も削除
     const existingImg = modalContent.querySelector('img');
     if (existingImg) existingImg.remove();
@@ -249,10 +249,55 @@ document.addEventListener('DOMContentLoaded', function () {
 //   }
 // });
 
-jQuery(".js-accordion").on("click", function(e){
+jQuery(".js-accordion").on("click", function (e) {
   e.preventDefault();
   var $item = jQuery(this).closest(".faq__item"); // どんな階層でもOK
   $item.toggleClass("is-open");
   jQuery(this).next(".faq__answer").slideToggle(300);
 });
 
+/* ==================================================
+# pagination
+================================================== */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const isSp = window.matchMedia('(max-width: 767px)').matches;
+
+  const items = document.querySelectorAll('.pagination__numbers .pagination__number');
+  const dots  = document.querySelectorAll('.pagination__numbers .pagination__link.dots');
+
+  // ✅ PCのとき：何もしない＋もし過去に隠してたら戻す（保険）
+  if (!isSp) {
+    items.forEach(li => li.style.display = '');
+    dots.forEach(el => el.style.display = '');
+    return;
+  }
+
+  // --- ここからSP処理（現在±1の3つだけ表示） ---
+  items.forEach(li => li.style.display = 'none');
+
+  const currentLink = document.querySelector('.pagination__numbers .pagination__link.current');
+  if (!currentLink) return;
+
+  const currentLi = currentLink.closest('.pagination__number');
+  let prevLi = currentLi?.previousElementSibling;
+  let nextLi = currentLi?.nextElementSibling;
+
+  // 「…」を飛ばして前後を取る
+  while (prevLi && prevLi.querySelector('.pagination__link.dots')) {
+    prevLi = prevLi.previousElementSibling;
+  }
+  while (nextLi && nextLi.querySelector('.pagination__link.dots')) {
+    nextLi = nextLi.nextElementSibling;
+  }
+
+  [prevLi, currentLi, nextLi].forEach(li => {
+    if (li) li.style.display = '';
+  });
+
+  dots.forEach(el => el.style.display = 'none');
+});
+
+
+console.log('pagination SP script loaded', window.innerWidth);

@@ -39,43 +39,43 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-about.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="header__link">
               <span class="header__link--en">About us</span>
               <span class="header__link--ja">私たちについて</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-information.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/information")) ?>" class="header__link">
               <span class="header__link--en">Information</span>
               <span class="header__link--ja">ダイビング情報</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-blog.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/blog")) ?>" class="header__link">
               <span class="header__link--en">Blog</span>
               <span class="header__link--ja">ブログ</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-voice.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/voice")) ?>" class="header__link">
               <span class="header__link--en">Voice</span>
               <span class="header__link--ja">お客様の声</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-price.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/price")) ?>" class="header__link">
               <span class="header__link--en">Price</span>
               <span class="header__link--ja">料金一覧</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-faq.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/faq")) ?>" class="header__link">
               <span class="header__link--en">FAQ</span>
               <span class="header__link--ja">よくある質問</span>
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="page-contact.html" class="header__link">
+            <a href="<?php echo esc_url(home_url("/contact")) ?>" class="header__link">
               <span class="header__link--en">Contact</span>
               <span class="header__link--ja">お問い合わせ</span>
             </a>

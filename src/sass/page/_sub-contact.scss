@@ -1,6 +1,6 @@
 @use "global" as *;
-body.sub-contact {
-  .sub-contact {
+.sub-contact1 {
+  .sub-contact2 {
     margin-top: rem(50);
     margin-bottom: rem(150);
     @include mq("md") {
