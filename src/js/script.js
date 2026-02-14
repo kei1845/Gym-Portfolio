@@ -238,16 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
 # accordion
 ================================================== */
 
-// jQuery(".js-accordion").on("click", function(e){
-//   e.preventDefault();
-//   if (jQuery(this).parent().hasClass("is-open")) {
-//     jQuery(this).parent().removeClass("is-open");
-//     jQuery(this).next().slideUp();
-//   } else {
-//     jQuery(this).parent().addClass("is-open");
-//     jQuery(this).next().slideDown();
-//   }
-// });
+
 
 jQuery(".js-accordion").on("click", function (e) {
   e.preventDefault();
@@ -299,3 +290,27 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(el => el.style.display = 'none');
 });
 
+
+/* ==================================================
+# home.phpのアーカイブの年クリックで月を開閉。
+================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const years = document.querySelectorAll('.archive__year');
+
+  years.forEach((yearEl, i) => {
+    const months = yearEl.nextElementSibling;
+    if (!months || !months.classList.contains('archive__month')) return;
+
+    // ✅ 初期：最新年だけ開く（先頭が最新年になる）
+    const openInitially = (i === 0);
+    months.style.display = openInitially ? 'block' : 'none';
+    yearEl.classList.toggle('is-open', openInitially);
+
+    yearEl.addEventListener('click', () => {
+      const isOpen = months.style.display === 'block';
+      months.style.display = isOpen ? 'none' : 'block';
+      yearEl.classList.toggle('is-open', !isOpen);
+    });
+  });
+});

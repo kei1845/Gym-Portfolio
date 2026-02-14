@@ -1,5 +1,5 @@
 @use "global" as *;
-body.sub-blog {
+.sub-blog {
   .blog-list-single {
     margin-right: auto;
     margin-left: auto;
@@ -110,4 +110,10 @@ body.sub-blog {
     display: flex;
     justify-content: space-between;
   }
+  .pagination__prev.is-disabled,
+  .pagination__next.is-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
 }

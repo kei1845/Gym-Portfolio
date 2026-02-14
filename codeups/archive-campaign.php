@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="campaign-card__desc u-desktop">
-                  <?php echo esc_html( wp_trim_words( get_the_content(), 164, '' ) ); ?>
+                  <?php echo esc_html(wp_trim_words(get_the_content(), 164, '')); ?>
 
 
                 </div>

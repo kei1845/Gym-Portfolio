@@ -50,7 +50,7 @@
   height: inherit;
   img {
     object-fit: cover;
-    height: auto;
+    height: 100%;
     object-position: 72% 50%;
     @include mq("md") {
       object-position: 50% 50%;

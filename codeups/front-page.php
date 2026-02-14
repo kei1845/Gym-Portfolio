@@ -125,7 +125,7 @@
                 ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
               <div class="button-wrapper-outer about-button">
                 <div class="button-wrapper">
-                  <a href="#" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41"
+                  <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41"
                       height="7" viewBox="0 0 41 7" fill="none">
                       <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></a>
@@ -142,7 +142,7 @@
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
           <div class="button-wrapper-outer about-button">
             <div class="button-wrapper">
-              <a href="#" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+              <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
                   viewBox="0 0 41 7" fill="none">
                   <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></a>
@@ -169,7 +169,7 @@
             正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
           <div class="button-wrapper-outer information__button">
             <div class="button-wrapper">
-              <a href="#" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+              <a href="<?php echo esc_url(home_url("/information")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
                   viewBox="0 0 41 7" fill="none">
                   <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></a>
@@ -186,40 +186,45 @@
         <h2 class="heading__ja blog-title">ブログ</h2>
       </div>
       <div class="blog__boxes">
-        <a href="#" class="blog__box hover-opacity hover-zoom">
-          <div class="blog__box-image">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/blog1.png')); ?>" alt="珊瑚礁">
-          </div>
-          <time class="blog__box-time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog__box-title">ライセンス取得</h3>
-          <div class="blog__box-bar"></div>
-          <p class="blog__box-text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-        </a>
-        <a href="#" class="blog__box hover-opacity hover-zoom">
-          <div class="blog__box-image">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/blog2.png')); ?>" alt="ウミガメ">
-          </div>
-          <time class="blog__box-time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog__box-title">ウミガメと泳ぐ</h3>
-          <div class="blog__box-bar"></div>
-          <p class="blog__box-text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-        </a>
-        <a href="#" class="blog__box hover-opacity hover-zoom">
-          <div class="blog__box-image">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/blog3.png')); ?>" alt="カクレクマノミと珊瑚礁">
-          </div>
-          <time class="blog__box-time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog__box-title">カクレクマノミ</h3>
-          <div class="blog__box-bar"></div>
-          <p class="blog__box-text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-        </a>
+        <?php
+        $blog_query = new WP_Query([
+          'post_type'      => 'post',
+          'posts_per_page' => 3,
+          'post_status'    => 'publish',
+        ]);
+
+        if ($blog_query->have_posts()) :
+          while ($blog_query->have_posts()) : $blog_query->the_post();
+        ?>
+            <a href="<?php the_permalink(); ?>" class="blog__box hover-opacity hover-zoom">
+              <div class="blog__box-image">
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('full'); ?>
+                <?php else : ?>
+                  <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像" />
+                <?php endif; ?>
+              </div>
+
+              <time class="blog__box-time" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+                <?php echo esc_html(get_the_date('Y.m.d')); ?>
+              </time>
+
+              <h3 class="blog__box-title"><?php echo esc_html(wp_trim_words(get_the_title(), 17, '')); ?></h3>
+              <div class="blog__box-bar"></div>
+
+              <p class="blog__box-text"><?php echo esc_html(wp_trim_words(get_the_content(), 80, '')); ?></p>
+            </a>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        else :
+          echo '<p>記事が投稿されていません</p>';
+        endif;
+        ?>
       </div>
       <div class="button-wrapper-outer blog__button">
         <div class="button-wrapper">
-          <a href="#" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+          <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
               viewBox="0 0 41 7" fill="none">
               <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg></a>
@@ -296,7 +301,7 @@
               </div>
 
               <p class="voice__box-text">
-                <?php echo esc_html( wp_trim_words( get_the_content(), 170, '' ) ); ?>
+                <?php echo esc_html(wp_trim_words(get_the_content(), 170, '')); ?>
               </p>
             </div>
         <?php
@@ -401,7 +406,7 @@
       </div>
       <div class="button-wrapper-outer price-button">
         <div class="button-wrapper">
-          <a href="#" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+          <a href="<?php echo esc_url(home_url("/price")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
               viewBox="0 0 41 7" fill="none">
               <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg></a>
@@ -437,7 +442,7 @@
           <p class="contact__reserve">ご予約・お問い合わせはコチラ</p>
           <div class="button-wrapper-outer contact__button">
             <div class="button-wrapper">
-              <a href="#" class="button slide">Contact us<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+              <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button slide">Contact us<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
                   viewBox="0 0 41 7" fill="none">
                   <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></a>
