@@ -166,7 +166,7 @@ jQuery(function ($) {
 
 
 /* ==================================================
-# modal
+# aboutのmodal
 ================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -299,5 +299,3 @@ document.addEventListener('DOMContentLoaded', () => {
   dots.forEach(el => el.style.display = 'none');
 });
 
-
-console.log('pagination SP script loaded', window.innerWidth);

@@ -6,7 +6,6 @@
 
 .sub-mv {
   position: relative;
-  width: 100%;
   height: rem(460);
   @include mq("md") {
     height: rem(548);
@@ -51,7 +50,7 @@
   height: inherit;
   img {
     object-fit: cover;
-    height: 100%;
+    height: auto;
     object-position: 72% 50%;
     @include mq("md") {
       object-position: 50% 50%;
@@ -174,7 +173,8 @@
   margin-left: auto;
   max-width: rem(345);
   @include mq('md') {
-    max-width: rem(444);
+    // max-width: rem(444);
+    max-width: rem(520);
   }
 }
 
@@ -195,6 +195,12 @@
   border: 1px solid $green-accent;
 }
 .pagination__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  
   transition: background-color 0.3s ease;
   &:hover {
     background-color: $green-accent;

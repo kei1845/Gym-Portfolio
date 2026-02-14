@@ -1,6 +1,6 @@
 @use "global" as *;
 
-body.archive {
+.archive {
 
 .voice-inner {
     margin-top: rem(52);
@@ -42,6 +42,7 @@ body.archive {
   }
   .voice__box-left {
     max-width: vw(375, 149);
+    width: 100%;
     @include mq("md") {
       max-width: rem(276);
     }
@@ -104,6 +105,7 @@ body.archive {
       width: rem(180);
     }
     img {
+      height: auto;
       aspect-ratio: 180 / 140;
       object-fit: cover;
     }

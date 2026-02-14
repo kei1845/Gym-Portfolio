@@ -33,7 +33,7 @@
       <nav class="header__nav u-desktop">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="page-campaign.html" class="header__link">
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="header__link">
               <span class="header__link--en">Campaign</span>
               <span class="header__link--ja">キャンペーン</span>
             </a>
@@ -57,7 +57,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="<?php echo esc_url(home_url("/voice")) ?>" class="header__link">
+            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>" class="header__link">
               <span class="header__link--en">Voice</span>
               <span class="header__link--ja">お客様の声</span>
             </a>
