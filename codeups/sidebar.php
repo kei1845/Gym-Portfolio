@@ -166,7 +166,7 @@
             <div class="blog-sidebar__head-text">アーカイブ</div>
           </div>
           <div class="blog-sidebar__archive">
-            <div class="archive">
+            <div class="sub-archive">
               <?php
               global $wpdb;
 

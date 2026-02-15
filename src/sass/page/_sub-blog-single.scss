@@ -3,6 +3,7 @@
   .blog-list-single {
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
     // margin-top: rem(-7);//カンプ完全一致。仮。
     @include mq("md") {
       max-width: rem(700);
@@ -99,6 +100,7 @@
     }
   }
 
+
   .pagination__single {
     margin-top: rem(40);
     @include mq("md") {
@@ -116,4 +118,15 @@
     pointer-events: none;
   }
 
+  /* 長いURLや英数字で崩れないようにする */
+.blog__box-text,
+.blog__box-title {
+  overflow-wrap: anywhere;  /* 最強。URLでも折り返す */
+  word-break: break-word;   /* 保険 */
+}
+
+/* もし .blog__boxes が flex の場合の保険（伸び防止） */
+.blog__box {
+  min-width: 0;
+}
 }

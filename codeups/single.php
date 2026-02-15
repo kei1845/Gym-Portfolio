@@ -28,13 +28,11 @@
 
                             <h1 class="article__title"><?php the_title(); ?></h1>
 
-                            <div class="article__thumb">
-                                <?php if (has_post_thumbnail()) : ?>
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="article__thumb">
                                     <?php the_post_thumbnail('full'); ?>
-                                <?php else : ?>
-                                    <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像">
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
 
                             <div class="article__content">
                                 <?php the_content(); ?>

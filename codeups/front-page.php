@@ -41,14 +41,14 @@
           <?php
           $args = [
             'post_type'      => 'campaign',
-            'posts_per_page' => 4,      // トップは4つまで
+            'posts_per_page' => 8,      // トップは本来は4つまで
             'orderby'        => 'date', // 新しい順
             'order'          => 'DESC',
           ];
-          $q = new WP_Query($args);
+          $campaign_query = new WP_Query($args);
 
-          if ($q->have_posts()):
-            while ($q->have_posts()): $q->the_post();
+          if ($campaign_query->have_posts()):
+            while ($campaign_query->have_posts()): $campaign_query->the_post();
 
               // タグ（タクソノミー名）
               $tag_name = '';
@@ -224,7 +224,7 @@
       </div>
       <div class="button-wrapper-outer blog__button">
         <div class="button-wrapper">
-          <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
+          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
               viewBox="0 0 41 7" fill="none">
               <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg></a>
@@ -240,15 +240,15 @@
       </div>
       <div class="voice__boxes">
         <?php
-        $q = new WP_Query([
+      $voice_query = new WP_Query([
           'post_type'      => 'voice',
           'posts_per_page' => 2,      // トップは2件
           'orderby'        => 'date',
           'order'          => 'DESC',
         ]);
 
-        if ($q->have_posts()):
-          while ($q->have_posts()): $q->the_post();
+        if ($voice_query->have_posts()):
+          while ($voice_query->have_posts()): $voice_query->the_post();
 
             // ACF（フィールド名は君のやつに合わせて）
             $age    = get_field('voice_age');     // 例: "20代"

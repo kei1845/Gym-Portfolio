@@ -51,7 +51,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="header__link">
+            <a href="<?php echo esc_url(home_url('/blog')); ?>" class="header__link">
               <span class="header__link--en">Blog</span>
               <span class="header__link--ja">ブログ</span>
             </a>

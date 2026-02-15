@@ -74,6 +74,7 @@
   }
   .blog__box-image {
     img {
+      height: auto;
       aspect-ratio: 301/201;
       object-fit: cover;
     }
