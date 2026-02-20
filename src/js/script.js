@@ -314,3 +314,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ==================================================
+# thanks-pageへの遷移
+================================================== */
+
+document.addEventListener('wpcf7mailsent', function() {
+  window.location.href = '/contact/thanks/';
+});
