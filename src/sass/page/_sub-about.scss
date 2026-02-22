@@ -2,36 +2,41 @@
 
 .sub-about {
   .about {
+
     // margin-top: rem(20);
     @include mq("md") {
       margin-top: rem(149);
     }
   }
 
-  .about-inner {
-  }
+  .about-inner {}
 
   .about__content {
     margin-top: rem(28);
+
     @include mq("md") {
       margin-top: rem(40);
     }
   }
+
   .about__img {
     display: flex;
     justify-content: center;
     position: relative;
   }
+
   .about__img-left {
     width: vw(375, 128);
     aspect-ratio: 128/194;
+
     @include mq("md") {
       width: vw(1440, 400);
       aspect-ratio: 400/606;
     }
+
     z-index: 3;
-    img {
-    }
+
+    img {}
   }
 
   .about__catch {
@@ -45,22 +50,26 @@
     top: 19%;
     left: 7%;
     line-height: 1;
+
     @include mq("md") {
       line-height: 1.25;
       top: 30%;
       left: 18.5%;
     }
   }
+
   .about__img-right {
     aspect-ratio: 281/186;
     position: relative;
     z-index: 1;
-    img {
-    }    
+
+    img {}
+
     // 以下追記
     width: 100%;
     margin-left: 0;
     margin-top: rem(23);
+
     @include mq("md") {
       width: vw(1440, 880);
       margin-left: rem(-200);
@@ -68,9 +77,10 @@
       aspect-ratio: 880/581;
     }
   }
-  
+
   .about__img-right-text {
     position: absolute;
+
     p {
       margin-top: rem(14);
       margin-right: rem(-12);
@@ -80,13 +90,14 @@
       line-height: 1.5;
       color: $white;
     }
+
     // 以下追記
     top: 22.5%;
     right: 5.5%;
   }
-  
-  .about__text {    
-  }
+
+  .about__text {}
+
   .about__text-body {
     font-weight: $normal;
     font-size: rem(16);
@@ -95,17 +106,19 @@
     // 以下追記
     margin-top: rem(39);
   }
-  
+
 
   .gallery {
     margin-top: rem(37);
     margin-bottom: rem(104);
+
     @include mq("md") {
       margin-top: rem(120);
       margin-bottom: rem(140);
     }
 
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
@@ -125,16 +138,16 @@
     }
   }
 
-  .gallery-inner {
-  }
+  .gallery-inner {}
 
   .gallery__grid {
-    margin-top: rem(40);    
+    margin-top: rem(40);
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: rem(8);
+
     @include mq("md") {
       margin-top: rem(80);
       grid-template-columns: 45.56% 7.41% 45.56%;
@@ -143,35 +156,42 @@
 
 
   .gallery__item {
-  /* buttonの見た目だけ消す */
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  padding: 0;
-  background: transparent;
+    /* buttonの見た目だけ消す */
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    padding: 0;
+    background: transparent;
 
-  /* レイアウト */
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  overflow: hidden;
-  aspect-ratio: 580 / 369;
+    /* レイアウト */
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    aspect-ratio: 580 / 369;
 
-  @include mq("md") {
-    grid-column: span 2;
-    grid-row: span 1;
+    // 以下WordPressによる追記
+    img {
+      height: 100%;
+      object-fit: cover; // 枠いっぱいにトリミングして埋める
+    }
+
+    @include mq("md") {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
   }
-}
 
-.gallery__item:focus-visible {
-  outline: 2px solid #408F95;
-  outline-offset: 2px;
-}
+  .gallery__item:focus-visible {
+    outline: 2px solid #408F95;
+    outline-offset: 2px;
+  }
 
 
   .gallery__item:nth-child(6n + 1),
   .gallery__item:nth-child(6n + 6) {
     aspect-ratio: 492 / 746;
+
     @include mq("md") {
       grid-column: span 1;
       grid-row: span 2;
@@ -202,6 +222,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     img {
       max-width: 90%;
       max-height: 90%;

@@ -42,8 +42,8 @@
           </div>
           <div class="footer__nav-column">
             <a href="#" class="footer__text hover-opacity starfish">よくある質問</a>
-            <a href="#" class="footer__text hover-opacity starfish">プライバシー<br class="u-mobile">ポリシー</a>
-            <a href="#" class="footer__text hover-opacity starfish">利用規約</a>
+            <a href="<?php echo esc_url(home_url("/privacy-policy")) ?>" class="footer__text hover-opacity starfish">プライバシー<br class="u-mobile">ポリシー</a>
+            <a href="<?php echo esc_url(home_url("/terms-of-service")) ?>" class="footer__text hover-opacity starfish">利用規約</a>
             <a href="#" class="footer__text hover-opacity starfish">お問い合わせ</a>
           </div>
         </div>
@@ -51,7 +51,7 @@
     </div>
     <small class="footer__copyright">Copyright &copy; 2021 - <?php echo wp_date("Y");?> CodeUps LLC. All Rights Reserved.</small>
   </footer>
-  <a href="#mv" class="page-top" id="js-page-top"><img src="<?php echo esc_url( get_theme_file_uri('/assets/images/to-top.png') ); ?>" alt="ページの一番上へ戻る"></a>
+  <a href="#" class="page-top" id="js-page-top"><img src="<?php echo esc_url( get_theme_file_uri('/assets/images/to-top.png') ); ?>" alt="ページの一番上へ戻る"></a>
   <?php wp_footer(); ?>
 </body>
 

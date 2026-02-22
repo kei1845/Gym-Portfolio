@@ -1,8 +1,9 @@
 @use "global" as *;
 
-body.sub-error {
+.sub-error {
   background-color: $green-accent;
   position: relative;
+  // margin-bottom: rem(160);
   &::before {
     content: "";
     position: fixed;
@@ -11,28 +12,38 @@ body.sub-error {
     pointer-events: none;
     z-index: 0;
     background-position: left 51% top 18%;
-    background-size: 329px;
+    background-size: rem(329);
     @include mq("md") {
       background-position: left 25% center;
-      background-size: min(vw(1440, 665), 665px);
+      background-size: min(vw(1440, 665), rem(665));
     }
+  }
+  .breadcrumb {
+    color: $white;
+    margin-top: 0;
+    padding-top: rem(88);
+    @include mq('md') {
+      padding-top: rem(98);
+    }
+    
+    
   }
 
   .breadcrumb.breadcrumb-error {
     color: $white;
-      margin-top: 88px;
+      margin-top: rem(88);
       @include mq('md') {
-          margin-top: 94px;
+          margin-top: rem(94);
       }
     
   }
 
   .error {
-      margin-top: 39px;
-      margin-bottom: -61px;
+      margin-top: rem(39);
+      margin-bottom: rem(-61);
       @include mq("md") {
-          margin-top: 98px;
-          margin-bottom: -12px;
+          margin-top: rem(98);
+          margin-bottom: rem(-12);
       }
   }
 
@@ -44,13 +55,13 @@ body.sub-error {
     color: $white;
     font-family: $third-font-family;
     font-weight: $normal;
-    font-size: 80px;
+    font-size: rem(80);
     letter-spacing: 0.5em;
-    margin-left: 37px;
+    margin-left: rem(37);
 
     @include mq("md") {
-      font-size: 160px;
-      margin-left: 79px;
+      font-size: rem(160);
+      margin-left: rem(79);
     }
   }
 
@@ -58,20 +69,20 @@ body.sub-error {
     color: $white;
     font-family: $third-font-family;
     font-weight: $normal;
-    font-size: 16px;
+    font-size: rem(16);
     line-height: 1.5;
-    margin-top: -16px;
+    margin-top: rem(-16);
     @include mq("md") {
         margin-top: 0;
-      font-size: 16px;
+      font-size: rem(16);
       line-height: 1.5;
     }
   }
 
   .error__button {
-    margin-top: 40px;
+    margin-top: rem(40);
     @include mq("md") {
-      margin-top: 80px;
+      margin-top: rem(80);
     }
     .button-wrapper {
       &::before {
@@ -110,4 +121,15 @@ body.sub-error {
   .footer.footer-error {
     background: none;
   }
+}
+
+body.error404 .footer {
+
+  margin-top: 0 !important;
+  padding-top: rem(103);
+  @include mq('md') {
+    padding-top: rem(160);
+  }
+  
+  
 }

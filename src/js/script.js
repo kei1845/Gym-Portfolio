@@ -235,16 +235,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ==================================================
-# accordion
+# accordion faq
 ================================================== */
 
+jQuery(function ($) {
+  // 初期は必ず閉じる（＋）＆答えは非表示
+  $(".faq__item").removeClass("is-open");
+  $(".js-accordion").removeClass("is-open").attr("aria-expanded", "false");
+  $(".faq__answer").hide().removeClass("is-open");
 
+  $(".js-accordion").on("click", function (e) {
+    e.preventDefault();
 
-jQuery(".js-accordion").on("click", function (e) {
-  e.preventDefault();
-  var $item = jQuery(this).closest(".faq__item"); // どんな階層でもOK
-  $item.toggleClass("is-open");
-  jQuery(this).next(".faq__answer").slideToggle(300);
+    var $btn = $(this);
+    var $item = $btn.closest(".faq__item");
+    var $answer = $btn.next(".faq__answer");
+
+    var isOpen = !$item.hasClass("is-open");
+
+    $item.toggleClass("is-open", isOpen);
+    $btn.toggleClass("is-open", isOpen).attr("aria-expanded", isOpen ? "true" : "false");
+
+    // “表示”も isOpen に合わせて確実に同期
+    if (isOpen) {
+      $answer.stop(true, true).slideDown(300).addClass("is-open");
+    } else {
+      $answer.stop(true, true).slideUp(300).removeClass("is-open");
+    }
+  });
 });
 
 /* ==================================================

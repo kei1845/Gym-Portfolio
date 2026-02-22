@@ -7,7 +7,17 @@ body.side-map-no-fish {
     }
   }
 }
-body.sub-utility {
+.sub-utility {
+  .sub-mv__title{
+  white-space: nowrap;                 
+  font-size: clamp(rem(28), 6vw, rem(40));
+  line-height: 1.1;
+  @include mq('md') {
+    font-size: clamp(rem(28), 6vw, rem(80));
+  }
+  
+  
+}
   /* site-map
     -------------------------------------------------- */
   .site-map {

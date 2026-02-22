@@ -15,96 +15,50 @@
       </nav>
     </div>
   <?php endif; ?>
+
   <div class="faq">
-    <div class="faq-inner inner">
-      <div class="faq__list">
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
+  <div class="faq-inner inner">
+    <div class="faq__list">
+
+      <?php
+      $faq_items = class_exists('SCF') ? SCF::get('faq_items') : [];
+
+      if (!empty($faq_items)) :
+        foreach ($faq_items as $item) :
+          $question = isset($item['question']) ? $item['question'] : '';
+          $answer   = isset($item['answer']) ? $item['answer'] : '';
+
+          if ($question === '' && $answer === '') continue;
+      ?>
+          <div class="faq__item">
+            <button type="button" class="faq__question js-accordion" aria-expanded="false">
+              <span class="faq__question-text"><?php echo esc_html($question); ?></span>
+              <span class="faq__icon">
+                <span class="faq__icon-bar"></span>
+                <span class="faq__icon-bar"></span>
+              </span>
+            </button>
+
+            <div class="faq__answer">
+              <p class="faq__answer-text">
+                <?php echo nl2br(esc_html($answer)); ?>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button type="button" class="faq__question js-accordion">
-            <span class="faq__question-text">ここに質問が入ります。</span>
-            <span class="faq__icon">
-              <span class="faq__icon-bar"></span>
-              <span class="faq__icon-bar"></span>
-            </span>
-          </button>
-          <div class="faq__answer is-open">
-            <p class="faq__answer-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-      </div>
+        <?php
+        endforeach;
+      else :
+        ?>
+        <p>FAQは準備中です。</p>
+      <?php endif; ?>
+
     </div>
   </div>
+</div>
+
+
+
+
 
   <section class="contact">
     <div class="contact__inner inner">
