@@ -240,7 +240,7 @@
       </div>
       <div class="voice__boxes">
         <?php
-      $voice_query = new WP_Query([
+        $voice_query = new WP_Query([
           'post_type'      => 'voice',
           'posts_per_page' => 2,      // トップは2件
           'orderby'        => 'date',
@@ -327,7 +327,41 @@
         <h2 class="heading__ja">料金一覧</h2>
       </div>
       <div class="price__contents">
+        <?php
+        $price_page_id = get_page_by_path('price')?->ID;
+        ?>
+
         <div class="price__list">
+          <?php
+          $categories = [
+            ['title' => 'ライセンス講習',   'field' => 'group_license', 'count' => 3],
+            ['title' => '体験ダイビング',   'field' => 'group_trial',   'count' => 4],
+            ['title' => 'ファンダイビング', 'field' => 'group_fan',     'count' => 4],
+            ['title' => 'スペシャルダイビング', 'field' => 'group_special', 'count' => 3],
+          ];
+
+          foreach ($categories as $cat) :
+            $group = get_field($cat['field'], $price_page_id);
+            if (empty($group) || !is_array($group)) continue;
+          ?>
+            <div class="price__category">
+              <h3 class="price__category-title"><?php echo esc_html($cat['title']); ?></h3>
+              <div class="price__category-bar"></div>
+
+              <?php for ($i = 1; $i <= $cat['count']; $i++):
+                $name  = $group["item{$i}_name"] ?? '';
+                $price = $group["item{$i}_price"] ?? '';
+                if (!$name && !$price) continue;
+              ?>
+                <div class="price__item">
+                  <div class="price__item-name"><?php echo esc_html($name); ?></div>
+                  <div class="price__item-price"><?php echo esc_html($price); ?></div>
+                </div>
+              <?php endfor; ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <!-- <div class="price__list">
           <div class="price__category">
             <h3 class="price__category-title">ライセンス講習</h3>
             <div class="price__category-bar"></div>
@@ -396,7 +430,7 @@
               <div class="price__item-price">¥32,000</div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="price__img colorbox u-desktop">
           <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/price-img.png')); ?>" alt="熱帯魚と珊瑚礁">
         </div>

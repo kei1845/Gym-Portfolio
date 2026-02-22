@@ -19,95 +19,112 @@
     <div class="price">
       <div class="price__inner inner">
         <div class="price__boxes">
-          <div class="price__box">
-            <div class="price__header">
-              <h3 class="price__header-title">ライセンス講習</h3>
-              <div class="price__header-img"></div>
+          <?php $group = get_field('group_license'); ?>
+          <?php if ($group) : ?>
+            <div class="price__box">
+              <div class="price__header">
+                <h3 class="price__header-title">ライセンス講習</h3>
+                <div class="price__header-img"></div>
+              </div>
+
+              <table class="price__table">
+                <tbody>
+                  <?php for ($i = 1; $i <= 3; $i++) :
+                    $name  = $group["item{$i}_name"] ?? '';
+                    $price = $group["item{$i}_price"] ?? '';
+                    if (!$name && !$price) continue;
+                  ?>
+                    <tr>
+                      <td><?php echo esc_html($name); ?></td>
+                      <td><?php echo esc_html($price); ?></td>
+                    </tr>
+                  <?php endfor; ?>
+                </tbody>
+              </table>
             </div>
-            <table class="price__table">
-              <tr>
-                <td>オープンウォーター<br class="u-mobile">ダイバーコース</td>
-                <td>¥50,000</td>
-              </tr>
-              <tr>
-                <td>アドバンスド<br class="u-mobile">オープンウォーターコース</td>
-                <td>¥60,000</td>
-              </tr>
-              <tr>
-                <td>レスキュー＋EFRコース</td>
-                <td>¥70,000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="price__box">
-            <div class="price__header">
-              <h3 class="price__header-title">体験ダイビング</h3>
-              <div class="price__header-img"></div>
+          <?php endif; ?>
+
+          <?php $group = get_field('group_trial'); ?>
+          <?php if ($group) : ?>
+            <div class="price__box">
+              <div class="price__header">
+                <h3 class="price__header-title">体験ダイビング</h3>
+                <div class="price__header-img"></div>
+              </div>
+
+              <table class="price__table">
+                <tbody>
+                  <?php for ($i = 1; $i <= 4; $i++) :
+                    $name  = $group["item{$i}_name"] ?? '';
+                    $price = $group["item{$i}_price"] ?? '';
+                    if (!$name && !$price) continue;
+                  ?>
+                    <tr>
+                      <td><?php echo esc_html($name); ?></td>
+                      <td><?php echo esc_html($price); ?></td>
+                    </tr>
+                  <?php endfor; ?>
+                </tbody>
+              </table>
             </div>
-            <table class="price__table">
-              <tr>
-                <td>ビーチ体験ダイビング<br class="u-mobile">(半日)</td>
-                <td>¥7,000</td>
-              </tr>
-              <tr>
-                <td>ビーチ体験ダイビング<br class="u-mobile">(1日)</td>
-                <td>¥14,000</td>
-              </tr>
-              <tr>
-                <td>ボート体験ダイビング<br class="u-mobile">(半日)</td>
-                <td>¥10,000</td>
-              </tr>
-              <tr>
-                <td>ボート体験ダイビング<br class="u-mobile">(1日)</td>
-                <td>¥18,000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="price__box">
-            <div class="price__header">
-              <h3 class="price__header-title">ファンダイビング</h3>
-              <div class="price__header-img"></div>
+          <?php endif; ?>
+
+          <?php $group = get_field('group_fan'); ?>
+          <?php if ($group) : ?>
+            <div class="price__box">
+              <div class="price__header">
+                <h3 class="price__header-title">ファンダイビング</h3>
+                <div class="price__header-img"></div>
+              </div>
+
+              <table class="price__table">
+                <tbody>
+                  <?php for ($i = 1; $i <= 4; $i++) :
+                    $name  = $group["item{$i}_name"] ?? '';
+                    $price = $group["item{$i}_price"] ?? '';
+                    if (!$name && !$price) continue;
+                  ?>
+                    <tr>
+                      <td><?php echo esc_html($name); ?></td>
+                      <td><?php echo esc_html($price); ?></td>
+                    </tr>
+                  <?php endfor; ?>
+                </tbody>
+              </table>
             </div>
-            <table class="price__table">
-              <tr>
-                <td>ビーチダイビング<br class="u-mobile">(2ダイブ)</td>
-                <td>¥14,000</td>
-              </tr>
-              <tr>
-                <td>ボートダイビング<br class="u-mobile">(2ダイブ)</td>
-                <td>¥18,000</td>
-              </tr>
-              <tr>
-                <td>スペシャルダイビング<br class="u-mobile">(2ダイブ)</td>
-                <td>¥24,000</td>
-              </tr>
-              <tr>
-                <td>ナイトダイビング<br class="u-mobile">(1ダイブ)</td>
-                <td>¥10,000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="price__box">
-            <div class="price__header">
-              <h3 class="price__header-title">スペシャルダイビング</h3>
-              <div class="price__header-img"></div>
+          <?php endif; ?>
+
+          <?php $group = get_field('group_special'); ?>
+          <?php if ($group) : ?>
+            <div class="price__box">
+              <div class="price__header">
+                <h3 class="price__header-title">スペシャルダイビング</h3>
+                <div class="price__header-img"></div>
+              </div>
+
+              <table class="price__table">
+                <tbody>
+                  <?php for ($i = 1; $i <= 3; $i++) :
+                    $name  = $group["item{$i}_name"] ?? '';
+                    $price = $group["item{$i}_price"] ?? '';
+                    if (!$name && !$price) continue;
+                  ?>
+                    <tr>
+                      <td><?php echo esc_html($name); ?></td>
+                      <td><?php echo esc_html($price); ?></td>
+                    </tr>
+                  <?php endfor; ?>
+                </tbody>
+              </table>
             </div>
-            <table class="price__table">
-              <tr>
-                <td>貸切ダイビング<br class="u-mobile">(2ダイブ)</td>
-                <td>¥24,000</td>
-              </tr>
-              <tr>
-                <td>1日ダイビング<br class="u-mobile">(3ダイブ)</td>
-                <td>¥32,000</td>
-              </tr>
-              <tr>
-                <td>ナイトダイビング<br class="u-mobile">(2ダイブ)</td>
-                <td>¥14,000</td>
-              </tr>
-            </table>
-          </div>
+          <?php endif; ?>
+
+
         </div>
+
+
+
+
       </div>
     </div>
 
