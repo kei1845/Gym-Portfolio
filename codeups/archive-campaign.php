@@ -44,29 +44,10 @@
 
     <section class="campaign">
       <div class="campaign-cards">
-        <?php
-        $paged = max(1, get_query_var('paged'));
+        <?php if (have_posts()): ?>
+          <?php while (have_posts()): the_post(); ?>
 
-        $args = [
-          'post_type'      => 'campaign',
-          'posts_per_page' => 4, // 好きに（PC2列なので4とか6が見栄え良い）
-          'paged'          => $paged,
-        ];
-
-        if (!empty($_GET['cc'])) {
-          $cc = sanitize_text_field($_GET['cc']);
-          $args['tax_query'] = [[
-            'taxonomy' => 'campaign_category',
-            'field'    => 'slug',
-            'terms'    => $cc,
-          ]];
-        }
-
-        $q = new WP_Query($args);
-
-        if ($q->have_posts()):
-          while ($q->have_posts()): $q->the_post();
-
+            <?php
             // ターム名（タグ表示用）
             $tag_name = '';
             $terms = get_the_terms(get_the_ID(), 'campaign_category');
@@ -83,7 +64,8 @@
 
             $start_fmt = $start ? date('Y/n/j', strtotime($start)) : '';
             $end_fmt   = $end   ? date('n/j',   strtotime($end))   : '';
-        ?>
+            ?>
+
             <div class="campaign-card">
               <div class="campaign-card__img">
                 <?php if (has_post_thumbnail()): ?>
@@ -108,27 +90,23 @@
                 <?php endif; ?>
 
                 <div class="campaign-card__price">
-                  <?php if (get_field('price_before')) : ?>
-                    <div class="campaign-card__old">
-                      ¥<?php echo number_format(get_field('price_before')); ?>
-                    </div>
+                  <?php if ($before) : ?>
+                    <div class="campaign-card__old">¥<?php echo number_format($before); ?></div>
                   <?php endif; ?>
 
-                  <?php if (get_field('price_after')) : ?>
-                    <div class="campaign-card__new">
-                      ¥<?php echo number_format(get_field('price_after')); ?>
-                    </div>
+                  <?php if ($after) : ?>
+                    <div class="campaign-card__new">¥<?php echo number_format($after); ?></div>
                   <?php endif; ?>
                 </div>
 
                 <div class="campaign-card__desc u-desktop">
                   <?php echo esc_html(wp_trim_words(get_the_content(), 164, '')); ?>
-
-
                 </div>
 
                 <?php if ($start_fmt && $end_fmt): ?>
-                  <div class="campaign-card__day u-desktop"><?php echo esc_html($start_fmt . '-' . $end_fmt); ?></div>
+                  <div class="campaign-card__day u-desktop">
+                    <?php echo esc_html($start_fmt . '-' . $end_fmt); ?>
+                  </div>
                 <?php endif; ?>
 
                 <div class="campaign-card__contact u-desktop">ご予約・お問い合わせはコチラ</div>
@@ -146,128 +124,83 @@
               </div>
             </div>
 
-          <?php
-          endwhile;
-          wp_reset_postdata();
-        else:
-          ?>
+          <?php endwhile; ?>
+        <?php else: ?>
           <p>該当するキャンペーンはありません。</p>
         <?php endif; ?>
       </div>
     </section>
 
     <?php
-    global $wp_query;
+global $wp_query;
 
-    $is_sp = wp_is_mobile(); // SP判定（WP標準）
-    $mid   = $is_sp ? 1 : 2; // SP: 現在±1（合計3） / PC: 現在±2（合計5）
-    $end   = $is_sp ? 0 : 1; // PCだけ端も出す（見た目が6前後になる）
+$paged = max(1, get_query_var('paged'), get_query_var('page'));
 
-    $links = paginate_links([
-      'total'     => $wp_query->max_num_pages,
-      'current'   => max(1, get_query_var('paged')),
-      'type'      => 'array',
-      'mid_size'  => $mid,
-      'end_size'  => $end,
-      'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none"><path d="M8.5 0.5L0.5 8.5L8.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-      'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none"><path d="M0.5 0.5L8.5 8.5L0.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-    ]);
+$is_sp = wp_is_mobile();
+$mid   = $is_sp ? 1 : 2;
+$end   = $is_sp ? 0 : 1;
 
-    if ($links) :
+$links = paginate_links([
+  'total'     => $wp_query->max_num_pages,
+  'current'   => $paged,
+  'type'      => 'array',
+  'mid_size'  => $mid,
+  'end_size'  => $end,
+  'add_args'  => ($current !== 'all') ? ['cc' => $current] : false,
+  'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none"><path d="M8.5 0.5L0.5 8.5L8.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+  'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none"><path d="M0.5 0.5L8.5 8.5L0.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+]);
 
-      // 先頭が prev か確認
-      $first = reset($links);
-      $has_prev = (is_string($first) && strpos($first, 'prev') !== false);
+if ($links):
+
+  // 先頭が prev か確認
+  $first = reset($links);
+  $has_prev = (is_string($first) && strpos($first, 'prev') !== false);
+  $prev = $has_prev ? array_shift($links) : null;
+
+  // 末尾が next か確認
+  $last = end($links);
+  $has_next = (is_string($last) && strpos($last, 'next') !== false);
+  $next = $has_next ? array_pop($links) : null;
+?>
+  <ul class="pagination__list">
+
+    <li class="pagination__prev <?php echo $has_prev ? '' : 'is-hidden'; ?>">
+      <?php
       if ($has_prev) {
-        $prev = array_shift($links);
-      } else {
-        $prev = null;
+        echo str_replace('page-numbers', 'pagination__link pagination__arrow', $prev);
       }
+      ?>
+    </li>
 
-      // 末尾が next か確認
-      $last = end($links);
-      $has_next = (is_string($last) && strpos($last, 'next') !== false);
-      if ($has_next) {
-        $next = array_pop($links);
-      } else {
-        $next = null;
-      }
-    ?>
-      <ul class="pagination__list">
+    <li>
+      <ul class="pagination__numbers">
+        <?php
+        foreach ($links as $link) {
+          $li_class = 'pagination__number';
+          if (strpos($link, 'current') !== false) $li_class .= ' is-current';
 
-        <li class="pagination__prev <?php echo $has_prev ? '' : 'is-hidden'; ?>">
-          <?php
-          if ($has_prev) {
-            echo str_replace('page-numbers', 'pagination__link pagination__arrow', $prev);
-          }
-          ?>
-        </li>
+          $link = str_replace('page-numbers', 'pagination__link', $link);
 
-        <li>
-          <ul class="pagination__numbers">
-            <?php
-            foreach ($links as $link) {
-              $li_class = 'pagination__number';
-              if (strpos($link, 'current') !== false) $li_class .= ' is-current';
-
-              $link = str_replace('page-numbers', 'pagination__link', $link);
-
-              echo '<li class="' . esc_attr($li_class) . '">' . $link . '</li>';
-            }
-            ?>
-          </ul>
-        </li>
-
-        <li class="pagination__next <?php echo $has_next ? '' : 'is-hidden'; ?>">
-          <?php
-          if ($has_next) {
-            echo str_replace('page-numbers', 'pagination__link pagination__arrow', $next);
-          }
-          ?>
-        </li>
-
+          echo '<li class="' . esc_attr($li_class) . '">' . $link . '</li>';
+        }
+        ?>
       </ul>
-    <?php endif; ?>
+    </li>
 
-    <!-- <ul class="pagination__list">
-      <li class="pagination__prev">
-        <a href="#" class="pagination__link pagination__arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none">
-            <path d="M8.5 0.5L0.5 8.5L8.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
-      </li>
-      <li>
-        <ul class="pagination__numbers">
-          <li class="pagination__number is-current">
-            <span class="pagination__link" aria-current="page">1</span>
-          </li>
-          <li class="pagination__number">
-            <a href="#" class="pagination__link">2</a>
-          </li>
-          <li class="pagination__number">
-            <a href="#" class="pagination__link">3</a>
-          </li>
-          <li class="pagination__number">
-            <a href="#" class="pagination__link">4</a>
-          </li>
-         
-          <li class="pagination__number u-desktop">
-            <a href="#" class="pagination__link">5</a>
-          </li>
-          <li class="pagination__number u-desktop">
-            <a href="#" class="pagination__link">6</a>
-          </li>
-        </ul>
-      </li>
-      <li class="pagination__next">
-        <a href="#" class="pagination__link pagination__arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="17" viewBox="0 0 9 17" fill="none">
-            <path d="M0.5 0.5L8.5 8.5L0.5 16.5" stroke="#408F95" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
-      </li>
-    </ul> -->
+    <li class="pagination__next <?php echo $has_next ? '' : 'is-hidden'; ?>">
+      <?php
+      if ($has_next) {
+        echo str_replace('page-numbers', 'pagination__link pagination__arrow', $next);
+      }
+      ?>
+    </li>
+
+  </ul>
+<?php endif; ?>
+      
+
+
   </div>
 
   <section class="contact">

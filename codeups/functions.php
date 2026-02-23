@@ -63,3 +63,46 @@ add_action('wp_enqueue_scripts', function () {
     true
   );
 });
+
+
+//カスタム投稿、voice
+add_action('pre_get_posts', function ($query) {
+  if (is_admin() || !$query->is_main_query()) return;
+
+  // voice のアーカイブだけ
+  if ($query->is_post_type_archive('voice')) {
+    $query->set('posts_per_page', 6);
+
+    // cc（タブ）の絞り込み
+    if (!empty($_GET['cc']) && $_GET['cc'] !== 'all') {
+      $query->set('tax_query', [
+        [
+          'taxonomy' => 'voice_category',
+          'field'    => 'slug',
+          'terms'    => sanitize_text_field($_GET['cc']),
+        ]
+      ]);
+    }
+  }
+});
+
+// カスタム投稿 campaign
+add_action('pre_get_posts', function ($query) {
+  if (is_admin() || !$query->is_main_query()) return;
+
+  if ($query->is_post_type_archive('campaign')) {
+    $query->set('post_type', 'campaign');
+    $query->set('post_status', 'publish');
+    $query->set('posts_per_page', 4);
+
+    if (!empty($_GET['cc']) && $_GET['cc'] !== 'all') {
+      $query->set('tax_query', [
+        [
+          'taxonomy' => 'campaign_category',
+          'field'    => 'slug',
+          'terms'    => sanitize_text_field($_GET['cc']),
+        ]
+      ]);
+    }
+  }
+});

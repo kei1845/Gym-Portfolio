@@ -18,33 +18,33 @@
       <div class="footer__body">
         <div class="footer__wrapper">
           <div class="footer__nav-column">
-            <a href="#" class="footer__text hover-opacity starfish">キャンペーン</a>
-            <a href="#" class="footer__text hover-opacity">ライセンス取得</a>
-            <a href="#" class="footer__text hover-opacity">貸切体験ダイビング</a>
-            <a href="#" class="footer__text hover-opacity">ナイトダイビング</a>
-            <a href="#" class="footer__text hover-opacity starfish">私たちについて</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity starfish">キャンペーン</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ライセンス講習</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ファンダイビング</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">体験ダイビング</a>
+            <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="footer__text hover-opacity starfish">私たちについて</a>
           </div>
           <div class="footer__nav-column">
-            <a href="#" class="footer__text hover-opacity starfish">ダイビング情報</a>
-            <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
-            <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
-            <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
-            <a href="#" class="footer__text hover-opacity starfish">ブログ</a>
+            <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text hover-opacity starfish">ダイビング情報</a>
+            <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text hover-opacity">ライセンス講習</a>
+            <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text hover-opacity">体験ダイビング</a>
+            <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text hover-opacity">ファンダイビング</a>
+            <a href="<?php echo esc_url(home_url('/blog')); ?>" class="footer__text hover-opacity starfish">ブログ</a>
           </div>
         </div>
         <div class="footer__wrapper">
           <div class="footer__nav-column">
-            <a href="#" class="footer__text hover-opacity starfish">お客様の声</a>
-            <a href="#" class="footer__text hover-opacity starfish">料金一覧</a>
-            <a href="#" class="footer__text hover-opacity">ライセンス講習</a>
-            <a href="#" class="footer__text hover-opacity">体験ダイビング</a>
-            <a href="#" class="footer__text hover-opacity">ファンダイビング</a>
+            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>" class="footer__text hover-opacity starfish">お客様の声</a>
+            <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text hover-opacity starfish">料金一覧</a>
+            <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text hover-opacity">ライセンス講習</a>
+            <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text hover-opacity">体験ダイビング</a>
+            <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text hover-opacity">ファンダイビング</a>
           </div>
           <div class="footer__nav-column">
-            <a href="#" class="footer__text hover-opacity starfish">よくある質問</a>
+            <a href="<?php echo esc_url(home_url("/faq")) ?>" class="footer__text hover-opacity starfish">よくある質問</a>
             <a href="<?php echo esc_url(home_url("/privacy-policy")) ?>" class="footer__text hover-opacity starfish">プライバシー<br class="u-mobile">ポリシー</a>
             <a href="<?php echo esc_url(home_url("/terms-of-service")) ?>" class="footer__text hover-opacity starfish">利用規約</a>
-            <a href="#" class="footer__text hover-opacity starfish">お問い合わせ</a>
+            <a href="<?php echo esc_url(home_url("/contact")) ?>" class="footer__text hover-opacity starfish">お問い合わせ</a>
           </div>
         </div>
       </div>
