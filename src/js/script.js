@@ -336,7 +336,12 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==================================================
 # thanks-pageへの遷移
 ================================================== */
+// ローカル用でも本番環境でも
 
 document.addEventListener('wpcf7mailsent', function() {
-  window.location.href = '/contact/thanks/';
+  const base = document.querySelector('base')?.href || window.location.origin;
+  const path = window.location.pathname.includes('/codeups/')
+    ? '/codeups/contact/thanks/'
+    : '/contact/thanks/';
+  window.location.href = path;
 });

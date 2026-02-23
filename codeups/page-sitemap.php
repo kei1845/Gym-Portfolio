@@ -2,7 +2,7 @@
 <main class="sub-utility">
     <section class="sub-mv" id="mv">
         <div class="sub-mv__img">
-            <img src="./assets/images/sub-pages/sub-utility/sub-utility-mv.png" alt="海の中のミスジチョウチョウウオ">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/sub-pages/sub-utility/sub-utility-mv.png')); ?>" alt="海の中のミスジチョウチョウウオ">
         </div>
         <div class="sub-mv__content">
             <h2 class="sub-mv__title">Site MAP</h2>
@@ -21,34 +21,34 @@
             <div class="footer__body footer__body-site-map">
                 <div class="footer__wrapper footer__wrapper-site-map">
                     <div class="footer__nav-column">
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">キャンペーン</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ライセンス取得</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">貸切体験ダイビング</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ナイトダイビング</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">私たちについて</a>
+                        <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text site-map-text hover-opacity starfish-black">キャンペーン</a>
+                        <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text site-map-text hover-opacity">ライセンス取得</a>
+                        <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text site-map-text hover-opacity">貸切体験ダイビング</a>
+                        <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text site-map-text hover-opacity">ナイトダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="footer__text site-map-text hover-opacity starfish-black">私たちについて</a>
                     </div>
                     <div class="footer__nav-column">
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">ダイビング情報</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ライセンス講習</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">体験ダイビング</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ファンダイビング</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">ブログ</a>
+                        <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text site-map-text hover-opacity starfish-black">ダイビング情報</a>
+                        <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text site-map-text hover-opacity">ライセンス講習</a>
+                        <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text site-map-text hover-opacity">体験ダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/information")) ?>" class="footer__text site-map-text hover-opacity">ファンダイビング</a>
+                        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="footer__text site-map-text hover-opacity starfish-black">ブログ</a>
                     </div>
                 </div>
                 <div class="footer__wrapper footer__wrapper-site-map">
                     <div class="footer__nav-column">
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">お客様の声</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">料金一覧</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ライセンス講習</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">体験ダイビング</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity">ファンダイビング</a>
+                        <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>" class="footer__text site-map-text hover-opacity starfish-black">お客様の声</a>
+                        <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text site-map-text hover-opacity starfish-black">料金一覧</a>
+                        <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text site-map-text hover-opacity">ライセンス講習</a>
+                        <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text site-map-text hover-opacity">体験ダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/price")) ?>" class="footer__text site-map-text hover-opacity">ファンダイビング</a>
                     </div>
                     <div class="footer__nav-column">
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">よくある質問</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">プライバシー<br
+                        <a href="<?php echo esc_url(home_url("/faq")) ?>" class="footer__text site-map-text hover-opacity starfish-black">よくある質問</a>
+                        <a href="<?php echo esc_url(home_url("/privacy-policy")) ?>" class="footer__text site-map-text hover-opacity starfish-black">プライバシー<br
                                 class="u-mobile">ポリシー</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">利用規約</a>
-                        <a href="#" class="footer__text site-map-text hover-opacity starfish-black">お問い合わせ</a>
+                        <a href="<?php echo esc_url(home_url("/terms-of-service")) ?>" class="footer__text site-map-text hover-opacity starfish-black">利用規約</a>
+                        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="footer__text site-map-text hover-opacity starfish-black">お問い合わせ</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="contact__box">
                 <div class="contact__left">
                     <div class="contact__header">
-                        <img src="./assets/images/contact-icon.png" alt="CodeUps">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/contact-icon.png')); ?>" alt="CodeUps">
                     </div>
                     <div class="contact__bar"></div>
                     <div class="contact__footer">
@@ -72,7 +72,7 @@
                             <p class="contact__footer-text">定休日:毎週火曜日</p>
                         </address>
                         <div class="contact__footer-right">
-                            <img src="./assets/images/contact-img.png" alt="CodeUpsの店舗地図">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/contact-img.png')); ?>" alt="CodeUpsの店舗地図">
                         </div>
                     </div>
                 </div>

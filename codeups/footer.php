@@ -19,9 +19,9 @@
         <div class="footer__wrapper">
           <div class="footer__nav-column">
             <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity starfish">キャンペーン</a>
-            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ライセンス講習</a>
-            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ファンダイビング</a>
-            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">体験ダイビング</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ライセンス取得</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">貸切体験ダイビング</a>
+            <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="footer__text hover-opacity">ナイトダイビング</a>
             <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="footer__text hover-opacity starfish">私たちについて</a>
           </div>
           <div class="footer__nav-column">
