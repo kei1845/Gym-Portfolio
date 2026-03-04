@@ -19,13 +19,13 @@ const changed = require("gulp-changed");
 const del = require("del");
 
 // ====== 設定ここだけ見ればOK ======
-const themeName = "codeups";
+const themeName = "gym-portfolio";
 
 // ① gulpプロジェクト内に置いてる “編集用テーマ” の場所（VSCodeで触ってるやつ）
-const themeSrcRoot = "../codeups";
+const themeSrcRoot = "../gym-portfolio";
 
 // ② Local by Flywheel の WP テーマの実体（出力先）
-const wpThemeRoot = `C:/Users/elsie/Local Sites/codeups/app/public/wp-content/themes/${themeName}`;
+const wpThemeRoot = `C:/Users/elsie/Local Sites/gym-portfolio/app/public/wp-content/themes/${themeName}`;
 
 // HTMLとして見る用（dist）
 const destPath = {

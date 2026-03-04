@@ -23,6 +23,7 @@
     </div>
   </section>
   <section class="campaign">
+    <p>あああああああ</p>
     <div class="campaign__inner inner">
       <div class="heading">
         <p class="heading__en">Campaign</p>
