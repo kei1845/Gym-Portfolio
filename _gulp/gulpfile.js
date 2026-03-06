@@ -147,7 +147,7 @@ const clean = () => {
 const browserSyncFunc = (done) => {
   browserSync.init({
     notify: false,
-    proxy: "codeups.local",
+    proxy: "gym-portfolio.local",
   });
   done();
 };
