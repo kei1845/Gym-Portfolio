@@ -27,56 +27,56 @@
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="<?php echo esc_url( home_url('/') ); ?>">          
-          <img src="<?php echo esc_url( get_theme_file_uri('/assets/images/CodeUps.png') ); ?>" alt="CodeUps">
+          <span>K</span> FIT GYM
         </a>
       </h1>
       <nav class="header__nav u-desktop">
         <ul class="header__nav-list">
-          <li class="header__nav-item">
+          <!-- <li class="header__nav-item">
             <a href="<?php echo esc_url( get_post_type_archive_link('campaign') ); ?>" class="header__link">
               <span class="header__link--en">Campaign</span>
               <span class="header__link--ja">キャンペーン</span>
             </a>
-          </li>
+          </li> -->
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="header__link">
-              <span class="header__link--en">About us</span>
+              <!-- <span class="header__link--en">About us</span> -->
               <span class="header__link--ja">私たちについて</span>
             </a>
           </li>
-          <li class="header__nav-item">
+          <!-- <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/information")) ?>" class="header__link">
               <span class="header__link--en">Information</span>
               <span class="header__link--ja">ダイビング情報</span>
             </a>
-          </li>
+          </li> -->
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url('/blog')); ?>" class="header__link">
-              <span class="header__link--en">Blog</span>
+              <!-- <span class="header__link--en">Blog</span> -->
               <span class="header__link--ja">ブログ</span>
             </a>
           </li>
           <li class="header__nav-item">
             <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>" class="header__link">
-              <span class="header__link--en">Voice</span>
+              <!-- <span class="header__link--en">Voice</span> -->
               <span class="header__link--ja">お客様の声</span>
             </a>
           </li>
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/price")) ?>" class="header__link">
-              <span class="header__link--en">Price</span>
+              <!-- <span class="header__link--en">Price</span> -->
               <span class="header__link--ja">料金一覧</span>
             </a>
           </li>
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/faq")) ?>" class="header__link">
-              <span class="header__link--en">FAQ</span>
+              <!-- <span class="header__link--en">FAQ</span> -->
               <span class="header__link--ja">よくある質問</span>
             </a>
           </li>
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/contact")) ?>" class="header__link">
-              <span class="header__link--en">Contact</span>
+              <!-- <span class="header__link--en">Contact</span> -->
               <span class="header__link--ja">お問い合わせ</span>
             </a>
           </li>

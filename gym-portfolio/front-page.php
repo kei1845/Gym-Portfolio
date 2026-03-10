@@ -4,26 +4,89 @@
     <div class="swiper mv-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide mv-swiper-slide mv-slide1">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/mv1.png')); ?>" alt="海の中のカメ">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv1.png')); ?>" alt="ジムでランニングマシンを使ってトレーニングする女性">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide2">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/mv2.png')); ?>" alt="海の中のカメとダイバー">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv2.png')); ?>" alt="ジムのランニングマシンでトレーニングする男性">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide3">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/mv3.png')); ?>" alt="海上の海と船と島">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv3.png')); ?>" alt="ジムでランニングマシンを使って運動する女性">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide4">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/mv4.png')); ?>" alt="砂浜">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv4.png')); ?>" alt="フィットネスジムでランニングマシンを使う利用者">
         </div>
       </div>
     </div>
     <div class="mv__content">
-      <h2 class="mv__title">DIVING</h2>
-      <p class="mv__sub">into the ocean</p>
+      <h2 class="mv__title">はじめてでも、<br>
+        続けられるジム。</h2>
+      <p class="mv__text">
+        初心者・女性も安心して通える、<br class="u-mobile">
+        通いやすいフィットネスジム
+      </p>
+      <a href="<?php echo esc_url(home_url("/contact")) ?>" class="mv__button">無料体験を申し込む</a>
     </div>
   </section>
+
+  <section class="about">
+    <div class="about__inner inner">
+      <div class="about__content">
+        <h2 class="about__title">地域に根ざした、<br>通い続けられるジム</h2>
+        <p class="about__text">私たちは地域に寄り添い、初心者から経験者まで<br>
+          安心して通えるトレーニング環境づくりを大切にしています。<br>
+          無理なく、長く続けられることが<br>
+          本当の成果につながると考えています。</p>
+      </div>
+      <div class="about__img colorbox">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/about1.png')); ?>" alt="ジムでトレーナーが女性にトレーニング指導をしている様子">
+      </div>
+    </div>
+  </section>
+
+  <section class="reason">
+    <div class="reason-inner inner">
+      <h2 class="reason__title">私たちのジムが選ばれる<br class="u-mobile"><span>3</span>つの理由</h2>
+      <div class="reason__boxes">
+        <div class="reason__box">
+          <div class="reason__box-img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/people.svg')); ?>" alt="人のアイコン">
+        </div>
+        <h3 class="reason__box-title">初心者・男女歓迎</h3>
+        <p class="reason__box-text">初めての方でも安心して始められる環境を整えています。<br>
+      経験豊富なトレーナーが一人ひとりに合わせてサポートします。</p>
+        </div>
+        <div class="reason__box">
+          <div class="reason__box-img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/shower.svg')); ?>" alt="シャワーのアイコン">
+        </div>
+        <h3 class="reason__box-title">清潔なシャワー完備</h3>
+        <p class="reason__box-text">運動後に快適にご利用いただける<br>
+      清潔なシャワールームを完備しています。</p>
+        </div>
+        <div class="reason__box">
+          <div class="reason__box-img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/note.svg')); ?>" alt="メモのアイコン">
+        </div>
+        <h3 class="reason__box-title">トレーナー常駐</h3>
+        <p class="reason__box-text">経験豊富なトレーナーが常駐し、<br>
+      トレーニングをしっかりサポートします。</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
   <section class="campaign">
-    <p>あああああああいいいいい</p>
     <div class="campaign__inner inner">
       <div class="heading">
         <p class="heading__en">Campaign</p>
@@ -107,52 +170,7 @@
       </div>
     </div>
   </section>
-  <section class="about">
-    <div class="about__inner inner">
-      <div class="heading">
-        <p class="heading__en">About us</p>
-        <h2 class="heading__ja">私たちについて</h2>
-      </div>
-      <div class="about__content">
-        <div class="about__img">
-          <div class="about__img-left">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/ocean1.png')); ?>" alt="屋根と青空と木">
-          </div>
-          <h3 class="about__catch u-desktop">Dive into<br>the Ocean</h3>
-          <div class="about__img-right">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/ocean2.png')); ?>" alt="海の中のミスジチョウチョウウオ">
-            <div class="about__img-right-text u-desktop">
-              <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <div class="button-wrapper-outer about-button">
-                <div class="button-wrapper">
-                  <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41"
-                      height="7" viewBox="0 0 41 7" fill="none">
-                      <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="about__text u-mobile">
-          <h3 class="about__text-title">
-            Dive into<br>the Ocean
-          </h3>
-          <p class="about__text-body">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-          <div class="button-wrapper-outer about-button">
-            <div class="button-wrapper">
-              <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button slide">View more<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
-                  viewBox="0 0 41 7" fill="none">
-                  <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <section class="information">
     <div class="information__inner inner">
       <div class="heading">

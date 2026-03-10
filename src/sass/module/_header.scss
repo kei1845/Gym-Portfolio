@@ -1,15 +1,18 @@
 @use "global" as *;
 .header {
-  background: rgba(13, 41, 54, 0.68);
+  // background: rgba(13, 41, 54, 0.68);
+  background: $white;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   height: rem(80);
-  @include mq('md') {
+  @include mq("md") {
     height: rem(90);
   }
+  
+  
 }
 .header__inner {
   height: inherit;
@@ -22,15 +25,20 @@
   }
 }
 .header__logo {
-  @include mq('md') {
-    position: relative;
-    top: rem(4);    
-  }
-  img {
-    width: rem(102);
-    @include mq("md") {
-      width: rem(133);
+  font-size: rem(30);
+  letter-spacing: 0.05em;
+  color: $black;
+  height: inherit;
+  a {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: $blue;
+      margin-right: 0.3em;
     }
+
   }
 }
 .header__nav {
@@ -52,7 +60,10 @@
   justify-content: center;
   gap: rem(4);
 
-  // 以下下線引き
+
+
+  /* 以下下線引き
+  -------------------------------------------------- */
   position: relative;
   &::after {
     position: absolute;
@@ -61,7 +72,7 @@
     content: "";
     width: 100%;
     height: rem(1);
-    background: $white;
+    background: $black;
     transform: scale(0, 1);
     transform-origin: center top;
     transition: transform 0.3s;
@@ -70,19 +81,19 @@
     transform: scale(1, 1);
   }
 }
-.header__link--en {
-  color: $white;
-  text-align: center;
-  font-family: $second-font-family;
-  font-weight: $normal;
-  font-size: rem(18);
-  line-height: 1;
-}
+// .header__link--en {
+//   color: $black;
+//   text-align: center;
+//   font-family: $second-font-family;
+//   font-weight: $normal;
+//   font-size: rem(18);
+//   line-height: 1;
+// }
 .header__link--ja {
-  color: $white;
+  color: $black;
   text-align: center;  
   font-weight: $normal;
-  font-size: rem(10);
+  font-size: rem(18);
   line-height: 1.5;
 }
 /* ==================================================
@@ -123,9 +134,9 @@
   top: 0;
   left: 0;
   width: rem(32);
-  height: rem(1);
+  height: rem(3);
   border-radius: 100px;
-  background: $white;
+  background: $black;
   transition: transform 0.3s linear,top 0.3s linear;
   &:nth-child(1) {
   }

@@ -1,0 +1,128 @@
+@use "global" as *;
+
+.front-page {
+    .reason {
+        background: $blue2;
+        margin-top: rem(70);
+        padding-top: rem(30);
+        padding-bottom: rem(60);
+    @include mq("md") {
+      margin-top: rem(120);
+      padding-top: rem(30);
+      padding-bottom: rem(60);
+    }
+}
+
+.reason-inner {
+
+}
+
+.reason__title {
+    span {
+        color: $blue;
+        font-size: rem(40);
+        @include mq("md") {
+            font-size: rem(65);
+        }
+        
+        
+    }
+    text-align: center;
+    color: $black;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    font-size: rem(30);
+    line-height: 1.2;
+    // margin-top: rem(30);
+    @include mq("md") {
+      font-size: rem(40);
+      line-height: 1.25;
+    //   margin-top: rem(30);
+    }
+
+}
+
+.reason__boxes {
+    // display: flex;
+    // flex-direction: column;
+    // @include mq("md") {
+    //     flex-direction: row;
+    //     justify-content: space-between;
+
+    // }
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(40);
+    margin-top: rem(28);
+    @include mq("md") {
+      grid-template-columns: repeat(3 , 1fr);
+      gap: rem(80) rem(40);
+      margin-top: rem(80);
+    }
+    
+    
+
+}
+
+.reason__box {
+    // max-width: rem(300);
+    padding: rem(16) rem(16) rem(24) rem(16);
+    background: $white;
+    box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.reason__box-img {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    max-width: rem(150);
+    margin-top: rem(20);
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+        margin-top: rem(30);
+    }
+    
+    
+    img {
+        max-height: rem(100);
+        width: auto;
+
+    }
+
+}
+
+.reason__box-title {
+    text-align: center;
+    color: $black;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    line-height: 1.2;
+    font-size: rem(30);
+    margin-top: rem(30);
+    @include mq("md") {
+      font-size: rem(28);
+      line-height: 1.25;
+      margin-top: rem(40);
+    }
+
+}
+
+.reason__box-text {
+    text-align: center;
+    color: $black;
+    // font-family: $second-font-family;
+    font-size: rem(15);
+    font-weight: $normal;
+    margin-top: rem(10);
+    @include mq("md") {
+        text-align: left;
+        font-size: rem(18);
+      margin-top: rem(20);
+    }
+
+}
+
+
+}
