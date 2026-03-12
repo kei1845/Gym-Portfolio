@@ -72,12 +72,14 @@
             トレーニングをしっかりサポートします。</p>
         </div>
       </div>
+
+      
     </div>
   </section>
 
   <section class="facility">
     <div class="facility-inner inner">
-      <h2 class="facility__title">充実した設備と清潔なトレーニング環境</h2>
+      <h2 class="facility__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
       <div class="facility__boxes">
         <div class="facility__box">
           <div class="facility__img">
@@ -94,7 +96,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.png')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
           </div>
           <div class="facility__content">
-            <h3 class="facility__box-title">広々とした、集中できる<br>フリーウェイトエリア</h3>
+            <h3 class="facility__box-title">広々とした集中できる<br>フリーウェイトエリア</h3>
             <p class="facility__box-text">ダンベル・バーベルを豊富に揃え、
               周囲を気にせずトレーニングに集中できる空間設計です。</p>
           </div>
@@ -119,6 +121,9 @@
               毎日清掃を徹底し、安心してご利用いただけます。</p>
           </div>
         </div>
+      </div>
+      <div class="button-wrap facility__button">
+        <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button">詳しく見る</a>
       </div>
     </div>
   </section>
