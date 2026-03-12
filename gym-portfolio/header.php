@@ -56,12 +56,7 @@
               <span class="header__link--ja">ブログ</span>
             </a>
           </li>
-          <li class="header__nav-item">
-            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>" class="header__link">
-              <!-- <span class="header__link--en">Voice</span> -->
-              <span class="header__link--ja">お客様の声</span>
-            </a>
-          </li>
+    
           <li class="header__nav-item">
             <a href="<?php echo esc_url(home_url("/price")) ?>" class="header__link">
               <!-- <span class="header__link--en">Price</span> -->

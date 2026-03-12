@@ -50,33 +50,78 @@
         <div class="reason__box">
           <div class="reason__box-img">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/people.svg')); ?>" alt="人のアイコン">
-        </div>
-        <h3 class="reason__box-title">初心者・男女歓迎</h3>
-        <p class="reason__box-text">初めての方でも安心して始められる環境を整えています。<br>
-      経験豊富なトレーナーが一人ひとりに合わせてサポートします。</p>
+          </div>
+          <h3 class="reason__box-title">初心者・男女歓迎</h3>
+          <p class="reason__box-text">初めての方でも安心して始められる環境を整えています。<br>
+            経験豊富なトレーナーが一人ひとりに合わせてサポートします。</p>
         </div>
         <div class="reason__box">
           <div class="reason__box-img">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/shower.svg')); ?>" alt="シャワーのアイコン">
-        </div>
-        <h3 class="reason__box-title">清潔なシャワー完備</h3>
-        <p class="reason__box-text">運動後に快適にご利用いただける<br>
-      清潔なシャワールームを完備しています。</p>
+          </div>
+          <h3 class="reason__box-title">清潔なシャワー完備</h3>
+          <p class="reason__box-text">運動後に快適にご利用いただける<br>
+            清潔なシャワールームを完備しています。</p>
         </div>
         <div class="reason__box">
           <div class="reason__box-img">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/note.svg')); ?>" alt="メモのアイコン">
-        </div>
-        <h3 class="reason__box-title">トレーナー常駐</h3>
-        <p class="reason__box-text">経験豊富なトレーナーが常駐し、<br>
-      トレーニングをしっかりサポートします。</p>
+          </div>
+          <h3 class="reason__box-title">トレーナー常駐</h3>
+          <p class="reason__box-text">経験豊富なトレーナーが常駐し、<br>
+            トレーニングをしっかりサポートします。</p>
         </div>
       </div>
     </div>
-
   </section>
 
-
+  <section class="facility">
+    <div class="facility-inner inner">
+      <h2 class="facility__title">充実した設備と清潔なトレーニング環境</h2>
+      <div class="facility__boxes">
+        <div class="facility__box">
+          <div class="facility__img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility1.png')); ?>" alt="最新トレーニングマシンが並ぶジムエリア">
+          </div>
+          <div class="facility__content">
+            <h3 class="facility__box-title">最新機器を揃えた、<br>本格トレーニング環境</h3>
+            <p class="facility__box-text">初心者から上級者まで効率よく運動できる最新マシンを導入し、
+              正しいフォームで効率よく鍛えられる環境を整えています。</p>
+          </div>
+        </div>
+        <div class="facility__box">
+          <div class="facility__img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.png')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
+          </div>
+          <div class="facility__content">
+            <h3 class="facility__box-title">広々とした、集中できる<br>フリーウェイトエリア</h3>
+            <p class="facility__box-text">ダンベル・バーベルを豊富に揃え、
+              周囲を気にせずトレーニングに集中できる空間設計です。</p>
+          </div>
+        </div>
+        <div class="facility__box">
+          <div class="facility__img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility3.png')); ?>" alt="ランニングマシンが並ぶ有酸素トレーニングエリア">
+          </div>
+          <div class="facility__content">
+            <h3 class="facility__box-title">充実した有酸素<br>トレーニングエリア</h3>
+            <p class="facility__box-text">ランニングマシンやエアロバイクなど
+              多彩な有酸素マシンを完備。</p>
+          </div>
+        </div>
+        <div class="facility__box">
+          <div class="facility__img">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility4.png')); ?>" alt="清潔なシャワールームと洗面スペース">
+          </div>
+          <div class="facility__content">
+            <h3 class="facility__box-title">清潔で快適な<br>シャワールーム</h3>
+            <p class="facility__box-text">トレーニング後もすっきりリフレッシュ。
+              毎日清掃を徹底し、安心してご利用いただけます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
