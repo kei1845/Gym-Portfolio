@@ -20,9 +20,27 @@
     }
   }
 
+  .article__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-top: rem(12);
+}
+
+.article__category {
+  display: inline-block;
+  padding: rem(4) rem(12);
+  border: 1px solid $blue;
+  color:  $blue;
+  background: $white;
+  font-size: rem(14);
+  text-decoration: none;
+  border-radius: 100px;
+}
+
   .article {
     time.article__date {
-      font-family: $second-font-family;
+      // font-family: $second-font-family;
       font-weight: $normal;
       font-size: rem(14);
       line-height: 1.286;

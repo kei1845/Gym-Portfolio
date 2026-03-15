@@ -4,12 +4,12 @@
     .reason {
         background: $blue2;
         margin-top: rem(70);
-        padding-top: rem(30);
-        padding-bottom: rem(60);
+        padding-top: rem(90);
+        padding-bottom: rem(120);
     @include mq("md") {
       margin-top: rem(120);
-      padding-top: rem(30);
-      padding-bottom: rem(60);
+      padding-top: rem(90);
+      padding-bottom: rem(150);
     }
 }
 

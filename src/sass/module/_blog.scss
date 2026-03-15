@@ -2,58 +2,63 @@
 
 .front-page {
   .blog {
-    margin-top: rem(80);
+    background: $blue2;
+        margin-top: rem(70);
+        padding-top: rem(90);
+        padding-bottom: rem(120);
     @include mq("md") {
-      position: relative;
-      margin-top: 0;
-      padding-top: rem(100);
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-height: rem(500);
-        height: 100%;
-        background: url(../images/water.png) no-repeat;
-        background-size: 100% auto;
-        z-index: -1;
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        background: url(../images/fish1.png) no-repeat;
-        background-size: contain;
-        z-index: 1;
-        width: rem(437);
-        height: rem(201);
-        top: rem(25);
-        left: rem(100);
-      }
+      margin-top: rem(120);
+      padding-top: rem(90);
+      padding-bottom: rem(150);
     }
+    
   }
 
   .blog__inner {
-    @include mq("md") {
-    }
   }
 
-  // デザインカンプ完全一致。仮。
-  // .blog__inner.inner {
-  //   @media screen and (max-width: rem(767)) {
-  //     padding-right: rem(20);
-  //     padding-left: rem(20);
-  //   }
-  // }
+  /* blogのカテゴリー
+  -------------------------------------------------- */
+  .blog__box-meta {
+  // display: flex;
+  // flex-direction: column;
+  // gap: rem(12);
+  margin-top: rem(16);
+}
 
-  .heading {
-    .blog-title {
-      @include mq("md") {
-        color: $white;
-        &::first-letter {
-          color: $white;
-        }
-      }
+.blog__box-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-top: rem(12);
+}
+
+.blog__box-category {
+  display: inline-block;
+  padding: rem(4) rem(12);
+  border: 1px solid $blue;
+  color:  $blue;
+  background: $white;
+  font-size: rem(14);
+  text-decoration: none;
+  border-radius: 100px;
+}
+
+.blog__box-time {
+  flex-shrink: 0;
+}
+
+
+  .blog__title {
+    text-align: center;
+    color: $black;
+    font-family: $third-font-family;
+    font-weight: $bold;
+    font-size: rem(30);
+    line-height: 1.2;
+    @include mq("md") {
+      font-size: rem(40);
+      line-height: 1.25;
     }
   }
   .blog__boxes {
@@ -68,11 +73,14 @@
     }
   }
   .blog__box {
-    padding: rem(16) rem(16) rem(24) rem(16);
+    padding: rem(20) rem(20) rem(20) rem(20);
     background: $white;
     box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
   }
   .blog__box-image {
+    border-radius: 10px;
+    overflow: hidden;
     img {
       height: auto;
       aspect-ratio: 301/201;
@@ -81,16 +89,15 @@
   }
   .blog__box-time {
     display: block;
-    margin-top: rem(23);
-    color: $green;
-    font-family: $second-font-family;
+    margin-top: rem(8);
+    color: $black;
     font-weight: $normal;
     font-size: rem(12);
     line-height: 1.5;
   }
   .blog__box-title {
     margin-top: rem(-1);
-    color: $green;
+    color: $black;
     font-weight: $medium;
     font-size: rem(16);
     line-height: 1.5;
@@ -99,7 +106,7 @@
     margin-top: rem(4);
     width: 100%;
     height: rem(1);
-    background: $green-accent;
+    background: $blue;
   }
   .blog__box-text {
     margin-top: rem(16);
@@ -115,5 +122,12 @@
       margin-top: rem(80);
       margin-right: rem(3);
     }
+  }
+
+  .blog__button {
+    margin-top: rem(80);
+        @include mq("md") {
+            margin-top: rem(120);
+        }
   }
 }

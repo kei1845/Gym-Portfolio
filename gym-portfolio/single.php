@@ -22,6 +22,17 @@
                 <article class="article">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+                            <?php $categories = get_the_category(); ?>
+                            <?php if (!empty($categories)) : ?>
+                                <div class="article__categories">
+                                    <?php foreach ($categories as $category) : ?>
+                                        <a class="article__category" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                                            <?php echo esc_html($category->name); ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
+
                             <time class="article__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
                                 <?php echo esc_html(get_the_date('Y.m.d')); ?>
                             </time>

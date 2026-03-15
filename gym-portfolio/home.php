@@ -16,6 +16,8 @@
     </div>
   <?php endif; ?>
 
+
+
   <div class="blog">
     <div class="blog-inner inner">
       <div class="blog-list">
@@ -31,6 +33,21 @@
                     <img class="news__img" src="<?php echo esc_url(get_theme_file_uri("/assets/images/no-image.png")); ?>" alt="NoImage画像" />
                   <?php endif; ?>
                 </div>
+                <?php
+                $categories = get_the_category();
+                if ($categories) :
+                ?>
+                  <div class="article__categories">
+                    <?php foreach ($categories as $category) : ?>
+                      <span class="article__category">
+                        <?php echo esc_html($category->name); ?>
+                      </span>
+                    <?php endforeach; ?>
+                  </div>
+                <?php endif; ?>
+
+
+
                 <time class="blog__box-time" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
                 <h3 class="blog__box-title"><?php echo wp_trim_words(get_the_title(), 17, ''); ?></h3>
                 <div class="blog__box-bar"></div>

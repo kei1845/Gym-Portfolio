@@ -4,10 +4,10 @@
 .front-page {
 
     .facility {
-        margin-top: rem(70);
+        margin-top: rem(100);
 
         @include mq("md") {
-            margin-top: rem(60);
+            margin-top: rem(130);
         }
 
     }
@@ -68,8 +68,9 @@
             max-width: 55%;
         }
 
+        border-radius: 30px;
+        overflow: hidden;
         img {
-            border-radius: 30px;
             aspect-ratio: 708 / 364;
             object-fit: cover;
         }
@@ -125,7 +126,12 @@
     }
 
     .facility__button {
-        margin-top: rem(40);
+        margin-top: rem(80);
+        @include mq("md") {
+            margin-top: rem(120);
+        }
+        
+        
     }
     
 

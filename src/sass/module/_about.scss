@@ -63,8 +63,9 @@
     @include mq("md") {
       width: 50%;
     }
+    border-radius: 30px;
+    overflow: hidden;
     img {
-      border-radius: 30px;
       aspect-ratio: 397 / 303;
       object-fit: cover;
 
