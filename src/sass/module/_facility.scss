@@ -4,7 +4,7 @@
 .front-page {
 
     .facility {
-        margin-top: rem(100);
+        margin-top: rem(90);
 
         @include mq("md") {
             margin-top: rem(130);
@@ -18,7 +18,6 @@
         // color: $black;
         color: $blue;
         text-align: center;
-        font-family: $third-font-family;
         font-weight: $bold;
         font-size: rem(30);
         line-height: 1.2;
@@ -32,8 +31,13 @@
     .facility__boxes {
         display: flex;
         flex-direction: column;
-        gap: rem(40);
+        gap: rem(60);
         margin-top: rem(60);
+        @include mq("md") {
+            margin-top: rem(100);
+        }
+        
+        
 
 
 
@@ -97,7 +101,6 @@
     .facility__box-title {
         text-align: center;
         color: $blue;
-        font-family: $third-font-family;
         font-weight: $bold;
         line-height: 1.2;
         font-size: rem(30);

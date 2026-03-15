@@ -52,7 +52,6 @@
   .blog__title {
     text-align: center;
     color: $black;
-    font-family: $third-font-family;
     font-weight: $bold;
     font-size: rem(30);
     line-height: 1.2;
@@ -64,13 +63,15 @@
   .blog__boxes {
     display: grid;
     grid-template-columns: 1fr;
-    gap: rem(40);
-    margin-top: rem(28);
+    gap: rem(60);
+    margin-top: rem(60);
     @include mq("md") {
       grid-template-columns: repeat(3 , 1fr);
       gap: rem(80) rem(40);
-      margin-top: rem(80);
+      margin-top: rem(100);
     }
+        @include mq("md") {
+        }
   }
   .blog__box {
     padding: rem(20) rem(20) rem(20) rem(20);

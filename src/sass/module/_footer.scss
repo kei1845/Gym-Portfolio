@@ -1,22 +1,74 @@
 @use "global" as *;
 .footer {
-  background: $green-accent;
-  margin-top: rem(103);
+  background: $blue3;
+  margin-top: rem(50);
   
   @include mq("md") {
-    margin-top: rem(160);
+    margin-top: rem(100);
   }
 }
 .footer__inner {
-  padding-top: rem(48);
+  // padding-top: rem(48);
+  // @include mq("md") {
+  //   padding-top: rem(80);
+  //   padding-right: rem(24);
+  //   padding-left: rem(24);
+  //   margin: 0 auto;
+  //   max-width: rem(1200);
+  // }
+}
+
+.footer__copyright {
+  display: block;
+  color: $white;
+  font-weight: $normal;
+  font-size: rem(12);
+  line-height: 1.5;
+  text-align: center;  
+  margin-top: rem(40);
+  padding-top: rem(3);
+  padding-bottom: rem(3);
   @include mq("md") {
-    padding-top: rem(80);
-    padding-right: rem(24);
-    padding-left: rem(24);
-    margin: 0 auto;
-    max-width: rem(1200);
+    font-size: rem(14);
+    line-height: 1.286;
+    // margin-top: rem(80);
+    // padding-bottom: rem(80);
   }
 }
+/* ==================================================
+# to-top
+================================================== */
+.page-top {
+  position: fixed;
+  width: rem(48);
+  height: rem(48);    
+  right: rem(15);
+  bottom: rem(15);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s , visibility 0.3s;
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+  @include mq('md') {
+    width: rem(80);
+    height: rem(80);
+    right: rem(20);
+    bottom: rem(20);
+  }
+  img {    
+  }
+}
+
+
+/* ==================================================
+# 以下削除
+================================================== */
+
+
+
 .footer__header {
   display: flex;
   flex-direction: column;
@@ -122,46 +174,6 @@
     left: rem(-21);
   }
 }
-.footer__copyright {
-  display: block;
-  color: $white;
-  font-family: $second-font-family;
-  font-weight: $normal;
-  font-size: rem(12);
-  line-height: 1.5;
-  text-align: center;  
-  margin-top: rem(40);
-  padding-bottom: rem(57);
-  @include mq("md") {
-    font-size: rem(14);
-    line-height: 1.286;
-    margin-top: rem(80);
-    padding-bottom: rem(80);
-  }
-}
-/* ==================================================
-# to-top
-================================================== */
-.page-top {
-  position: fixed;
-  width: rem(48);
-  height: rem(48);    
-  right: rem(15);
-  bottom: rem(15);
-  z-index: 90;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s , visibility 0.3s;
-  &.is-show {
-    opacity: 1;
-    visibility: visible;
-  }
-  @include mq('md') {
-    width: rem(80);
-    height: rem(80);
-    right: rem(20);
-    bottom: rem(20);
-  }
-  img {    
-  }
-}
+
+
+
