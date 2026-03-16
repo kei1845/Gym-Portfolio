@@ -39,9 +39,9 @@
             </a>
           </li> -->
           <li class="header__nav-item">
-            <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="header__link">
+            <a href="<?php echo esc_url(home_url("/facility")) ?>" class="header__link">
               <!-- <span class="header__link--en">About us</span> -->
-              <span class="header__link--ja">私たちについて</span>
+              <span class="header__link--ja">施設紹介</span>
             </a>
           </li>
           <!-- <li class="header__nav-item">

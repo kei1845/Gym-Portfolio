@@ -123,7 +123,7 @@
         </div>
       </div>
       <div class="button-wrap facility__button">
-        <a href="<?php echo esc_url(home_url("/about-us")) ?>" class="button">詳しく見る</a>
+        <a href="<?php echo esc_url(home_url("/facility")) ?>" class="button">詳しく見る</a>
       </div>
     </div>
   </section>
@@ -201,7 +201,6 @@
       <div class="button-wrap contact__button">
         <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button">無料体験を予約する</a>
       </div>
-
     </div>
   </section>
 </main>
