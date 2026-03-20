@@ -2,7 +2,7 @@
 <main class="sub-contact1">
   <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/sub-pages/contact/contact-mv.png')); ?>" alt="海の中のミスジチョウチョウウオ">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/contact-mv.png')); ?>" alt="最新のトレーニングマシンが揃った清潔なジム内">
     </div>
     <div class="sub-mv__content">
       <h2 class="sub-mv__title">Contact</h2>

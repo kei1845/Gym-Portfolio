@@ -2,7 +2,7 @@
 <main class="sub-faq">
   <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/sub-pages/faq/faq-mv.png')); ?>" alt="海の中のミスジチョウチョウウオ">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/faq-mv.png')); ?>" alt="ベンチプレスやスクワットができるトレーニング設備">
     </div>
     <div class="sub-mv__content">
       <h2 class="sub-mv__title">FAQ</h2>
@@ -61,39 +61,13 @@
 
 
   <section class="contact">
-    <div class="contact__inner inner">
-      <div class="contact__box">
-        <div class="contact__left">
-          <div class="contact__header">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/contact-icon.png')); ?>" alt="CodeUps">
-          </div>
-          <div class="contact__bar"></div>
-          <div class="contact__footer">
-            <address class="contact__footer-left">
-              <p class="contact__footer-text">沖縄県那覇市1-1</p>
-              <p class="contact__footer-text">TEL:0120-000-0000</p>
-              <p class="contact__footer-text">営業時間:8:30-19:00</p>
-              <p class="contact__footer-text">定休日:毎週火曜日</p>
-            </address>
-            <div class="contact__footer-right">
-              <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/contact-img.png')); ?>" alt="CodeUpsの店舗地図">
-            </div>
-          </div>
-        </div>
-        <div class="contact__vertical-bar"></div>
-        <div class="contact__right">
-          <p class="contact__title-main">Contact</p>
-          <h2 class="contact__title-sub">お問い合わせ</h2>
-          <p class="contact__reserve">ご予約・お問い合わせはコチラ</p>
-          <div class="button-wrapper-outer contact__button">
-            <div class="button-wrapper">
-              <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button slide">Contact us<svg xmlns="http://www.w3.org/2000/svg" width="41" height="7"
-                  viewBox="0 0 41 7" fill="none">
-                  <path d="M0.5 6.5H40.5L33.5 0.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </div>
-          </div>
-        </div>
+    <div class="contact-inner inner">
+      <h2 class="contact__title">はじめてでも大丈夫<br>まずは<span>無料体験</span>から<br class="u-mobile">お試しください。</h2>
+      <p class="contact__text">
+        初心者・女性も安心してご利用いただけます。
+      </p>
+      <div class="button-wrap contact__button">
+        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button">無料体験を予約する</a>
       </div>
     </div>
   </section>
