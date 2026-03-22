@@ -5,7 +5,7 @@
       <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/faq-mv.png')); ?>" alt="ベンチプレスやスクワットができるトレーニング設備">
     </div>
     <div class="sub-mv__content">
-      <h2 class="sub-mv__title">FAQ</h2>
+      <h2 class="sub-mv__title">よくある質問</h2>
     </div>
   </section>
   <?php if (function_exists('bcn_display')) : ?>
@@ -18,6 +18,10 @@
 
   <div class="faq">
   <div class="faq-inner inner">
+    <div class="sub-gym">
+        <h2 class="sub-gym__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
+        <p class="sub-gym__text">安心して続けられる環境をご紹介します。</p>
+      </div>
     <div class="faq__list">
 
       <?php

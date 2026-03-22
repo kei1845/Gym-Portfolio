@@ -159,6 +159,42 @@
   }
 }
 
+/* ==================================================
+# 冒頭部分の文面
+================================================== */
+.sub-gym {
+  text-align: center;
+  margin-top: rem(30);
+    @include mq("md") {
+      margin-top: rem(50);
+    }
+}
+
+.sub-gym__title {
+    // color: $black;
+    color: $blue;
+    font-weight: $bold;
+    font-size: rem(30);
+    line-height: 1.2;
+
+    @include mq("md") {
+      font-size: rem(40);
+      line-height: 1.25;
+    }
+  }
+  
+  .sub-gym__text {
+    color: $black;
+    text-align: center;
+    font-weight: $normal;
+    font-size: rem(18);
+    margin-top: rem(5);  
+    @include mq("md") {
+      font-size: rem(22);
+      margin-top: rem(10);
+    }
+  }
+
 
 /* ==================================================
 # tabs

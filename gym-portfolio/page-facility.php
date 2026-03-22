@@ -19,7 +19,10 @@
 
   <section class="facility">
     <div class="facility-inner inner">
-      <h2 class="facility__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
+      <div class="sub-gym">
+        <h2 class="sub-gym__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
+        <p class="sub-gym__text">安心して続けられる環境をご紹介します。</p>
+      </div>
       <div class="facility__boxes">
         <div class="facility__box">
           <div class="facility__img">

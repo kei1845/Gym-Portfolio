@@ -1,120 +1,235 @@
 @use "global" as *;
+
 .sub-price {
-  .price {
-      margin-top: rem(52);
-      margin-bottom: rem(106);
-      @include mq('md') {
-          margin-top: rem(150);
-          margin-bottom: rem(140);
+    .price {
+        //   margin-top: rem(52);
+        //   margin-bottom: rem(106);
+        //   @include mq('md') {
+        //       margin-top: rem(150);
+        //       margin-bottom: rem(140);
+        // }
     }
+
+    .price__inner {
+
+    }
+
+    .price__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        @include mq("md") {
+            grid-template-columns: repeat(3 , 1fr);
+            gap: 24px;
+        }
+        
+        
+
 }
 
-.price__inner {
+.price__cards {
+    margin-top: 60px;
+    @include mq("md") {
+        margin-top: 60px;
+    }
+    
+    
 }
 
-// .price__boxes {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: rem(40);
-//     @include mq('md') {
-//         gap: rem(80);
-//     }
+.price-card {
+position: relative;
+  background: $white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+}
 
-//     // justify-content: center;
-// }
 
-// .price__box {
-//     max-width: rem(702);
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     @include mq('md') {
-//         flex-direction: row;
-//         justify-content: center;
-//         align-items: stretch; // ★これが核心
-//     }
-//   }
+.price-card__head {
+    padding: rem(32) 0 rem(24);
+    text-align: center;
+    background: $blue2;
+    
+}
 
-//   .price__header {
-//     width: 100%;
-//     height: rem(40);
-//     @include mq('md') {
-//         width: rem(200);
-//         min-height: rem(178);
-//         height: auto;
-//     }
-//     display: flex;
-//     flex-direction: row-reverse;
-//     gap: rem(8);
-//     @include mq('md') {
-//         flex-direction: column;
-//         gap: rem(8);
-//     }
-//     justify-content: center;
-//     align-items: center;
-//     background: $green-accent;
-//   }
+.price-card__title {
+    font-size: rem(32);
+    font-weight: $bold;
+    line-height: 1.4;
+    color: $blue3;
+    
+}
 
-//   .price__header-title {
-//     color: $white;
-//     font-weight: $bold;
-//     font-size: rem(16);
-//     line-height: 1.5;
-//   }
+.price-card__subtitle {
+    margin-top: rem(4);
+    font-size: rem(18);
+    color: $blue3;
+    
+}
+.price-card__body {
+    
+} 
 
-//   .price__header-img {
-//     background-image: url(../images/sub-pages/price/white-whale.png);
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     //   width: rem(50);
-//     //   height: rem(50);
-//     width: rem(24);
-//     height: rem(24);
-//     @include mq('md') {
-//         width: rem(64);
-//         height: rem(64);
-//         margin-left: rem(5);
-//     }
-//   }
+.price-card__price-area {
+    
+    padding: rem(20) 0;
+    text-align: center;
+    border-top: 1px solid $white2;
+  border-bottom: 1px solid $white2;
+}
 
-//   .price__table {
-//     width: 100%; /* 表全体を横幅いっぱいに */
-//     @include mq('md') {
-//         max-width: rem(502);
-//     }
-//     border-collapse: collapse; /* セルの境界線をまとめる */
-//   }
+.price-card__price {
+    color: $blue3;
+  font-weight: $bold;
+  line-height: 1;
 
-//   td {
-//     color: $green;
-//     font-size: rem(16);
-//     // font-size: rem(16);
-//     font-weight: $normal;
-//     line-height: 1.5;
-//     border: 1px solid $green-accent; /* 見やすくするための線 */
-//     word-break: break-word; /* 長い単語や文字列でも折り返す */
-//     vertical-align: middle;
-//     padding: rem(6) rem(16);
-//     min-height: rem(64);
-//     height: rem(60);
-//     @include mq('md') {
-//         padding: rem(17) rem(16);
-//     }
-//     &:nth-child(1) {
-//         width: 70%;
-//         text-align: center;
-//         @include mq('md') {
-//           width: 67.7%;
-//           text-align: left;
-//       }
-//     }
-//     &:nth-child(2) {
-//         text-align: right;
-//         width: 30%;
-//         @include mq('md') {
-//             width: 32.3%;
-//         }
-//     }
-//   }
+}
+
+.price-card__price-number {
+    font-size: rem(64);
+    
+}
+
+.price-card__price-yen {
+    font-size: rem(40);
+
+}
+
+.price-card__price-tax {
+    font-size: rem(16);
+  font-weight: $medium;
+
+}
+
+.price-card__note {
+    margin-top: rem(16);
+  font-size: rem(16);
+  color: $black;
+
+}
+
+.price-card__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  gap: 8px;
+  text-align: center;
+    @include mq("md") {
+        display: block;
+        text-align: left;
+        padding-top: rem(15);
+        padding-left: rem(24);
+        height: rem(120);
+    }
+    
+    
+}
+
+.price-card__item {
+    position: relative;
+    @include mq("md") {
+      padding-left: rem(24);
+  }
+  
+  
+  font-size: rem(18);
+  line-height: 1.8;
+  color: $black;
+  &:nth-child(n + 2) {
+    margin-top: rem(12);
+  }
+  &::before {
+    content: "✓";
+    position: absolute;
+    
+    left: rem(-24);
+    top: 0;
+    @include mq("md") {
+        left: 0;
+        top: 0;
+    }
+    
+    
+  color: $blue;
+  font-weight: $bold;
+  }
+
+}
+
+.price-card__target {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(20) rem(24) rem(32);
+    @include mq("md") {
+        display: block;
+        padding: rem(20) rem(24) rem(32);
+    }
+    
+    
+
+}
+
+.price-card__target-label {
+    position: relative;
+  padding-left: rem(25);
+  font-size: rem(18);
+  color: $blue3;
+  &::before {
+    content: "";
+  position: absolute;
+  left: 0;
+  top: rem(7);
+  width: rem(15);
+  height: rem(15);
+  border-radius: 50%;
+  background: $blue3;
+  }
+
+}
+
+.price-card__target-text {
+    margin-top: rem(8);
+  font-size: rem(20);
+  font-weight: $medium;
+  line-height: 1.7;
+  color: $black;
+
+}
+
+.price-card--recommended {
+    .price-card__head {
+        background: #fcead6;
+        .price-card__title,.price-card__subtitle {
+            color: #673b11;
+        }
+    }
+    .price-card__body {
+        background: #fefbf6;
+    }
+    
+}
+
+.price-card__badge {
+    position: absolute;
+    top: rem(7);
+    right: rem(-67);
+    width: rem(200);
+    height: rem(50);
+    background: #f49a22;
+    // background: linear-gradient(to right, #f8931c 0%, #f07601 100%);
+  transform: rotate(40deg);
+  color: #fff;
+  font-size: rem(18);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+//   padding: 14px 12px 0 0;
+//   clip-path: polygon(100% 0, 0 0, 100% 100%);
+
+}
+
+
+
 }

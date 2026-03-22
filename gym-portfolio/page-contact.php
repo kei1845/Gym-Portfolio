@@ -5,7 +5,7 @@
       <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/contact-mv.png')); ?>" alt="最新のトレーニングマシンが揃った清潔なジム内">
     </div>
     <div class="sub-mv__content">
-      <h2 class="sub-mv__title">Contact</h2>
+      <h2 class="sub-mv__title">お問い合わせ</h2>
     </div>
   </section>
   <?php if (function_exists('bcn_display')) : ?>
@@ -18,6 +18,11 @@
 
   <div class="sub-contact2">
     <div class="sub-contact-inner inner">
+      <div class="sub-gym">
+        <h2 class="sub-gym__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
+        <p class="sub-gym__text">安心して続けられる環境をご紹介します。</p>
+      </div>
+
       <?php echo do_shortcode('[contact-form-7 id="123d5e5" title="コンタクトフォーム 1"]'); ?>
 
 
