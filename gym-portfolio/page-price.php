@@ -16,7 +16,7 @@
       </div>
     <?php endif; ?>
 
-    <div class="price">
+    <section class="price">
       <div class="price__inner inner">
         <div class="sub-gym">
           <h2 class="sub-gym__title">料金案内</h2>
@@ -37,12 +37,12 @@
                 </p>
                 <p class="price-card__note">月額利用料</p>
               </div>
-              <ul class="price-card__list">
-                <li class="price-card__item">利用：月4回まで</li>
-                <li class="price-card__item">利用時間：全日</li>
-              </ul>
+              <div class="price-card__list">
+                <p class="price-card__item icon-check">利用：月4回まで</p>
+                <p class="price-card__item icon-check">利用時間：全日</p>
+              </div>
               <div class="price-card__target">
-                <p class="price-card__target-label">こんな人：</p>
+                <p class="price-card__target-label icon-circle">こんな人：</p>
                 <p class="price-card__target-text">まずは習慣化したい</p>
               </div>
             </div>
@@ -62,12 +62,12 @@
                 </p>
                 <p class="price-card__note">月額利用料</p>
               </div>
-              <ul class="price-card__list">
-                <li class="price-card__item">利用：通い放題</li>
-                <li class="price-card__item">利用時間：全日</li>
-              </ul>
+              <div class="price-card__list">
+                <p class="price-card__item icon-check">利用：通い放題</p>
+                <p class="price-card__item icon-check">利用時間：全日</p>
+              </div>
               <div class="price-card__target">
-                <p class="price-card__target-label">こんな人：</p>
+                <p class="price-card__target-label icon-circle">こんな人：</p>
                 <p class="price-card__target-text">しっかり鍛えたい</p>
               </div>
             </div>
@@ -86,22 +86,80 @@
                 </p>
                 <p class="price-card__note">月額利用料</p>
               </div>
-              <ul class="price-card__list">
-                <li class="price-card__item">利用：通い放題</li>
-                <li class="price-card__item">特典：月2回フォームチェック<br>（15分）</li>
-              </ul>
+              <div class="price-card__list">
+                <p class="price-card__item icon-check">利用：通い放題</p>
+                <p class="price-card__item icon-check">特典：月2回フォームチェック<br>（15分）</p>
+              </div>
               <div class="price-card__target">
-                <p class="price-card__target-label">こんな人：</p>
+                <p class="price-card__target-label icon-circle">こんな人：</p>
                 <p class="price-card__target-text">無駄なく結果を出したい</p>
               </div>
             </div>
           </div>
         </div>
 
+        <div class="sub-gym">
+          <h2 class="sub-gym__title">その他の費用</h2>
+          <p class="sub-gym__text">入会時に必要な費用や<br class="u-mobile">追加オプションもご確認ください。</p>
+        </div>
+        <div class="price-extra">
+          <div class="price-extra__card">
+            <div class="price-extra__head">
+              <h3 class="price-extra__title">入会時にかかる費用</h3>
+            </div>
+            <div class="price-extra__list">
+              <div class="price-extra__item">
+                <span class="price-extra__label">入会金</span>
+                <span class="price-extra__value">10,000円</span>
+              </div>
+              <div class="price-extra__item-text">
+                ※入会時に一度だけ発生します
+              </div>
+            </div>
+          </div>
+          <div class="price-extra__card">
+            <div class="price-extra__head">
+              <h3 class="price-extra__title">オプション</h3>
+            </div>
+            <div class="price-extra__list">
+              <div class="price-extra__item">
+                <span class="price-extra__label">パーソナル(60分)</span>
+                <span class="price-extra__value">10,000円</span>
+              </div>
+              <div class="price-extra__item">
+                <span class="price-extra__label">ロッカー契約</span>
+                <span class="price-extra__value">1,100円</span>
+              </div>
+              <div class="price-extra__item">
+                <span class="price-extra__label">レンタルセット</span>
+                <span class="price-extra__value">550円/回</span>
+              </div>
+              <div class="price-extra__item">
+                <span class="price-extra__label">プロテイン</span>
+                <span class="price-extra__value">300円～</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
+        <div class="caution">
+          <h3 class="caution__title">よくある注意</h3>
+          <div class="caution__body">
+            <ul class="caution__list">
+              <li class="caution__item caution__item--dot">
+                お支払い：クレジット／口座振替
+              </li>
+              <li class="caution__item caution__item--dot">
+                休会：当月末までの申請で翌月から適用
+              </li>
+              <li class="caution__item caution__item--dot ">
+                退会：当月10日までの申請で当月末退会
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
 
 

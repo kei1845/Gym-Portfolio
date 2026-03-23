@@ -2,22 +2,30 @@
 
 .sub-faq {
   .faq {
-    margin-top: rem(51);
-    margin-bottom: rem(106);
+    // margin-top: rem(51);
+    // margin-bottom: rem(106);
 
-    @include mq('md') {
-      margin-top: rem(150);
-      margin-bottom: rem(30);
-    }
+    // @include mq('md') {
+    //   margin-top: rem(150);
+    //   margin-bottom: rem(30);
+    // }
   }
 
   .faq-inner {}
 
   .inner {}
 
-  .faq__list {}
+  .faq__list {
+    margin-top: rem(30);
+    @include mq("md") {
+      margin-top: rem(60);
+    }
+    
+    
+  }
 
   .faq__item {
+    
     &:nth-child(n + 2) {
       margin-top: rem(40);
 
@@ -30,10 +38,11 @@
 
 
   .faq__question {
+    border-radius: 10px;
     margin: 0 auto;
     max-width: rem(700);
     width: 100%;
-    background: $green-accent;
+    background: $blue;
     min-height: rem(55);
     padding: rem(11) rem(16);
 
@@ -101,9 +110,9 @@
         margin-top: rem(16);
       }
     }
-
+    border-radius: 10px;
     display: none;
-    border: 1px solid $green-accent;
+    border: 1px solid $blue;
     padding: rem(22) rem(15) rem(24) rem(15);
 
     @include mq('md') {
@@ -120,7 +129,7 @@
   }
 
   .faq__answer-text {
-    color: $green;
+    color: $black;
     font-weight: $normal;
     font-size: rem(16);
     line-height: 1.438; //23pxPCとSP

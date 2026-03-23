@@ -334,6 +334,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==================================================
+# contactの[date]をinput全体で選択できるように
+================================================== */
+document.querySelectorAll('input[type="date"]').forEach(el => {
+  el.addEventListener('click', function () {
+    this.showPicker && this.showPicker();
+  });
+});
+
+/* ==================================================
 # thanks-pageへの遷移
 ================================================== */
 // ローカル用でも本番環境でも
