@@ -19,8 +19,8 @@
   <div class="sub-contact2">
     <div class="sub-contact-inner inner">
       <div class="sub-gym">
-        <h2 class="sub-gym__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
-        <p class="sub-gym__text">安心して続けられる環境をご紹介します。</p>
+        <h2 class="sub-gym__title">まずはお気軽に<br class="u-mobile">ご相談ください</h2>
+        <p class="sub-gym__text">トレーニングや体験についてのご質問をお待ちしております。</p>
       </div>
 
       <?php echo do_shortcode('[contact-form-7 id="123d5e5" title="コンタクトフォーム 1"]'); ?>

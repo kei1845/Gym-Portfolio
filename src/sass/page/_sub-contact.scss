@@ -2,12 +2,17 @@
 
 .sub-contact1 {
   .sub-contact2 {
-    margin-top: rem(50);
-    margin-bottom: rem(150);
+    // margin-top: rem(50);
+    // margin-bottom: rem(150);
+
+    // @include mq("md") {
+    //   margin-top: rem(150);
+    //   margin-bottom: rem(150);
+    // }
+    margin-top: rem(30);
 
     @include mq("md") {
-      margin-top: rem(150);
-      margin-bottom: rem(150);
+      margin-top: rem(60);
     }
   }
 
@@ -18,8 +23,8 @@
   .dashed-line {
     height: rem(1);
     background-image: repeating-linear-gradient(to right,
-        $green-accent 0,
-        $green-accent rem(3),
+        $blue 0,
+        $blue rem(3),
         transparent rem(3),
         transparent rem(4));
     margin-top: rem(24);
@@ -36,6 +41,12 @@
     max-width: rem(700);
     margin-right: auto;
     margin-left: auto;
+
+    margin-top: rem(30);
+
+    @include mq("md") {
+      margin-top: rem(60);
+    }
   }
 
   .sub-contact-form__row {
@@ -54,8 +65,8 @@
     @include mq('md') {
       flex: 0 0 rem(220);
     }
-    
-    
+
+
   }
 
   /* 右カラムの“枠”を固定 */
@@ -70,7 +81,7 @@
     align-items: center;
     gap: rem(8);
     flex-wrap: nowrap;
-    color: $green;
+    color: $black;
     font-size: rem(16);
     font-weight: $bold;
   }
@@ -133,6 +144,7 @@
   .sub-contact-form input,
   .sub-contact-form textarea,
   .sub-contact-form select {
+    border-radius: 5px;
     background: $white;
     width: 100%;
     margin-top: rem(17);
@@ -144,10 +156,11 @@
     }
 
     padding: rem(7);
-    border: 1px solid $green-accent;
+    border: 1px solid $blue;
   }
 
   .sub-contact-form textarea {
+    border-radius: 5px;
     height: rem(200);
     min-height: rem(200);
     /* カンプに合わせる */
@@ -155,7 +168,7 @@
   }
 
   input::placeholder {
-    color: $green2;
+    color: $blue2;
     font-size: rem(16);
     font-weight: $normal;
   }
@@ -253,9 +266,11 @@
     position: absolute;
     right: rem(16);
     top: 50%;
+
     @include mq('md') {
       top: 29%;
-    }    
+    }
+
     //     transform: translateY(-50%);
     transform: translateY(-50%) translateY(rem(8));
     width: 0;
@@ -274,11 +289,15 @@
     /* ▼の上をクリックしてもselectが開く */
   }
 
+  .wpcf7-spinner {
+    display: none;
+  }
+
   .sub-contact-form__row2 {
     margin-top: rem(20);
 
     @include mq('md') {
-      margin-top: rem(80);
+      margin-top: rem(40);
       // margin-right: rem(-43);//カンプ一致用
     }
 
@@ -313,207 +332,305 @@
   }
 
   // 以下追記
-  /* CF7のチェックボックスを縦並びに */
-.wpcf7-form .check-box-group .wpcf7-form-control{
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
-}
 
-/* 余計な余白を消す */
-.wpcf7-form .check-box-group .wpcf7-list-item{
-  margin: 0;
-}
-
-/* labelをチェックボックス行にする */
-.wpcf7-form .check-box-group .wpcf7-list-item label{
-  display: inline-flex;
-  align-items: center;
-  gap: rem(8);
-  cursor: pointer;
-}
-
-/* 本物のcheckboxは隠す */
-.wpcf7-form .check-box-group input[type="checkbox"]{
-  position: absolute;
-  opacity: 0;
-}
-
-/* 代替の四角を擬似要素で作る */
-.wpcf7-form .check-box-group .wpcf7-list-item-label{
-  position: relative;
-  padding-left: rem(22);
-}
-
-.wpcf7-form .check-box-group .wpcf7-list-item-label::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 56%;
-  transform: translateY(-50%);
-  width: rem(14);
-  height: rem(14);
-  border: 1px solid #2a7f84; /* あなたの枠色に合わせてOK */
-}
-
-/* チェックマーク */
-.wpcf7-form .check-box-group input[type="checkbox"]:checked + .wpcf7-list-item-label::after{
-  content: "";
-  position: absolute;
-  left: rem(1);
-  top: rem(11);
-  transform: translateY(-38%) rotate(-45deg);
-  width: rem(12);
-  height: rem(7);
-  border-left: rem(2) solid #c94800;
-  border-bottom: rem(2) solid #c94800;
-}
-
-.wpcf7-form-control-wrap {
-  width: 100%;
-}
-
-/* 送信前のcheck-box
--------------------------------------------------- */
-/* acceptance（同意）もチェックボックスと同じ見た目にする */
-.wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] label{
-  display: inline-flex;
-  align-items: center;
-  gap: rem(16);
-  justify-content: center;
-  cursor: pointer;
-}
-
-.wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] input[type="checkbox"]{
-  position: absolute;
-  opacity: 0;
-}
-
-/* ラベル文字（同意文） */
-.wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] .wpcf7-list-item-label{
-  position: relative;
-  padding-left: rem(30);
-  font-size: rem(14);
-  line-height: 1.6;
-}
-
-/* 四角 */
-.wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] .wpcf7-list-item-label::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-  width: rem(22);
-  height: rem(22);
-  border: 1px solid #2a7f84;
-}
-
-/* チェック */
-.wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] input[type="checkbox"]:checked + .wpcf7-list-item-label::after{
-  content: "";
-  position: absolute;
-  left: rem(2);
-  top: rem(7);
-  width: rem(18);
-  height: rem(11);
-  transform: rotate(-45deg);
-  border-left: rem(3) solid #c94800;
-  border-bottom: rem(3) solid #c94800;
-}
-
-/* 送信ボタン
--------------------------------------------------- */
-/* 送信ボタンの親。幅をボタンと同じに固定 */
-.contact-form__submit .button-wrapper{
-  display: inline-block;
-  width: rem(202);  /* あとで調整するならここ */
-  position: relative;
-}
-
-/* CF7のsubmit(input)を確実に“幅100%”で貼り付け */
-.contact-form__submit .wpcf7-submit.button{
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;  /* どこかのmax-width潰す */
-  min-width: 0;
-  height: auto;               /* paddingで高さ作る */
-  box-sizing: border-box;
-}
-
-/* wrapper内のbr対策（入ってるの見えてた） */
-.contact-form__submit br{ display:none; }
-.contact-form__submit p{ margin:0; }
-
-.sub-contact-form input {
-  margin-top: 0!important;
-}
-
-.button-wrapper-outer {
-  
-}
-.button-wrapper br{
-  display: none;
-}
-.button-wrapper p{
-  margin: 0;
-}
-.button-wrapper{
-  display: inline-block;
-  position: relative;
-
-  &::before{
-    content:"";
-    position:absolute;
-    top: rem(6);
-    left: rem(4);
-    width: rem(202);
-    height: rem(54);
-    background: $white;
-    border: 1px solid $green-accent;
-    z-index: 0;
-    pointer-events: none;  // ★これ重要
+  // お問い合わせ項目の中の文面
+  .wpcf7-list-item-label {
+    color: $black;
   }
-}
-/* submit本体（inputでもbuttonでも同じ見た目に） */
-.button,
-input.button,
-.wpcf7-submit.button{
-  appearance: none;
-  -webkit-appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(8);
-  width: rem(202);
-  padding: rem(16) rem(10);
-  border: 1px solid $green-accent;
-  background: $green-accent;
-  color: $white;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: background .2s, color .2s, border-color .2s;
-}
-.button::after,
-input.button::after,
-.wpcf7-submit.button::after{
-  content:"";
-  width: rem(41);
-  height: rem(7);
-  background:
-    linear-gradient(currentColor, currentColor) left center / 100% rem(2) no-repeat;
-  clip-path: polygon(0 40%, 78% 40%, 78% 0, 100% 50%, 78% 100%, 78% 60%, 0 60%);
-  transform: translateY(rem(-1));
-}
 
-/* hoverは inputにも効くように複数指定 */
-.button:hover,
-input.button:hover,
-.wpcf7-submit.button:hover{
-  background: $white;
-  color: $green-accent;
-  border-color: $green-accent;
-}
+  // キャンペーンの選択肢の四角の中の文字の色
+  input[type="date"] {
+    color: $black;
+  }
+
+
+
+  /* CF7のチェックボックスを縦並びに */
+  .wpcf7-form .check-box-group .wpcf7-form-control {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  /* 余計な余白を消す */
+  .wpcf7-form .check-box-group .wpcf7-list-item {
+    margin: 0;
+  }
+
+  /* labelをチェックボックス行にする */
+  .wpcf7-form .check-box-group .wpcf7-list-item label {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8);
+    cursor: pointer;
+  }
+
+  /* 本物のcheckboxは隠す */
+  .wpcf7-form .check-box-group input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  /* 代替の四角を擬似要素で作る */
+  .wpcf7-form .check-box-group .wpcf7-list-item-label {
+    position: relative;
+    padding-left: rem(22);
+  }
+
+  .wpcf7-form .check-box-group .wpcf7-list-item-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 56%;
+    transform: translateY(-50%);
+    width: rem(14);
+    height: rem(14);
+    border: 1px solid $blue;
+    border-radius: 2px;
+  }
+
+  /* チェックマーク */
+  .wpcf7-form .check-box-group input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
+    content: "";
+    position: absolute;
+    left: rem(1);
+    top: rem(11);
+    transform: translateY(-38%) rotate(-45deg);
+    width: rem(12);
+    height: rem(7);
+    border-left: rem(2) solid #c94800;
+    border-bottom: rem(2) solid #c94800;
+  }
+
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+
+  /* aタグ、利用規約へ
+-------------------------------------------------- */
+  .contact-anchor {
+    text-decoration: underline;
+    text-decoration-color: $black;
+    text-underline-offset: rem(4);
+  }
+
+
+
+  /* 送信前のcheck-box
+-------------------------------------------------- */
+  /* acceptance（同意）もチェックボックスと同じ見た目にする */
+  .wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] label {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(16);
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  /* ラベル文字（同意文） */
+  .wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] .wpcf7-list-item-label {
+    position: relative;
+    padding-left: rem(30);
+    font-size: rem(14);
+    line-height: 1.6;
+  }
+
+  /* 四角 */
+  .wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] .wpcf7-list-item-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: rem(22);
+    height: rem(22);
+    border: 1px solid $blue;
+    border-radius: 3px;
+  }
+
+  /* チェック */
+  .wpcf7-form .wpcf7-form-control-wrap[data-name="acceptance-privacy"] input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
+    content: "";
+    position: absolute;
+    left: rem(2);
+    top: rem(7);
+    width: rem(18);
+    height: rem(11);
+    transform: rotate(-45deg);
+    border-left: rem(3) solid #c94800;
+    border-bottom: rem(3) solid #c94800;
+  }
+
+  /* 送信ボタン
+-------------------------------------------------- */
+  /* 送信ボタンの親。幅をボタンと同じに固定 */
+  .contact-form__submit .button-wrapper {
+    display: inline-block;
+    width: rem(202);
+    /* あとで調整するならここ */
+    position: relative;
+  }
+
+  /* CF7のsubmit(input)を確実に“幅100%”で貼り付け */
+  .contact-form__submit .wpcf7-submit.button {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    /* どこかのmax-width潰す */
+    min-width: 0;
+    height: auto;
+    /* paddingで高さ作る */
+    box-sizing: border-box;
+  }
+
+  /* wrapper内のbr対策（入ってるの見えてた） */
+  .contact-form__submit br {
+    display: none;
+  }
+
+  .contact-form__submit p {
+    margin: 0;
+  }
+
+  // .sub-contact-form input {
+  //   margin-top: 0!important;
+  // }
+
+  .button-wrapper-outer {}
+
+  .button-wrapper br {
+    display: none;
+  }
+
+  .button-wrapper p {
+    margin: 0;
+  }
+
+  .button-wrapper {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(6);
+      left: rem(4);
+      width: rem(202);
+      height: rem(54);
+      background: $white;
+      border: 1px solid $green-accent;
+      z-index: 0;
+      pointer-events: none; // ★これ重要
+    }
+  }
+
+  .sub-contact2__button {
+    margin-top: rem(24);
+
+    @include mq("md") {
+      margin-top: rem(40);
+    }
+  }
+
+
+
+
+  /* submit本体（inputでもbuttonでも同じ見た目に） */
+  .button,
+  input.button,
+  .wpcf7-submit.button {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(8);
+    min-width: 0;
+    width: rem(200);
+    border-radius: 30px;
+    height: rem(50);
+    font-size: rem(20);
+    // padding-bottom: 30px;
+    // padding: rem(16) rem(10);
+    border: 1px solid $green-accent;
+    background: $blue;
+    color: $white;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: opacity .2s;
+
+
+  }
+
+
+  // .wpcf7 input[type="submit"].button.button--submit {
+  //   appearance: none;
+  //   -webkit-appearance: none;
+  //   display: inline-flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 100px;
+  //   min-width: 0;
+  //   max-width: none;
+  //   padding: 0;
+  //   height: 50px;
+  //   border: 1px solid #408f95;
+  //   background: #1f4f8f;
+  //   color: #fff;
+  //   font-size: 20px;
+  //   line-height: 1;
+  // }
+
+
+  .button::after,
+  input.button::after,
+  .wpcf7-submit.button::after {
+    content: "";
+    width: rem(41);
+    height: rem(7);
+    background:
+      linear-gradient(currentColor, currentColor) left center / 100% rem(2) no-repeat;
+    clip-path: polygon(0 40%, 78% 40%, 78% 0, 100% 50%, 78% 100%, 78% 60%, 0 60%);
+    transform: translateY(rem(-1));
+  }
+
+  /* hoverは inputにも効くように複数指定 */
+  .button:hover,
+  input.button:hover,
+  .wpcf7-submit.button:hover {
+    // background: $white;
+    // color: $green-accent;
+    // border-color: $green-accent;
+    opacity: 0.8;
+  }
+
+  // 送信ボタン
+  // .sub-contact2__button-wrapper {
+  //   text-align: center;
+  //   margin-top: 40px;
+
+  // }
+  // .sub-contact2__button {
+  //   display: inline-block;
+  //   padding: 16px 40px;
+  //   border: none;
+  //   border-radius: 999px;
+  //   background-color: #4a9da3;
+  //   color: #fff;
+  //   font-size: 16px;
+  //   cursor: pointer;
+  //   transition: opacity 0.3s;
+  //   &:hover {
+  //     opacity: 0.8;
+  //   }
+
+  // }
+
 
   /* ==================================================
   # thanks page
@@ -527,7 +644,7 @@ input.button:hover,
       margin-bottom: rem(-48);
     }
 
-    color: $green;
+    color: $black;
     text-align: center;
     font-weight: $normal;
     font-size: rem(16);
@@ -538,212 +655,19 @@ input.button:hover,
 
   .thanks-text {
     margin-top: rem(40);
-
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* ==================================================
-  # まさたbrain
-  ================================================== */
-
-  // .form__list {
-  //   margin-top: rem(40);
-  // }
-
-  // .form__field+ .form__field,
-  // .form__acceptance {
-  //   margin-top: rem(24);
-  // }
-
-  // .form__required {
-  //   color: #e20000;
-  // }
-
-  // .form__input::placeholder {
-  //   color: #a9a9a9;
-  // }
-
-  // .form__textarea {
-  //   height: rem(160);
-  // }
-
-  // .form__input,
-  // .form__select,
-  // .form__textarea,
-  // .form__acceptance-text {
-  //   font-size: rem(14);
-  //   width: 100%;
-  //   padding: rem(12);
-  //   border: rem(1) solid #000;
-  //   border-radius: rem(4);
-  // }
-
-  // .form__acceptance-text {
-  //   overflow-y: auto;
-  //   height: rem(120);
-  //   background-color: #f2f2f2;
-  // }
-
-  // .form__select {
-  //   padding-right: rem(35);
-  // }
-
-  // .form__data-select {
-  //   position: relative;
-  // }
-
-  // .form__data-select::after {
-  //   position: absolute;
-  //   top: 46%;
-  //   right: rem(15);
-  //   width: rem(10);
-  //   height: rem(10);
-  //   content: "";
-  //   transform: translateY(-50%) rotate(135deg);
-  //   border-top: solid rem(2) #000;
-  //   border-right: solid rem(2) #000;
-  // }
-
-  // .form__data-radio {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
-
-  // .form__data,
-  // .form__data-radio,
-  // .form__data-select,
-  // .form__data-check {
-  //   margin-top: rem(4);
-  // }
-
-  // .wpcf7-list-item {
-  //   margin: 0;
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="radio-category"]
-  //   .wpcf7-list-item+ .wpcf7-list-item {
-  //   margin-left: rem(20);
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="radio-category"] .wpcf7-list-item-label {
-  //   position: relative;
-  //   display: inline-block;
-  //   padding-left: rem(16);
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="radio-category"]
-  //   .wpcf7-list-item-label::before {
-  //   position: absolute;
-  //   top: 56%;
-  //   left: 0;
-  //   width: rem(14);
-  //   height: rem(14);
-  //   content: "";
-  //   transform: translateY(-50%);
-  //   border: rem(1) solid #000;
-  //   border-radius: rem(7);
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="radio-category"]
-  //   .wpcf7-list-item-label::after {
-  //   position: absolute;
-  //   top: 56%;
-  //   left: rem(3);
-  //   width: rem(8);
-  //   height: rem(8);
-  //   content: "";
-  //   transform: translateY(-50%);
-  //   opacity: 0;
-  //   border-radius: rem(4);
-  //   background-color: #000;
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="radio-category"]
-  //   .wpcf7-list-item
-  //   input:checked+ .wpcf7-list-item-label::after {
-  //   opacity: 1;
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label {
-  //   position: relative;
-  //   display: inline-block;
-  //   padding-left: rem(24);
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::before {
-  //   position: absolute;
-  //   top: rem(3.25);
-  //   left: 0;
-  //   width: rem(20);
-  //   height: rem(20);
-  //   content: "";
-  //   border: rem(1) solid #000;
-  //   border-radius: rem(3);
-  // }
-
-  // .wpcf7-form-control-wrap[data-name="privacy"] .wpcf7-list-item-label::after {
-  //   position: absolute;
-  //   top: rem(9.25);
-  //   left: rem(5);
-  //   width: rem(10);
-  //   height: rem(5);
-  //   content: "";
-  //   transform: rotate(-45deg);
-  //   opacity: 0;
-  //   border-bottom: rem(2) solid #000;
-  //   border-left: rem(2) solid #000;
-  // }
-
-  // .form__checkbox:checked+ .wpcf7-list-item-label::after {
-  //   opacity: 1;
-  // }
-
-  // .form__submit-button {
-  //   margin-top: rem(40);
-  //   text-align: center;
-  // }
-
-  // .form__submit-input {
-  //   display: inline-block;
-  //   width: 100%;
-  //   max-width: rem(500);
-  //   padding: rem(16) rem(20);
-  //   transition: opacity 0.3s;
-  //   color: #fff;
-  //   border-radius: rem(4);
-  //   background-color: #000;
-  //   &:hover {
-  //     transition: opacity 0.3s;
-  //     opacity: 0.7;
-  //   }
-  // }
-
-
-
-
 
   /* エラー表示、消すな
 -------------------------------------------------- */
-/* 送信完了・エラーなどのメッセージを非表示 */
-.wpcf7 form .wpcf7-response-output {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
+  /* 送信完了・エラーなどのメッセージを非表示 */
+  .wpcf7 form .wpcf7-response-output {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
 
   /* 入力エラー時の枠線 */
   // .wpcf7-not-valid {

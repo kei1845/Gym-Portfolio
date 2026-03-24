@@ -126,7 +126,7 @@
         <a href="<?php echo esc_url(home_url("/facility")) ?>" class="button">詳しく見る</a>
       </div>
     </div>
-  </section>
+  </section>  
 
   <section class="blog">
     <div class="blog-inner inner">
