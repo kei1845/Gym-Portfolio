@@ -1,50 +1,15 @@
 @use "global" as *;
 
-.sub-error {
-  background-color: $green-accent;
-  position: relative;
-  // margin-bottom: rem(160);
-  &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("../images/sub-pages/error/error-whale.png") no-repeat;
-    pointer-events: none;
-    z-index: 0;
-    background-position: left 51% top 18%;
-    background-size: rem(329);
-    @include mq("md") {
-      background-position: left 25% center;
-      background-size: min(vw(1440, 665), rem(665));
-    }
-  }
-  .breadcrumb {
-    color: $white;
-    margin-top: 0;
-    padding-top: rem(88);
-    @include mq('md') {
-      padding-top: rem(98);
-    }
-    
-    
-  }
+.sub-error-wrapper {
+}
 
-  .breadcrumb.breadcrumb-error {
-    color: $white;
-      margin-top: rem(88);
-      @include mq('md') {
-          margin-top: rem(94);
-      }
-    
+.sub-error {
+
+  .sub-inner-error {
   }
 
   .error {
-      margin-top: rem(39);
-      margin-bottom: rem(-61);
-      @include mq("md") {
-          margin-top: rem(98);
-          margin-bottom: rem(-12);
-      }
+      
   }
 
   .error-inner.inner {
@@ -52,7 +17,7 @@
   }
 
   .error-title {
-    color: $white;
+    color: $black;
     font-family: $third-font-family;
     font-weight: $normal;
     font-size: rem(80);
@@ -66,7 +31,7 @@
   }
 
   .error-text {
-    color: $white;
+    color: $black;
     font-family: $third-font-family;
     font-weight: $normal;
     font-size: rem(16);
@@ -84,52 +49,5 @@
     @include mq("md") {
       margin-top: rem(80);
     }
-    .button-wrapper {
-      &::before {
-        background-color: $green-accent;
-        border: 1px solid $white;
-      }
-      .button {
-        border: 1px solid $white;
-        color: $green-accent;
-        background: $white;
-
-        svg {
-          path {
-            stroke: $green-accent;
-          }
-        }
-        &:hover svg path {
-          stroke: $white; /* ホバー時の色 */
-        }
-      }
-    }
-    .button.slide:hover {
-      color: $white;
-    }
   }
-
-  .slide {
-    &::after {
-      background: $green-accent;
-    }
-    &:hover {
-      color: $white;
-    }
-  }
-
-  .footer.footer-error {
-    background: none;
-  }
-}
-
-body.error404 .footer {
-
-  margin-top: 0 !important;
-  padding-top: rem(103);
-  @include mq('md') {
-    padding-top: rem(160);
-  }
-  
-  
 }

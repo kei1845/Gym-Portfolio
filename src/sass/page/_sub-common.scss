@@ -98,18 +98,18 @@
   }
 }
 // campaignのみ
-.sub-mv__img-campaign {
-  width: 100%;
-  height: inherit;
-  img {
-    object-fit: cover;
-    height: 100%;
-    object-position: 72% 50%;
-    @include mq("md") {
-      object-position: 50% 50%;
-    }
-  }
-}
+// .sub-mv__img-campaign {
+//   width: 100%;
+//   height: inherit;
+//   img {
+//     object-fit: cover;
+//     height: 100%;
+//     object-position: 72% 50%;
+//     @include mq("md") {
+//       object-position: 50% 50%;
+//     }
+//   }
+// }
 
 // .sub-mv__content {
 //   position: absolute;
@@ -138,7 +138,7 @@
   }
   display: flex;
   gap: rem(20);
-  color: $green;
+  color: $black;
   font-weight: $normal;
   font-size: rem(14);
   a {
