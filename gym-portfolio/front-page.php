@@ -126,7 +126,7 @@
         <a href="<?php echo esc_url(home_url("/facility")) ?>" class="button">詳しく見る</a>
       </div>
     </div>
-  </section>  
+  </section>
 
   <section class="blog">
     <div class="blog-inner inner">
@@ -171,7 +171,7 @@
                 </time>
               </div>
 
-              <h3 class="blog__box-title"><?php echo esc_html(wp_trim_words(get_the_title(), 17, '')); ?></h3>
+              <h3 class="blog__box-title"><?php echo esc_html(wp_trim_words(get_the_title(), 17, '…')); ?></h3>
               <div class="blog__box-bar"></div>
               <p class="blog__box-text"><?php echo esc_html(wp_trim_words(get_the_content(), 80, '')); ?></p>
             </a>

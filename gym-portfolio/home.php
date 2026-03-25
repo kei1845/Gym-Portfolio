@@ -17,7 +17,6 @@
   <?php endif; ?>
 
 
-
   <div class="blog">
     <div class="blog-inner inner">
       <div class="blog-list">
@@ -49,7 +48,7 @@
 
 
                 <time class="blog__box-time" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                <h3 class="blog__box-title"><?php echo wp_trim_words(get_the_title(), 17, ''); ?></h3>
+                <h3 class="blog__box-title"><?php echo wp_trim_words(get_the_title(), 17, '…'); ?></h3>
                 <div class="blog__box-bar"></div>
                 <p class="blog__box-text"><?php echo wp_trim_words(get_the_content(), 80, ''); ?></p>
               </a>

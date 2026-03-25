@@ -1,4 +1,5 @@
 @use "global" as *;
+
 .header {
   // background: rgba(13, 41, 54, 0.68);
   background: $white;
@@ -8,32 +9,38 @@
   width: 100%;
   z-index: 100;
   height: rem(80);
+
   @include mq("md") {
     height: rem(90);
   }
-  
-  
+
+
 }
+
 .header__inner {
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 rem(15);
+
   @include mq("md") {
     padding: 0 rem(40);
   }
 }
+
 .header__logo {
   font-size: rem(30);
   letter-spacing: 0.05em;
   color: $black;
   height: inherit;
+
   a {
     height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
+
     span {
       color: $blue;
       margin-right: 0.3em;
@@ -41,17 +48,21 @@
 
   }
 }
+
 .header__nav {
   height: inherit;
 }
+
 .header__nav-list {
   height: inherit;
   display: flex;
   gap: rem(40);
 }
+
 .header__nav-item {
   height: inherit;
 }
+
 .header__link {
   height: inherit;
   display: flex;
@@ -65,6 +76,7 @@
   /* 以下下線引き
   -------------------------------------------------- */
   position: relative;
+
   &::after {
     position: absolute;
     bottom: rem(20);
@@ -77,10 +89,12 @@
     transform-origin: center top;
     transition: transform 0.3s;
   }
+
   &:hover::after {
     transform: scale(1, 1);
   }
 }
+
 // .header__link--en {
 //   color: $black;
 //   text-align: center;
@@ -91,16 +105,17 @@
 // }
 .header__link--ja {
   color: $black;
-  text-align: center;  
-  font-weight: $normal;
+  text-align: center;
+  font-weight: $medium;
   font-size: rem(18);
   line-height: 1.5;
 }
+
 /* ==================================================
 # drawer menu
 ================================================== */
-.header__open {
-}
+.header__open {}
+
 .drawer-icon {
   width: rem(32);
   height: rem(24);
@@ -109,6 +124,7 @@
   position: fixed;
   top: rem(28);
   right: rem(15);
+
   &.is-checked {
     .drawer-icon__bar {
       &:nth-child(1) {
@@ -116,19 +132,24 @@
         transform: rotate(36.87deg);
         width: rem(40);
         left: rem(-3);
+        background-color: $white;
       }
+
       &:nth-child(2) {
         display: none;
       }
+
       &:nth-child(3) {
         top: rem(12);
         transform: rotate(-36.87deg);
         width: rem(40);
         left: rem(-3);
+        background-color: $white;
       }
     }
   }
 }
+
 .drawer-icon__bar {
   position: absolute;
   top: 0;
@@ -137,19 +158,22 @@
   height: rem(3);
   border-radius: 100px;
   background: $black;
-  transition: transform 0.3s linear,top 0.3s linear;
-  &:nth-child(1) {
-  }
+  transition: transform 0.3s linear, top 0.3s linear, background-color 0.3s ease;
+
+  &:nth-child(1) {}
+
   &:nth-child(2) {
     top: rem(12);
   }
+
   &:nth-child(3) {
     top: rem(24);
   }
 }
+
 .drawer-content {
-  overflow-y: auto;   // 縦スクロール許可
-  background: $green-accent;
+  overflow-y: auto; // 縦スクロール許可
+  background: $blue;
   position: fixed;
   top: 0;
   right: 0;
@@ -157,23 +181,67 @@
   height: 100vh;
   z-index: 200;
   transform: translateX(100vw);
-  transition: transform 0.3s linear;  
+  transition: transform 0.3s linear;
+
   &.is-checked {
     transform: translateX(0);
   }
 }
-.drawer-content-inner {
+
+.drawer-content-inner {}
+
+.drawer__nav-list {
+  margin-top: rem(100);
+  margin-bottom: rem(100);
+
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+
 }
-.drawer-content2 {
-  margin-top: rem(45);
-  gap: rem(30);
-  margin-left: rem(-10);
+
+.drawer__nav-logo {
+  font-size: rem(40);
+  letter-spacing: 0.05em;
+  // height: inherit;
+  color: $white;
+
+  a {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: $white;
+      margin-right: 0.3em;
+    }
+
+  }
 }
+
+
+
+
+.drawer__nav-item {
+  font-size: rem(30);
+  font-weight: $medium;
+  color: $white;
+
+  &:hover::after {
+    transform: scale(1, 1);
+  }
+  &:nth-child(n + 2) {
+    margin-top: 50px;
+  }
+  
+
+}
+
+
+
+
+
 body.is-scrollLock {
   overflow: hidden;
-}
-.drawer__logo {
-  width: rem(102);
-  margin-top: rem(-27);
-  margin-right: rem(244);
 }
