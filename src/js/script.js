@@ -2,6 +2,7 @@ jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
 });
 
+
 /* ==================================================
 # swiper mv
 ================================================== */
@@ -206,32 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-/* ==================================================
-# information タグ切り替え
-================================================== */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('.information__tab');
-  const contents = document.querySelectorAll('.information__content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.target;
-
-      // タブのactive切り替え
-      tabs.forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-
-      // コンテンツのactive切り替え
-      contents.forEach(content => {
-        content.classList.remove('is-active');
-        if (content.id === target) {
-          content.classList.add('is-active');
-        }
-      });
-    });
-  });
-});
 
 
 /* ==================================================
@@ -309,29 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ==================================================
-# home.phpのアーカイブの年クリックで月を開閉。
-================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const years = document.querySelectorAll('.archive__year');
-
-  years.forEach((yearEl, i) => {
-    const months = yearEl.nextElementSibling;
-    if (!months || !months.classList.contains('archive__month')) return;
-
-    // ✅ 初期：最新年だけ開く（先頭が最新年になる）
-    const openInitially = (i === 0);
-    months.style.display = openInitially ? 'block' : 'none';
-    yearEl.classList.toggle('is-open', openInitially);
-
-    yearEl.addEventListener('click', () => {
-      const isOpen = months.style.display === 'block';
-      months.style.display = isOpen ? 'none' : 'block';
-      yearEl.classList.toggle('is-open', !isOpen);
-    });
-  });
-});
 
 /* ==================================================
 # contactの[date]をinput全体で選択できるように
@@ -342,15 +296,25 @@ document.querySelectorAll('input[type="date"]').forEach(el => {
   });
 });
 
+
+
 /* ==================================================
 # thanks-pageへの遷移
 ================================================== */
 // ローカル用でも本番環境でも
 
 document.addEventListener('wpcf7mailsent', function() {
-  const base = document.querySelector('base')?.href || window.location.origin;
-  const path = window.location.pathname.includes('/codeups/')
-    ? '/codeups/contact/thanks/'
+  // const base = document.querySelector('base')?.href || window.location.origin;
+  const path = window.location.pathname.includes('/k-fit-gym/')
+    ? '/k-fit-gym/contact/thanks/'
     : '/contact/thanks/';
   window.location.href = path;
 });
+
+// document.addEventListener('wpcf7mailsent', function() {
+//   window.location.href = 'https://kei4358.net/k-fit-gym/contact/thanks/';
+// });
+
+
+
+
