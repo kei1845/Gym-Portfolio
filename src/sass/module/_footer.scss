@@ -2,9 +2,11 @@
 .footer {
   background: $blue3;
   margin-top: rem(50);
+  padding: rem(10) 0;
   
   @include mq("md") {
     margin-top: rem(100);
+    padding: rem(20) 0;
   }
 }
 .footer__inner {
@@ -25,14 +27,12 @@
   font-size: rem(12);
   line-height: 1.5;
   text-align: center;  
-  margin-top: rem(40);
-  padding-top: rem(3);
-  padding-bottom: rem(3);
+  // margin-top: rem(40);
+  // padding-top: rem(3);
+  // padding-bottom: rem(3);
   @include mq("md") {
     font-size: rem(14);
     line-height: 1.286;
-    // margin-top: rem(80);
-    // padding-bottom: rem(80);
   }
 }
 /* ==================================================

@@ -146,7 +146,7 @@
         初心者・女性も安心してご利用いただけます。
       </p>
       <div class="button-wrap contact__button">
-        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button">無料体験を予約する</a>
+        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="contact__button-content">無料体験を予約する</a>
       </div>
     </div>
   </section>

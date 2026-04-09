@@ -25,7 +25,7 @@
       </div>
       <div class="facility__boxes">
         <div class="facility__box">
-          <div class="facility__img">
+          <div class="facility__img facility__img-odd">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility1.png')); ?>" alt="最新トレーニングマシンが並ぶジムエリア">
           </div>
           <div class="facility__content">
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img">
+          <div class="facility__img facility__img-even">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.png')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
           </div>
           <div class="facility__content">
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img">
+          <div class="facility__img facility__img-odd">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility3.png')); ?>" alt="ランニングマシンが並ぶ有酸素トレーニングエリア">
           </div>
           <div class="facility__content">
@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img">
+          <div class="facility__img facility__img-even">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility4.png')); ?>" alt="清潔なシャワールームと洗面スペース">
           </div>
           <div class="facility__content">
@@ -113,7 +113,7 @@
         初心者・女性も安心してご利用いただけます。
       </p>
       <div class="button-wrap contact__button">
-        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button">無料体験を予約する</a>
+        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="contact__button-content">無料体験を予約する</a>
       </div>
     </div>
   </section>

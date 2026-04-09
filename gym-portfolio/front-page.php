@@ -4,16 +4,16 @@
     <div class="swiper mv-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide mv-swiper-slide mv-slide1">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv1.png')); ?>" alt="ジムでランニングマシンを使ってトレーニングする女性">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv1.png')); ?>" alt="">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide2">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv2.png')); ?>" alt="ジムのランニングマシンでトレーニングする男性">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv2.png')); ?>" alt="">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide3">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv3.png')); ?>" alt="ジムでランニングマシンを使って運動する女性">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv3.png')); ?>" alt="">
         </div>
         <div class="swiper-slide mv-swiper-slide mv-slide4">
-          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv4.png')); ?>" alt="フィットネスジムでランニングマシンを使う利用者">
+          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/mv4.png')); ?>" alt="">
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
           本当の成果につながると考えています。</p>
       </div>
       <div class="about__img colorbox">
-        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/about1.png')); ?>" alt="ジムでトレーナーが女性にトレーニング指導をしている様子">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/about1.png')); ?>" alt="">
       </div>
     </div>
   </section>
@@ -49,7 +49,7 @@
       <div class="reason__boxes">
         <div class="reason__box">
           <div class="reason__box-img">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/people.svg')); ?>" alt="人のアイコン">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/people.png')); ?>" alt="">
           </div>
           <h3 class="reason__box-title">初心者・男女歓迎</h3>
           <p class="reason__box-text">初めての方でも安心して始められる環境を整えています。<br>
@@ -57,7 +57,7 @@
         </div>
         <div class="reason__box">
           <div class="reason__box-img">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/shower.svg')); ?>" alt="シャワーのアイコン">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/shower.png')); ?>" alt="">
           </div>
           <h3 class="reason__box-title">清潔なシャワー完備</h3>
           <p class="reason__box-text">運動後に快適にご利用いただける<br>
@@ -65,7 +65,7 @@
         </div>
         <div class="reason__box">
           <div class="reason__box-img">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/note.svg')); ?>" alt="メモのアイコン">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/note.png')); ?>" alt="">
           </div>
           <h3 class="reason__box-title">トレーナー常駐</h3>
           <p class="reason__box-text">経験豊富なトレーナーが常駐し、<br>
@@ -82,7 +82,7 @@
       <h2 class="facility__title">充実した設備と清潔な<br class="u-mobile">トレーニング環境</h2>
       <div class="facility__boxes">
         <div class="facility__box">
-          <div class="facility__img colorbox">
+          <div class="facility__img facility__img-odd colorbox">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility1.png')); ?>" alt="最新トレーニングマシンが並ぶジムエリア">
           </div>
           <div class="facility__content">
@@ -92,7 +92,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img colorbox">
+          <div class="facility__img facility__img-even colorbox">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.png')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
           </div>
           <div class="facility__content">
@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img colorbox">
+          <div class="facility__img facility__img-odd colorbox">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility3.png')); ?>" alt="ランニングマシンが並ぶ有酸素トレーニングエリア">
           </div>
           <div class="facility__content">
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div class="facility__box">
-          <div class="facility__img colorbox">
+          <div class="facility__img facility__img-even colorbox">
             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility4.png')); ?>" alt="清潔なシャワールームと洗面スペース">
           </div>
           <div class="facility__content">
@@ -199,7 +199,7 @@
         初心者・女性も安心してご利用いただけます。
       </p>
       <div class="button-wrap contact__button">
-        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="button">無料体験を予約する</a>
+        <a href="<?php echo esc_url(home_url("/contact")) ?>" class="contact__button-content">無料体験を予約する</a>
       </div>
     </div>
   </section>

@@ -1,4 +1,5 @@
 @use "global" as *;
+
 /* ==================================================
 # title
 ================================================== */
@@ -7,68 +8,89 @@
   display: flex;
   flex-direction: column;
   gap: rem(4);
+
   @include mq("md") {
     gap: rem(8);
   }
 }
+
 .heading__en {
   color: $green;
   font-family: $second-font-family;
   font-weight: $normal;
   font-size: rem(32);
   line-height: 1.25;
+
   @include mq("md") {
     font-size: rem(40);
     line-height: 1;
   }
+
   &::first-letter {
     color: $green-accent;
   }
 }
+
 .heading__ja {
-  color: $green-accent;  
+  color: $green-accent;
   font-weight: $normal;
   font-size: rem(12);
   line-height: 1.5;
 }
+
 /* ==================================================
 # button
 ================================================== */
 .button-wrap {
-        text-align: center;
+  text-align: center;
+}
+
+.button {
+  min-width: rem(250);
+  padding: rem(14) rem(40) rem(16) rem(24);
+  font-size: rem(20);
+
+  @include mq("md") {
+    min-width: rem(320);
+    padding: rem(16) rem(50) rem(20) rem(28);
+    font-size: rem(26);
+  }
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $blue;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: $bold;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: rem(21);
+    right: rem(56);
+    width: rem(18);
+    height: rem(18);
+    @include mq("md") {
+      top: rem(26);
+      right: rem(70);
+      width: rem(22);
+      height: rem(22);
     }
 
-    .button {
-        min-width: rem(250);
-        padding: rem(14) rem(24) rem(16) rem(24);
-        font-size: rem(20);
 
-        @include mq("md") {
-            min-width: rem(320);
-            padding: rem(16) rem(28) rem(20) rem(28);
-            font-size: rem(26);
-        }
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: rem(10);
-
-        background: $blue;
-        color: #fff;
-        border-radius: 40px;
-        text-decoration: none;
-        font-weight: $bold;
-        transition: opacity 0.3s;
-
-        &:hover {
-            opacity: 0.8;
-        }
-
-        &::after {
-            content: ">";
-        }
-    }
+    background: url("../images/gym-top/next.png") no-repeat center / contain;
+  }
+}
 
 /* 旧ボタン
 -------------------------------------------------- */
@@ -150,6 +172,7 @@
 ================================================== */
 .colorbox {
   position: relative;
+
   .color {
     position: absolute;
     top: 0;
@@ -167,24 +190,29 @@
 .hover-white {
   position: relative;
   overflow: hidden;
+
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.2); /* 白をうっすら */
+    background: rgba(255, 255, 255, 0.2);
+    /* 白をうっすら */
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
   }
+
   &:hover::after {
     opacity: 1;
   }
 }
+
 /* ==================================================
 # hoverした時、透明にする。
 ================================================== */
 .hover-opacity {
   transition: opacity 0.4s;
+
   &:hover {
     opacity: 0.7;
   }
@@ -200,10 +228,12 @@
       transform: scale(1.35);
     }
   }
+
   img {
     transition: transform 0.4s ease;
   }
 }
+
 /* はみ出し防止（構造側） */
 .blog__box-image {
   overflow: hidden;

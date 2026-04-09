@@ -2,15 +2,20 @@
 
 .front-page {
   .mv {
-    // margin-top: rem(80);
-    // @include mq('md') {
-    //   margin-top: rem(90);
-    // }
+    margin-top: rem(80);
+    @include mq('md') {
+      margin-top: rem(90);
+    }
 
 
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - rem(80));
+    @include mq("md") {
+      height: calc(100vh - rem(90));
+    }
+    
+    
     overflow: hidden;
   }
 

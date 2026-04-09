@@ -5,13 +5,14 @@
 ================================================== */
 
 .sub-mv {
-  height: rem(460);
+  // height: rem(460);
+  height: calc(rem(460) - rem(80));
+  margin-top: rem(80);
   @include mq("md") {
-    height: rem(548);
-  }
-  @include mq("md") {
-  }
-  
+    // height: rem(548);
+    height: calc(rem(548) - rem(90));
+    margin-top: rem(90);
+  }  
   
   position: relative;
   width: 100%;
