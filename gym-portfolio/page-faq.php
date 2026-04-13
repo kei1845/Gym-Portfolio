@@ -2,10 +2,10 @@
 <main class="sub-faq">
   <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/faq-mv.png')); ?>" alt="ベンチプレスやスクワットができるトレーニング設備">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/faq-mv.png')); ?>" alt="">
     </div>
     <div class="sub-mv__content">
-      <h2 class="sub-mv__title">よくある質問</h2>
+      <h1 class="sub-mv__title">よくある質問</h1>
     </div>
   </section>
   <?php if (function_exists('bcn_display')) : ?>

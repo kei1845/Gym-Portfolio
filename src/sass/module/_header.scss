@@ -34,6 +34,7 @@
   letter-spacing: 0.05em;
   color: $black;
   height: inherit;
+  font-weight: $bold;
 
   a {
     height: inherit;
@@ -190,8 +191,8 @@
 .drawer-content-inner {}
 
 .drawer__nav-list {
-  margin-top: rem(100);
-  margin-bottom: rem(100);
+  margin-top: rem(120);
+  margin-bottom: rem(70);
 
   width: fit-content;
   margin-right: auto;
@@ -202,20 +203,16 @@
 .drawer__nav-logo {
   font-size: rem(40);
   letter-spacing: 0.05em;
-  // height: inherit;
+  font-weight: $medium;
   color: $white;
 
+  text-align: left;
+  // margin-top: rem(20);
+  // margin-right: rem(50);
+  position: absolute;
+  top: rem(20);
+  left: rem(50);
   a {
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      color: $white;
-      margin-right: 0.3em;
-    }
-
   }
 }
 
@@ -223,7 +220,7 @@
 
 
 .drawer__nav-item {
-  font-size: rem(30);
+  font-size: rem(24);
   font-weight: $medium;
   color: $white;
 
@@ -231,7 +228,7 @@
     transform: scale(1, 1);
   }
   &:nth-child(n + 2) {
-    margin-top: 50px;
+    margin-top: rem(25);
   }
   
 

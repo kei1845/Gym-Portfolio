@@ -120,7 +120,7 @@
     color: $blue;
     font-weight: $bold;
     line-height: 1.2;
-    font-size: rem(30);
+    font-size: rem(22);
 
     @include mq("md") {
       font-size: rem(28);
@@ -156,111 +156,6 @@
   }
 
 
-  // .about {
-
-  //   // margin-top: rem(20);
-  //   @include mq("md") {
-  //     margin-top: rem(149);
-  //   }
-  // }
-
-  // .about-inner {}
-
-  // .about__content {
-  //   margin-top: rem(28);
-
-  //   @include mq("md") {
-  //     margin-top: rem(40);
-  //   }
-  // }
-
-  // .about__img {
-  //   display: flex;
-  //   justify-content: center;
-  //   position: relative;
-  // }
-
-  // .about__img-left {
-  //   width: vw(375, 128);
-  //   aspect-ratio: 128/194;
-
-  //   @include mq("md") {
-  //     width: vw(1440, 400);
-  //     aspect-ratio: 400/606;
-  //   }
-
-  //   z-index: 3;
-
-  //   img {}
-  // }
-
-  // .about__catch {
-  //   position: absolute;
-  //   font-family: $second-font-family;
-  //   font-weight: $normal;
-  //   z-index: 8;
-  //   color: $white;
-  //   font-size: clamp(rem(40), 6vw, rem(80));
-  //   // 以下追記
-  //   top: 19%;
-  //   left: 7%;
-  //   line-height: 1;
-
-  //   @include mq("md") {
-  //     line-height: 1.25;
-  //     top: 30%;
-  //     left: 18.5%;
-  //   }
-  // }
-
-  // .about__img-right {
-  //   aspect-ratio: 281/186;
-  //   position: relative;
-  //   z-index: 1;
-
-  //   img {}
-
-  //   // 以下追記
-  //   width: 100%;
-  //   margin-left: 0;
-  //   margin-top: rem(23);
-
-  //   @include mq("md") {
-  //     width: vw(1440, 880);
-  //     margin-left: rem(-200);
-  //     margin-top: rem(81);
-  //     aspect-ratio: 880/581;
-  //   }
-  // }
-
-  // .about__img-right-text {
-  //   position: absolute;
-
-  //   p {
-  //     margin-top: rem(14);
-  //     margin-right: rem(-12);
-  //     max-width: min(rem(400), 28vw);
-  //     font-weight: $normal;
-  //     font-size: rem(16);
-  //     line-height: 1.5;
-  //     color: $white;
-  //   }
-
-  //   // 以下追記
-  //   top: 22.5%;
-  //   right: 5.5%;
-  // }
-
-  // .about__text {}
-
-  // .about__text-body {
-  //   font-weight: $normal;
-  //   font-size: rem(16);
-  //   line-height: 1.5;
-  //   color: $green;
-  //   // 以下追記
-  //   margin-top: rem(39);
-  // }
 
 
   .gallery {
@@ -325,12 +220,17 @@
     display: block;
     width: 100%;
     max-width: rem(275);
-    height: rem(310);
     border-radius: 30px;
-
+    
     cursor: pointer;
     overflow: hidden;
-    aspect-ratio: 580 / 369;
+    aspect-ratio: 1 / 1;
+    @include mq("md") {
+      height: rem(310);
+      aspect-ratio: 580 / 369;
+    }
+    
+    
 
     // 以下WordPressによる追記
     img {

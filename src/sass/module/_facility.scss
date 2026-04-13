@@ -114,7 +114,7 @@
         color: $blue;
         font-weight: $bold;
         line-height: 1.2;
-        font-size: rem(30);
+        font-size: rem(22);
 
         @include mq("md") {
             font-size: rem(28);

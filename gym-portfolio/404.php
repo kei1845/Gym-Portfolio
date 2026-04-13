@@ -3,7 +3,7 @@
 
 <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="ジムでランニングマシンを使う女性">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="">
     </div>
     <div class="sub-mv__content">
         <h2 class="sub-mv__title">404</h2>
@@ -21,7 +21,7 @@
 
         <div class="error">
             <div class="error-inner inner">
-                <div class="error-title">404</div>
+                <h1 class="error-title">404</h1>
                 <p class="error-text">申し訳ありません。<br>
                     お探しのページが見つかりません。</p>
 

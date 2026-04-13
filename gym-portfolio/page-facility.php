@@ -3,10 +3,10 @@
 <main class="sub-facility">
   <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="ジムでランニングマシンを使う女性">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="">
     </div>
     <div class="sub-mv__content">
-      <h2 class="sub-mv__title">施設紹介</h2>
+      <h1 class="sub-mv__title">施設紹介</h1>
     </div>
   </section>
   <?php if (function_exists('bcn_display')) : ?>
@@ -91,7 +91,7 @@
             $url = wp_get_attachment_image_url((int)$img_id, 'full');
             $alt = get_post_meta((int)$img_id, '_wp_attachment_image_alt', true);
           ?>
-            <button class="gallery__item" type="button" data-modal-img="<?php echo esc_url($url); ?>">
+            <button class="gallery__item hover-zoom hover-opacity" type="button" data-modal-img="<?php echo esc_url($url); ?>">
               <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
             </button>
           <?php endforeach; ?>

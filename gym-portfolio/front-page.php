@@ -18,8 +18,8 @@
       </div>
     </div>
     <div class="mv__content">
-      <h2 class="mv__title">はじめてでも、<br>
-        続けられるジム。</h2>
+      <h1 class="mv__title">はじめてでも、<br>
+        続けられるジム。</h1>
       <p class="mv__text">
         初心者・女性も安心して通える、<br class="u-mobile">
         通いやすいフィットネスジム

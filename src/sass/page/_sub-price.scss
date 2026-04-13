@@ -17,8 +17,9 @@
         grid-template-columns: 1fr;
         gap: rem(24);
 
-        
+
         margin-top: rem(30);
+
         @include mq("md") {
             grid-template-columns: repeat(3, 1fr);
             gap: rem(24);
@@ -45,7 +46,15 @@
     }
 
     .price-card__title {
+        // 他のでかい数字も調整しないとわからない。aun17では22pxにした
+        // font-size: rem(22);
         font-size: rem(32);
+
+        @include mq("md") {
+            font-size: rem(32);
+        }
+
+
         font-weight: $bold;
         line-height: 1.4;
         color: $blue3;
@@ -76,26 +85,28 @@
     }
 
     .price-card__price-number {
-        font-size: rem(64);
-
+        font-size: rem(54);
+        @include mq("md") {
+            font-size: rem(64);
+        }
     }
 
     .price-card__price-yen {
-        font-size: rem(40);
-
+        font-size: rem(32);
+        @include mq("md") {
+            font-size: rem(40);
+        }
     }
 
     .price-card__price-tax {
         font-size: rem(16);
         font-weight: $medium;
-
     }
 
     .price-card__note {
         margin-top: rem(16);
         font-size: rem(16);
         color: $black;
-
     }
 
     .price-card__list {
@@ -250,6 +261,7 @@
 
     .price-extra {
         margin-top: rem(30);
+
         @include mq("md") {
             margin-top: rem(50);
         }
@@ -294,7 +306,13 @@
     .price-extra__list {
         color: $black;
         font-weight: $normal;
-        font-size: rem(22);
+        font-size: rem(18);
+
+        @include mq("md") {
+            min-height: rem(304);
+        }
+
+
 
     }
 
@@ -322,26 +340,54 @@
 
 
     .caution {
-        margin-top: rem(50);
+        margin-top: rem(70);
+        border-top: 1px solid $blue;
+        padding-top: rem(30);
+        border-bottom: 1px solid $blue;
+        padding-bottom: rem(40);
+
         @include mq("md") {
-            margin-top: rem(50);
-            margin-top: 0;
+            margin-top: rem(70);
+            border-top: 1px solid $blue;
+            padding-top: rem(50);
+            border-bottom: 1px solid $blue;
+            padding-bottom: rem(60);
         }
-        
-        
+
+
     }
 
     .caution__title {
         font-weight: $bold;
-        font-size: rem(32);
         line-height: 1.4;
         color: $blue;
+        text-align: center;
+        font-size: rem(22);
+        @include mq("md") {
+            font-size: rem(32);
+        }
+        
+        
 
     }
 
     .caution__body {
         margin-top: rem(30);
         color: $black;
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left;
+        padding-left: rem(20);
+        @include mq("md") {
+            padding-left: rem(50);
+        }
+        
+        
+        // text-align: center;
+        // width: rem(350);
+        // margin-right: auto;
+        // margin-left: auto;
 
     }
 
@@ -349,12 +395,14 @@
 
     .caution__item {
         font-size: rem(16);
+        
+
+        // margin-left: rem(40);
         @include mq("md") {
             font-size: rem(18);
+            // margin-left: rem(20);
         }
-        
-        
-        margin-left: rem(20);
+
         &:nth-child(n + 2) {
             margin-top: rem(8);
         }
@@ -368,12 +416,13 @@
             position: absolute;
             top: rem(8);
             left: rem(-20);
+
             @include mq("md") {
                 top: rem(10);
                 left: rem(-20);
             }
-            
-            
+
+
             width: rem(10);
             height: rem(10);
             border-radius: 50%;

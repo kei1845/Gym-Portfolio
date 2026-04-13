@@ -25,11 +25,11 @@
   <?php wp_body_open(); ?>
   <header class="header">
     <div class="header__inner">
-      <h1 class="header__logo">
+      <div class="header__logo">
         <a href="<?php echo esc_url( home_url('/') ); ?>">          
           <span>K</span> FIT GYM
         </a>
-      </h1>
+      </div>
       <nav class="header__nav u-desktop">
         <ul class="header__nav-list">
           
@@ -70,13 +70,12 @@
   </button>
   <div id="js-drawer-content" class="drawer-content u-mobile">
     <div class="inner drawer-content-inner">
-      <ul class="drawer__nav-list">
-        
-        <li class="drawer__nav-item">
+      <div class="drawer__nav-logo">
           <a href="<?php echo esc_url( home_url('/') ); ?>">
             K FIT GYM
           </a>
-        </li>
+        </div>
+      <ul class="drawer__nav-list">
         <li class="drawer__nav-item">
           <a href="<?php echo esc_url(home_url("/facility")) ?>">
             施設紹介

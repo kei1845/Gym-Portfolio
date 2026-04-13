@@ -2,10 +2,10 @@
   <main class="sub-price">
     <section class="sub-mv" id="mv">
       <div class="sub-mv__img">
-        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/price-mv.png')); ?>" alt="ダンベルとトレーニング器具が並ぶジム">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/price-mv.png')); ?>" alt="">
       </div>
       <div class="sub-mv__content">
-        <h2 class="sub-mv__title">料金一覧</h2>
+        <h1 class="sub-mv__title">料金一覧</h1>
       </div>
     </section>
     <?php if (function_exists('bcn_display')) : ?>
