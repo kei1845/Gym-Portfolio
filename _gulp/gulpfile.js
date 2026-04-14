@@ -17,6 +17,8 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
 const changed = require("gulp-changed");
 const del = require("del");
+const webp = require('gulp-webp');//webp変換
+const rename = require('gulp-rename');//ファイル名変更
 
 // ====== 設定ここだけ見ればOK ======
 const themeName = "gym-portfolio";
