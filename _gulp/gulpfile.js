@@ -17,8 +17,7 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
 const changed = require("gulp-changed");
 const del = require("del");
-const webp = require('gulp-webp');//webp変換
-const rename = require('gulp-rename');//ファイル名変更
+const webp = require("gulp-webp");
 
 // ====== 設定ここだけ見ればOK ======
 const themeName = "gym-portfolio";
@@ -51,8 +50,9 @@ const srcPath = {
   css: "../src/sass/**/*.scss",
   js: "../src/js/**/*",
   img: "../src/images/**/*",
+  imgWebp: "../src/images/**/*.{jpg,jpeg,png}",
   html: ["../src/**/*.html", "!../src/**/_*.html", "!./node_modules/**"],
-  php: `${themeSrcRoot}/**/*.php`, // ★ 編集用テーマのphpを監視
+  php: `${themeSrcRoot}/**/*.php`,
 };
 
 // ====== タスク ======
@@ -92,8 +92,8 @@ const cssSass = () => {
     )
     .pipe(mmq())
     .pipe(sourcemaps.write("./"))
-    .pipe(dest(destPath.css))    // dist
-    .pipe(dest(destWpPath.css)); // WP
+    .pipe(dest(destPath.css))
+    .pipe(dest(destWpPath.css));
 };
 
 // JS
@@ -109,11 +109,11 @@ const jsBabel = () => {
         presets: ["@babel/preset-env"],
       })
     )
-    .pipe(dest(destPath.js))    // dist
-    .pipe(dest(destWpPath.js)); // WP
+    .pipe(dest(destPath.js))
+    .pipe(dest(destWpPath.js));
 };
 
-// 画像
+// 画像圧縮（元形式のまま出力）
 const imgImagemin = () => {
   return src(srcPath.img)
     .pipe(changed(destPath.img))
@@ -127,13 +127,21 @@ const imgImagemin = () => {
         { verbose: true }
       )
     )
-    .pipe(dest(destPath.img)) // dist
-    .pipe(dest(destWpPath.img)); // WP
+    .pipe(dest(destPath.img))
+    .pipe(dest(destWpPath.img));
+};
+
+// WebP生成
+const imgWebp = () => {
+  return src(srcPath.imgWebp)
+    .pipe(changed(destPath.img, { extension: ".webp" }))
+    .pipe(webp({ quality: 80 }))
+    .pipe(dest(destPath.img))
+    .pipe(dest(destWpPath.img));
 };
 
 // 削除
 const clean = () => {
-  // dist と WPテーマ配下の assets だけ消す（全部消すと危ない）
   return del(
     [
       destPath.all,
@@ -163,18 +171,19 @@ const browserSyncReload = (done) => {
 const watchFiles = () => {
   watch(srcPath.css, series(cssSass, browserSyncReload));
   watch(srcPath.js, series(jsBabel, browserSyncReload));
-  watch(srcPath.img, series(imgImagemin, browserSyncReload));
+  watch(srcPath.img, series(imgImagemin, imgWebp, browserSyncReload));
   watch(srcPath.html, series(htmlCopy, browserSyncReload));
-
-  // ★ php を変更したら WPテーマへコピーしてリロード
   watch(srcPath.php, series(phpCopy, browserSyncReload));
 };
 
 // 開発
 exports.default = series(
-  parallel(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy),
+  parallel(cssSass, jsBabel, imgImagemin, imgWebp, htmlCopy, phpCopy),
   parallel(watchFiles, browserSyncFunc)
 );
 
-// 本番（必要なら）
-exports.build = series(clean, parallel(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy));
+// 本番
+exports.build = series(
+  clean,
+  parallel(cssSass, jsBabel, imgImagemin, imgWebp, htmlCopy, phpCopy)
+);
