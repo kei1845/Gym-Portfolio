@@ -19,6 +19,10 @@
     //   margin-top: rem(-7);//カンプ完全一致。仮。
     }
   }
+  .article__thumb img {
+  width: 100%;
+  height: auto;
+}
 
   .article__categories {
   display: flex;
