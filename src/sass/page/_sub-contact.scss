@@ -189,7 +189,7 @@
   .check-box__box {
     width: rem(14);
     height: rem(14);
-    border: 1px solid $green-accent;
+    // border: 1px solid $green-accent;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -500,7 +500,11 @@
   //   margin-top: 0!important;
   // }
 
-  .button-wrapper-outer {}
+  .button-wrapper-outer {
+    p {
+      text-align: center;
+    }
+  }
 
   .button-wrapper br {
     display: none;
@@ -514,18 +518,7 @@
     display: inline-block;
     position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: rem(6);
-      left: rem(4);
-      width: rem(202);
-      height: rem(54);
-      background: $white;
-      border: 1px solid $green-accent;
-      z-index: 0;
-      pointer-events: none; // ★これ重要
-    }
+    
   }
 
   .sub-contact2__button {
@@ -556,7 +549,7 @@
     font-size: rem(20);
     // padding-bottom: 30px;
     // padding: rem(16) rem(10);
-    border: 1px solid $green-accent;
+    // border: 1px solid $green-accent;
     background: $blue;
     color: $white;
     cursor: pointer;

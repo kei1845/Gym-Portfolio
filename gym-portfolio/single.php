@@ -2,7 +2,7 @@
 <main class="sub-blog">
     <section class="sub-mv" id="mv">
         <div class="sub-mv__img">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/blog-mv.png')); ?>" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/blog-mv.webp')); ?>" alt="">
         </div>
         <div class="sub-mv__content">
             <h1 class="sub-mv__title">ブログ</h1>

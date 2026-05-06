@@ -9,7 +9,7 @@
 
 
 </footer>
-<a href="#" class="page-top" id="js-page-top"><img src="<?php echo esc_url( get_theme_file_uri('/assets/images/gym-top/to-top.png') ); ?>" alt=""></a>
+<a href="#" class="page-top" id="js-page-top"><img src="<?php echo esc_url( get_theme_file_uri('/assets/images/gym-top/to-top.webp') ); ?>" alt=""></a>
 <?php wp_footer(); ?>
 </body>
 

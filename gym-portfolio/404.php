@@ -3,7 +3,7 @@
 
 <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.webp')); ?>" alt="">
     </div>
     <div class="sub-mv__content">
         <h2 class="sub-mv__title">404</h2>

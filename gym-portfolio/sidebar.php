@@ -20,7 +20,7 @@
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('thumbnail'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像">
+                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.webp')); ?>" alt="NoImage画像">
               <?php endif; ?>
             </div>
 
@@ -64,7 +64,7 @@
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('thumbnail'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像">
+                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.webp')); ?>" alt="NoImage画像">
               <?php endif; ?>
             </div>
 
@@ -108,7 +108,7 @@
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('thumbnail'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像">
+                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.webp')); ?>" alt="NoImage画像">
               <?php endif; ?>
             </div>
 
@@ -152,7 +152,7 @@
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('thumbnail'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.png')); ?>" alt="NoImage画像">
+                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/no-image.webp')); ?>" alt="NoImage画像">
               <?php endif; ?>
             </div>
 

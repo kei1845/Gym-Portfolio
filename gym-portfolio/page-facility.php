@@ -3,7 +3,7 @@
 <main class="sub-facility">
   <section class="sub-mv" id="mv">
     <div class="sub-mv__img">
-      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.png')); ?>" alt="">
+      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-sub/about-mv.webp')); ?>" alt="">
     </div>
     <div class="sub-mv__content">
       <h1 class="sub-mv__title">施設紹介</h1>
@@ -26,7 +26,7 @@
       <div class="facility__boxes">
         <div class="facility__box">
           <div class="facility__img facility__img-odd">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility1.png')); ?>" alt="最新トレーニングマシンが並ぶジムエリア">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility1.webp')); ?>" alt="最新トレーニングマシンが並ぶジムエリア">
           </div>
           <div class="facility__content">
             <h3 class="facility__box-title">最新機器を揃えた、<br>本格トレーニング環境</h3>
@@ -37,7 +37,7 @@
         </div>
         <div class="facility__box">
           <div class="facility__img facility__img-even">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.png')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility2.webp')); ?>" alt="ダンベルとベンチが揃ったフリーウェイトエリア">
           </div>
           <div class="facility__content">
             <h3 class="facility__box-title">広々とした集中できる<br>フリーウェイトエリア</h3>
@@ -48,7 +48,7 @@
         </div>
         <div class="facility__box">
           <div class="facility__img facility__img-odd">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility3.png')); ?>" alt="ランニングマシンが並ぶ有酸素トレーニングエリア">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility3.webp')); ?>" alt="ランニングマシンが並ぶ有酸素トレーニングエリア">
           </div>
           <div class="facility__content">
             <h3 class="facility__box-title">充実した有酸素<br>トレーニングエリア</h3>
@@ -59,7 +59,7 @@
         </div>
         <div class="facility__box">
           <div class="facility__img facility__img-even">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility4.png')); ?>" alt="清潔なシャワールームと洗面スペース">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/gym-top/facility4.webp')); ?>" alt="清潔なシャワールームと洗面スペース">
           </div>
           <div class="facility__content">
             <h3 class="facility__box-title">清潔で快適な<br>シャワールーム</h3>
