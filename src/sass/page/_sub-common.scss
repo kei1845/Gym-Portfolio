@@ -138,10 +138,16 @@
     margin-left: 0;
   }
   display: flex;
-  gap: rem(20);
+  flex-wrap: wrap;      // ← 追加
+  gap: rem(8) rem(20);  // ← 縦方向8px、横方向20px
   color: $black;
   font-weight: $normal;
   font-size: rem(14);
+  a,
+  span {
+    flex-shrink: 0;     // ← 項目自体を縮ませない
+    white-space: nowrap; // ← 「第1世代」途中で改行しない
+  }
   a {
     text-decoration: none;
     position: relative;
